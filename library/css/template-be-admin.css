@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*************************************************************************
+	Theme: 							Biblioteca Engimas
+	Theme URI: 					http://themes.tielabs.com/sahifa/
+	Description Theme:	Personalized theme for bibliotecaenigmas.com website!
+	Author: 						Guillermo Camarena
+	Author URI: 				http://gcamarenaprog.com
+	Section: 						Library / CSS
+	File Name: 					template-be-admin.css
+	Version:						29-04-2024 
+	Description File: 	This is the style file for the admin page.
+**************************************************************************/
+
+ul .information {
+    margin-left: 2.5rem;
+    list-style: square;
+}
+
+.bea-title {
+    display: inline;
+}
+
+.bea-tab-box-content {
+    overflow: auto;
+    min-height: 42px;
+    max-height: 200px;
+    padding: 1em;
+    margin: 1em;
+    border: solid 1px rgb(223, 223, 223);
+    background-color: rgb(253, 253, 253);
+}
+
+/* 1045px */
+@media only screen and (max-width: 1045px) {}
+
+/* 990px */
+@media only screen and (max-width: 990px) {}
+
+/* 900px */
+@media only screen and (max-width: 900px) {}
+
+/* 800px */
+@media only screen and (max-width: 800px) {}
+
+/* 730px */
+@media only screen and (max-width: 730px) {}
+
+/* 670px */
+@media only screen and (max-width: 670px) {}
+
+/* 600px */
+@media only screen and (max-width: 600px) {
+    .bea-title {
+        display: none;
+    }
+}
+
+/* 500px */
+@media only screen and (max-width: 500px) {}
+
+/* 400px */
+@media only screen and (max-width: 400px) {}
+
+/* 350px */
+@media only screen and (max-width: 350px) {}
