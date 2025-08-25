@@ -1,10 +1,14 @@
 <?php
-  /*
-    Template: 		Biblioteca Enigmas
-    Author: 			Guillermo Camarena
-    Description: 	This file shows 404 error web page
-    Date:         25-08-2025
-    */
+  /**
+   *  Template Name:      Biblioteca Enigmas
+   *  Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   *  Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   *  Author:             Guillermo Camarena
+   *  Author URL:         http://gcamarenaprog.com
+   *  File name:          404.php
+   *  Description:        This file shows 404 error web page
+   *  Date:               25-08-2025
+   */
 ?>
 
 <?php get_header (); ?>
@@ -28,7 +32,7 @@
         <div class="not-found-404">
           <p><?php _eti ('Not Found'); ?></p>
         </div>
-        
+
         <!-- Message text /-->
         <p class="text-center mt10 ">
           <?php _eti ('Apologies, but the page you requested could not be found. Perhaps searching will help.'); ?>
