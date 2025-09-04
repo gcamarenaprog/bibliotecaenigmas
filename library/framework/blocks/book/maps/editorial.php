@@ -1,13 +1,15 @@
 <?php
-/*
-  Template: 	 Biblioteca Enigmas
-  Author: 		 Guillermo Camarena
-  Section: 		 Library | Framework | Blocks | Books | Maps
-  File name: 	 editorials.php
-  Date: 			 01-06-2025
-  Description: This file contains the editorials map.
-  Note:        Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/book/maps/
+   * File name:          editorial.php
+   * Description:        This file shows the editorial map page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <section>

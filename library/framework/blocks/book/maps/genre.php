@@ -1,11 +1,22 @@
 <?php
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/book/maps/
+   * File name:          genre.php
+   * Description:        This file shows the genre map page.
+   * Date:               25-08-2025
+   */
   /*
   Template: 	 Biblioteca Enigmas
   Author: 		 Guillermo Camarena
   Section: 		 Library | Framework | Blocks | Books | Maps
-  File name: 	 genres.php
+  File name: 	 genre.php
   Date: 			 01-06-2025
-  Description: This file contains the genres map.
+  Description: This file contains the genres maps.
   Note:        Refactored
   */
 ?>

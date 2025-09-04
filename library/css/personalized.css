@@ -1,3 +1,16 @@
+@charset "UTF-8";
+/*************************************************************************
+	Theme: 							Biblioteca Engimas
+	Theme URI: 					http://themes.tielabs.com/sahifa/
+	Description Theme:	Personalized theme for bibliotecaenigmas.com website!
+	Author: 						Guillermo Camarena
+	Author URI: 				http://gcamarenaprog.com
+	Path: 						  /library/css/
+	File Name: 					personalized.css
+	Description: 	      Style files for the Sahifa theme custom style.
+	Date:               25-08-2025
+**************************************************************************/
+
 /* Custom CSS --------------------------*/
 
 p {
@@ -95,8 +108,8 @@ h4 {
 }
 
 /* --> 694 | Top Menu */
-.top-nav ul li:hover>a,
-.top-nav ul:hover>a,
+.top-nav ul li:hover > a,
+.top-nav ul:hover > a,
 .top-nav ul li.current-menu-item a {
   color: #929292;
 }
@@ -212,8 +225,8 @@ h4 {
   border-left-color: #ddd;
 }
 
-#main-nav ul>li.menu-item-has-children:hover>a:after,
-#main-nav ul>li.mega-menu:hover>a:after {
+#main-nav ul > li.menu-item-has-children:hover > a:after,
+#main-nav ul > li.mega-menu:hover > a:after {
   content: "";
   position: absolute;
   left: 20px;
@@ -241,14 +254,14 @@ h4 {
 }
 
 /* Remove Arrows from the Sub Sub Menus */
-#main-nav ul ul>li.menu-item-has-children:hover>a:after,
-#main-nav ul ul>li.mega-menu:hover>a:after,
+#main-nav ul ul > li.menu-item-has-children:hover > a:after,
+#main-nav ul ul > li.mega-menu:hover > a:after,
 #main-nav ul li .mega-menu-block ul.sub-menu:before {
   display: none;
 }
 
-#main-nav ul>li.current-menu-item.menu-item-has-children:hover>a:after,
-#main-nav ul>li.current_page_parent.menu-item-has-children:hover>a:after {
+#main-nav ul > li.current-menu-item.menu-item-has-children:hover > a:after,
+#main-nav ul > li.current_page_parent.menu-item-has-children:hover > a:after {
   top: 45px;
 }
 
@@ -360,28 +373,28 @@ h4 {
 }
 
 /* Top Level links */
-#main-nav ul li:hover>a,
-#main-nav ul:hover>a {
+#main-nav ul li:hover > a,
+#main-nav ul:hover > a {
   color: #FFF;
 }
 
 /* Sub Level links */
-#main-nav ul ul li:hover>a,
-#main-nav ul ul:hover>a {
+#main-nav ul ul li:hover > a,
+#main-nav ul ul:hover > a {
   color: #FFF;
   padding-left: 15px;
   padding-right: 5px;
 }
 
-#main-nav ul ul ul li:hover>a,
-#main-nav ul ul ul:hover>a {
+#main-nav ul ul ul li:hover > a,
+#main-nav ul ul ul:hover > a {
   color: #FFF;
   padding-left: 15px;
   padding-right: 5px;
 }
 
-#main-nav ul li:hover>ul,
-#main-nav ul li:hover>.mega-menu-block {
+#main-nav ul li:hover > ul,
+#main-nav ul li:hover > .mega-menu-block {
   display: block;
   -webkit-animation: tieFadeInDown .2s ease-in;
   -moz-animation: tieFadeInDown .2s ease-in;
@@ -1027,7 +1040,7 @@ ul.timeline li.timeline-post span.timeline-date {
 
 /* --> 6630 */
 a.post-slideshow-next, a.post-slideshow-prev {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 /* --> 6993 | Toggle */
@@ -1055,10 +1068,13 @@ a.post-slideshow-next, a.post-slideshow-prev {
 /* --> 7030 | Toggle content */
 .toggle .toggle-content {
   padding: 10px 15px !important;
-  display: block;
   border: 1px solid #ececec;
   border-top: 0;
   box-shadow: 0 0 1px #CACACA;
+}
+
+.tie-sc-open {
+  display: grid !important;
 }
 
 /* --> 7200 | Tabs */
@@ -1656,8 +1672,8 @@ div.dt-button-collection {
   border-radius: 0 !important;
 }
 
-div.dt-buttons>.dt-button,
-div.dt-buttons>div.dt-button-split .dt-button {
+div.dt-buttons > .dt-button,
+div.dt-buttons > div.dt-button-split .dt-button {
   padding: 5px 10px !important;
   background: #2d2d2d !important;
   font-family: "Lekton" !important;
@@ -1675,7 +1691,7 @@ div.dt-buttons span.dt-button-down-arrow {
   color: #dddddd !important;
 }
 
-div.dt-buttons>.dt-button:hover:hover {
+div.dt-buttons > .dt-button:hover:hover {
   color: #c3c3c3 !important;
   background: #000000 !important;
 }
@@ -1686,7 +1702,7 @@ div.dt-container .dt-paging .dt-paging-button {
   padding: 5px 10px !important;
 }
 
-table.dataTable>tbody>tr.child ul.dtr-details>li {
+table.dataTable > tbody > tr.child ul.dtr-details > li {
   border-bottom: 1px solid #efefef;
   padding: .5em 0;
   list-style: inside;
@@ -1715,26 +1731,6 @@ table.dataTable>tbody>tr.child ul.dtr-details>li {
   font-weight: normal !important;
 }
 
-.wprt-container .table-responsive .table thead+tbody tr:nth-child(odd) {
-  background-color: #f9f9f9 !important;
-  font-size: 0.90em;
-}
-
-.wpdt-c.wdt-skin-light .wpDataTablesWrapper table.wpDataTable tr.even td {
-  background-color: #ffffff;
-  font-size: 0.90em;
-}
-
-.wpdt-c.wdt-skin-light .wpDataTablesWrapper table.wpDataTable>thead>tr>th {
-  font-weight: bold;
-  text-shadow: 0 0 0 #ffffff;
-  font-size: 0.90em;
-}
-
-.wpdt-c.wdt-skin-light .wpDataTablesWrapper table.wpDataTable>tbody>tr>td,
-.wpdt-c.wdt-skin-light .wpDataTablesWrapper table.wpDataTable>tfoot>tr>td {
-  font-size: 0.90em;
-}
 
 /* Copilanz */
 .cmplz-cookiebanner {
@@ -1766,7 +1762,8 @@ table.dataTable>tbody>tr.child ul.dtr-details>li {
 }
 
 /* 1200px Monitors, Desktops */
-@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 1200px) {
+}
 
 /* 1045px Monitors, Desktops */
 @media only screen and (max-width: 1045px) {
@@ -1815,7 +1812,9 @@ table.dataTable>tbody>tr.child ul.dtr-details>li {
 }
 
 /* 420px Smaller devices */
-@media only screen and (max-width: 420px) {}
+@media only screen and (max-width: 420px) {
+}
 
 /* 320px Smartwatches */
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+}

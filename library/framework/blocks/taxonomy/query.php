@@ -1,12 +1,15 @@
 <?php
-/*
-      Template Name: 	Biblioteca Enigmas - Home Books Page
-      Author: 				Guillermo Camarena
-      Section: 				Books | Framework | Blocks | Book | Taxonomy
-      File name: 			query.php
-      Date: 					31-05-2025
-      Description: 		This file has php code for query.
-    */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/taxonomy/
+   * File name:          query.php
+   * Description:        This file has php code for query in taxonomy file.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php if (!have_posts()) : ?>

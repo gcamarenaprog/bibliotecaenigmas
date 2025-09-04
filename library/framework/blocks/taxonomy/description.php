@@ -1,16 +1,15 @@
 <?php
-/*
-  Template Name: 	Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Books | Framework | Blocks | Book | Taxonomy
-  File name: 			description.php
-  Date: 					01-06-2025
-  Description: 		This file show description and details of the genres.
-  Notes:          Refactored code.
-  */
-?>
-
-<?php
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/taxonomy/
+   * File name:          description.php
+   * Description:        This file shows description and details of the genres in taxonomy file.
+   * Date:               25-08-2025
+   */
 
 // Get genre image
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));

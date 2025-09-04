@@ -1,4 +1,14 @@
 <?php
+  /**
+   *  Template Name:      Biblioteca Enigmas
+   *  Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   *  Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   *  Author:             Guillermo Camarena
+   *  Author URL:         http://gcamarenaprog.com
+   *  File name:          widget-books.php
+   *  Description:        This file shows a widget of the books section.
+   *  Date:               25-08-2025
+   */
 /*
 	Template: 			Biblioteca Enigmas
 	Author: 				Guillermo Camarena

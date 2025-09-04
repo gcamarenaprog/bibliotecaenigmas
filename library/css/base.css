@@ -5,10 +5,10 @@
 	Description Theme:	Personalized theme for bibliotecaenigmas.com website!
 	Author: 						Guillermo Camarena
 	Author URI: 				http://gcamarenaprog.com
-	Section: 						Library / CSS
+	Path: 						  /library/css/
 	File Name: 					base.css
-	Version:						23-04-2024  
-	Description File: 	This is the style file base for theme
+	Description: 	      This is the style file base the Biblioteca Enigmas Theme.
+	Date:               25-08-2025
 **************************************************************************/
 
 @import url('template-be.css');

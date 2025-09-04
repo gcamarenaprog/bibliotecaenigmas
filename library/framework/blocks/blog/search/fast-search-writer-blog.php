@@ -1,13 +1,15 @@
 <?php
-/*
-  Template Name: 	Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Library | Framework | Blocks | Fortean Blog | Search
-  File name: 			fast-search-writer-table.php
-  Date: 					04-06-2025
-  Description: 		This file shows the table of writer blog posts.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/search/
+   * File name:          widget-books.php
+   * Description:        This file shows the writer blog search page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php
@@ -104,7 +106,7 @@ $index = 0;
             <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php the_title(); ?></a></td>
 
             <!-- Category /-->
-            <td> <?php echo the_category($separator = ', ', $parents = '', $post_id = false); ?> </td>
+            <td> <?php echo the_category($separator = ', ', $parents = '', $post_id = false); ?></td>
 
             <!-- Date /-->
             <td><?php the_time(get_option('date_format')); ?></td>

@@ -1,19 +1,21 @@
 <?php
-/*
-  Template Name: 	Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Books | Framework | Blocks | Blog | Grid
-  File name: 			table.php
-  Date: 					04-06-2025
-  Description: 		This file shows the table of publications for each category.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/grid/
+   * File name:          list-posts.php
+   * Description:        This file displays the table with the list of posts on the grid blog.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php
-$currentObject = get_queried_object();
-
-echo do_shortcode('
+  $currentObject = get_queried_object ();
+  
+  echo do_shortcode ('
     [wp-datatable id="table" fat="LEVEL"]
     paging: true,
     responsive: true,
@@ -43,24 +45,24 @@ echo do_shortcode('
       },
     },
     [/wp-datatable]');
-
-$index = 0;
+  
+  $index = 0;
 
 ?>
 
-<!-- Title /-->
-<section>
-  <div class="tb-head">
-    <h1>= Lista de publicaciones =</h1>
-  </div>
-</section>
+  <!-- Title /-->
+  <section>
+    <div class="tb-head">
+      <h1>= Lista de publicaciones =</h1>
+    </div>
+  </section>
 
-<!-- Table /-->
-<section>
-  <div class="tb-box">
-    <table id="table" class="display compact" style="width:100%">
+  <!-- Table /-->
+  <section>
+    <div class="tb-box">
+      <table id="table" class="display compact" style="width:100%">
 
-      <thead>
+        <thead>
         <tr>
           <th>#</th>
           <th>TÍTULO</th>
@@ -68,26 +70,26 @@ $index = 0;
           <th>FECHA</th>
           <th>VISITAS</th>
         </tr>
-      </thead>
+        </thead>
 
-      <tbody>
-
-        <?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
-
+        <tbody>
+        
+        <?php while ($wp_query->have_posts ()): $wp_query->the_post (); ?>
+          
           <?php
-          $numberOfLikes = get_post_meta($post->ID, 'tie_likes');
+          $numberOfLikes = get_post_meta ($post->ID, 'tie_likes');
           $numberOfLikes_ = $numberOfLikes[0] ?? 0;
-
+          
           $count_key = 'tie_views';
-          $count = get_post_meta($post->ID, $count_key, true);
-          $count = @number_format($count);
+          $count = get_post_meta ($post->ID, $count_key, true);
+          $count = @number_format ($count);
           if (empty($count)) {
-            delete_post_meta($post->ID, $count_key);
-            add_post_meta($post->ID, $count_key, 0);
+            delete_post_meta ($post->ID, $count_key);
+            add_post_meta ($post->ID, $count_key, 0);
             $count = 0;
           }
           ?>
-
+          
           <?php $index++; ?>
 
           <tr>
@@ -95,13 +97,13 @@ $index = 0;
             <td><?php echo " $index. "; ?></td>
 
             <!-- Title /-->
-            <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php the_title(); ?></a></td>
+            <td><a href="<?php the_permalink (); ?>" rel="bookmark"> <?php the_title (); ?></a></td>
 
             <!-- Category /-->
-            <td> <?php echo the_category($separator = ', ', $parents = '', $post_id = false); ?> </td>
+            <td> <?php echo the_category ($separator = ', ', $parents = '', $post_id = false); ?> </td>
 
             <!-- Date /-->
-            <td><?php the_time(get_option('date_format')); ?></td>
+            <td><?php the_time (get_option ('date_format')); ?></td>
 
             <!-- Views /-->
             <td>
@@ -109,12 +111,12 @@ $index = 0;
             </td>
 
           </tr>
-
+        
         <?php endwhile; ?>
 
-      </tbody>
+        </tbody>
 
-      <tfoot>
+        <tfoot>
         <tr>
           <th>#</th>
           <th>TÍTULO</th>
@@ -122,10 +124,10 @@ $index = 0;
           <th>FECHA</th>
           <th>VISITAS</th>
         </tr>
-      </tfoot>
+        </tfoot>
 
-    </table>
-  </div>
-</section>
+      </table>
+    </div>
+  </section>
 
-<?php wp_reset_query(); ?>
+<?php wp_reset_query (); ?>

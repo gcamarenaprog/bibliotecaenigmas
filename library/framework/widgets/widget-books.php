@@ -1,16 +1,15 @@
 <?php
-  /*
-  Template: 		Biblioteca Enigmas
-  Author: 			Guillermo Camarena
-  Section: 			Library / Widgets
-  File name: 		widget-books.php
-  Date: 				09-05-2024
-  Description: 	This file shows a widget of the books section
-  Note:         Refactored
-  */
-?>
-
-<?php
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/widgets/
+   * File name:          widget-books.php
+   * Description:        This file contains the code for the book list widget.
+   * Date:               25-08-2025
+   */
   
   // Widget initialization and register
   add_action ('widgets_init', 'tie_books_list_widget');

@@ -1,14 +1,15 @@
 <?php
-/*
-      Template Name: 	Biblioteca Enigmas - Home Books Page
-      Author: 				Guillermo Camarena
-      Section: 				Books | Framework | Blocks | Blog | Grid
-      File name: 			information.php
-      Date: 					31-05-2025
-      Description: 		This file show welcome box.
-    */
+  /**
+   *  Template Name:      Biblioteca Enigmas
+   *  Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   *  Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   *  Author:             Guillermo Camarena
+   *  Author URL:         http://gcamarenaprog.com
+   *  File name:          information.php
+   *  Description:        This file displays the name and description of the category on the grid blog.
+   *  Date:               25-08-2025
+   */
 ?>
-
 
 <section>
   <div class="tb-head">
@@ -20,11 +21,13 @@
   <div class="tb-box">
 
     <div class="pb10">
-      <?php echo category_description(); ?>
+      <?php echo category_description (); ?>
     </div>
 
     <div class="tb-advice">
-      <p>Los artículos son de índole investigativo, histórico, documentativo e informativo. No se publican, fakes, noticias amarillistas, documentos sin sustento, etc.</p>
+      <p>Los artículos son de índole investigativo, histórico, documentativo e informativo. No se publican, fakes,
+        noticias amarillistas, documentos sin sustento, etc.
+      </p>
     </div>
 
   </div>

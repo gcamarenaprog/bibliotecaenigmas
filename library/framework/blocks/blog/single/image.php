@@ -1,13 +1,15 @@
 <?php
-/*
-  Template name:  Biblioteca Enigmas
-  Author: 			  Guillermo Camarena
-  Section: 			  Books | Framework | Blocks | Blog | Single
-  File name: 		  image.php
-  Date: 				  12-05-2024
-  Description: 	  This file contains the featured image for posts.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/single/
+   * File name:          image.php
+   * Description:        This file contains the image section of a blog post page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <section>

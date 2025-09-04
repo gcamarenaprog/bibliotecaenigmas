@@ -1,13 +1,15 @@
 <?php
-  /*
-  Template name: 	Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Books | Framework | Blocks | Blog | Single
-  File name: 			share.php
-  Date: 					12-05-2024
-  Description: 		This file contains the share buttons.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/single/
+   * File name:          share.php
+   * Description:        This file contains the related section of a blog post page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php
@@ -20,39 +22,6 @@
   $post_link = tie_get_option ('share_shortlink') ? esc_url (wp_get_shortlink ()) : esc_url (get_permalink ());
   $post_title = wp_strip_all_tags (get_the_title ());
   $protocol = is_ssl () ? 'https' : 'http';
-?>
-
-<?php
-  $likesOfPost = get_post_meta ($post->ID, 'tie_likes');
-  
-  $idPost = get_the_ID ();
-  $nameOfCookie = 'bbl_' . $idPost;
-  $statusLikeButton = null;
-  
-  if (!isset($_COOKIE[$nameOfCookie])) {
-    $statusLikeButton = false;
-  } else {
-    $statusLikeButton = true;
-  }
-  
-  if (isset($_POST['submit'])) {
-    if (isset($_COOKIE[$nameOfCookie])) {
-    } else {
-      if (!isset($likesOfPost[0])) {
-        setcookie ($nameOfCookie, 1, time () + (300), "/");
-        $statusLikeButton = true;
-        update_post_meta ($idPost, 'tie_likes', '1');
-      } else {
-        $likes = $likesOfPost[0];
-        $likes++;
-        setcookie ($nameOfCookie, $likesOfPost[0], time () + (300), "/");
-        $statusLikeButton = true;
-        update_post_meta ($idPost, 'tie_likes', $likes);
-      }
-    }
-  } else {
-    $_POST = array();
-  }
 ?>
 
 <section>

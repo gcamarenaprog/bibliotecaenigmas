@@ -1,13 +1,15 @@
 <?php
-  /*
-  Template: 			Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Books | Framework | Blocks | Blog | Single
-  File name: 			navigation.php
-  Date: 					02-05-2024
-  Description: 		This file contains the navigation next and previous post box.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/single/
+   * File name:          navigation.php
+   * Description:        This file contains the navigation section of a blog post page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php

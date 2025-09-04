@@ -1,13 +1,15 @@
 <?php
-/*
-  Template Name: 	Biblioteca Enigmas - Search Quotes
-  Author: 				Guillermo Camarena
-  Section: 				Library | Framework | Blocks | Search
-  File name: 			search.php
-  Date: 					31-05-2025
-  Description: 		This file show searches quotes section.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/taxonomy/
+   * File name:          search.php
+   * Description:        This file shows a search quotes page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php

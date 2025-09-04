@@ -1,11 +1,13 @@
-/**    
- * Template Name: 	Biblioteca Enigmas
- * Author: 				  Guillermo Camarena
- * Section: 				Library / Js
- * File name: 			widgets.php
- * Date: 					  03-05-2024
- * Description: 		This file contains the custom buttons script from the Wordpress editor in the administration.
- * Note:            Refactored
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/js/
+ * File name:          tiny-mce.js
+ * Description:        This file contains the custom buttons script from the Wordpress editor in the administration.
+ * Date:               25-08-2025
  */
 
 (function () {

@@ -5,61 +5,142 @@
 	Description Theme:	Personalized theme for bibliotecaenigmas.com website!
 	Author: 						Guillermo Camarena
 	Author URI: 				http://gcamarenaprog.com
-	Section: 						Library / CSS
+	Path: 						  /library/css/
 	File Name: 					template-be-admin.css
-	Version:						29-04-2024 
-	Description File: 	This is the style file for the admin page.
+	Description: 	      Admin style file for the Biblioteca Enigmas Theme.
+	Date:               25-08-2025
 **************************************************************************/
 
-ul .information {
-    margin-left: 2.5rem;
-    list-style: square;
+ul .bea-information {
+  margin-left: 1.5rem;
+  list-style: square;
+}
+
+li .bea-none {
+  list-style-type: none;
 }
 
 .bea-title {
-    display: inline;
+  display: inline;
+}
+
+.bea-green {
+  color: green;
+}
+
+.bea-red {
+  color: red;
+}
+
+.bea-button {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0.9em;
+  margin-top: 0.9em;
+}
+
+.bea-tabs-panel {
+  max-height: 100% !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.bea-tabs-panel-close {
+  max-height: 100% !important;
+  padding: .9em .9em !important;
+  display: none;
 }
 
 .bea-tab-box-content {
-    overflow: auto;
-    min-height: 42px;
-    max-height: 200px;
-    padding: 1em;
-    margin: 1em;
-    border: solid 1px rgb(223, 223, 223);
-    background-color: rgb(253, 253, 253);
+  overflow: auto;
+  min-height: 42px;
+  max-height: 200px;
+  padding: 1em;
+  margin: 1em;
+  border: solid 1px rgb(223, 223, 223);
+  background-color: rgb(253, 253, 253);
+}
+
+.bea-tab-box-information {
+  overflow: auto;
+  min-height: 42px;
+  max-height: 200px;
+  padding: 0.9em;
+  margin-bottom: 0.9em;
+  border: solid 1px rgb(223, 223, 223);
+  background-color: rgb(253, 253, 253);
+}
+
+.bea-tab-box-information.last {
+  margin-bottom: 0;
+}
+
+.bea-input-text {
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
+}
+
+.bea-select {
+  max-width: 100%;
+  width: 100%;
+}
+
+.bea-mt09 {
+  margin-top: 0.9em !important;
+}
+
+.bea-mb05 {
+  margin-bottom: 0.5em;
+}
+
+.bea-mb15 {
+  margin-bottom: 15px;
+}
+
+.bea-mr15 {
+  margin-right: 15px;
 }
 
 /* 1045px */
-@media only screen and (max-width: 1045px) {}
+@media only screen and (max-width: 1045px) {
+}
 
 /* 990px */
-@media only screen and (max-width: 990px) {}
+@media only screen and (max-width: 990px) {
+}
 
 /* 900px */
-@media only screen and (max-width: 900px) {}
+@media only screen and (max-width: 900px) {
+}
 
 /* 800px */
-@media only screen and (max-width: 800px) {}
+@media only screen and (max-width: 800px) {
+}
 
 /* 730px */
-@media only screen and (max-width: 730px) {}
+@media only screen and (max-width: 730px) {
+}
 
 /* 670px */
-@media only screen and (max-width: 670px) {}
+@media only screen and (max-width: 670px) {
+}
 
 /* 600px */
 @media only screen and (max-width: 600px) {
-    .bea-title {
-        display: none;
-    }
+  .bea-title {
+    display: none;
+  }
 }
 
 /* 500px */
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+}
 
 /* 400px */
-@media only screen and (max-width: 400px) {}
+@media only screen and (max-width: 400px) {
+}
 
 /* 350px */
-@media only screen and (max-width: 350px) {}
+@media only screen and (max-width: 350px) {
+}
