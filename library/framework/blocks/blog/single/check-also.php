@@ -1,13 +1,15 @@
 <?php
-/*
-  Template: 			Biblioteca Enigmas
-  Author: 				Guillermo Camarena
-  Section: 				Books | Framework | Blocks | Blog | Single
-  File name: 			check-also.php
-  Date: 					04-06-2025
-  Description: 		This file contains the check also window.
-  Note:           Refactored
-  */
+  /**
+   * Template Name:      Biblioteca Enigmas
+   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+   * Author:             Guillermo Camarena
+   * Author URL:         http://gcamarenaprog.com
+   * Path:               /library/framework/blocks/blog/single/
+   * File name:          check-also.php
+   * Description:        This file contains the check-also section of a blog post page.
+   * Date:               25-08-2025
+   */
 ?>
 
 <?php
@@ -15,16 +17,16 @@ global $postId, $postname;
 $currentId = $post->ID;
 $currentCategory = wp_get_post_terms($post->ID, 'category', array('fields' => 'slugs'));
 
-$maximum_random_number = sizeof($currentCategory);
+$maximumRandomNumber = sizeof($currentCategory);
 
-if ($maximum_random_number <= 1) {
-  $random_number = 0;
+if ($maximumRandomNumber <= 1) {
+  $randomNumber = 0;
 } else {
-  $random_number = rand(0, $maximum_random_number - 1);
+  $randomNumber = rand(0, $maximumRandomNumber - 1);
 }
 
-$array_genres_check_also = (array)$currentCategory;
-$selected_genre = $array_genres_check_also[$random_number];
+$arrayGenresCheckAlso = (array)$currentCategory;
+$selectedGenre = $arrayGenresCheckAlso[$randomNumber];
 
 $arguments = array(
   'post_type' => 'post',
@@ -33,14 +35,14 @@ $arguments = array(
     array(
       'taxonomy' => 'category',
       'field' => 'slug',
-      'terms' => $selected_genre,
+      'terms' => $selectedGenre,
     ),
   ),
 );
 
 $query = new WP_Query($arguments);
 $index = 0;
-$first_posts_related_to_current_post = null;
+$firstPostRelatedToCurrentPost = null;
 
 if ($query->have_posts()) {
   while ($query->have_posts()) {
@@ -51,7 +53,7 @@ if ($query->have_posts()) {
 
     // If the selected post is different to current post
     if ($postId != $currentId) {
-      $first_posts_related_to_current_post[] = $postId;
+      $firstPostRelatedToCurrentPost[] = $postId;
       if ($index > 4) {
         break;
       }
@@ -62,19 +64,19 @@ if ($query->have_posts()) {
 
 wp_reset_query();
 
-if ($first_posts_related_to_current_post) {
+if ($firstPostRelatedToCurrentPost) {
 
-  $visibility = true;
+  $isVisible = true;
 
   $arguments = array(
     'post_type' => 'post',
     'posts_per_page' => 1,
-    'post__in' => $first_posts_related_to_current_post,
+    'post__in' => $firstPostRelatedToCurrentPost,
     'tax_query' => array(
       array(
         'taxonomy' => 'category',
         'field' => 'slug',
-        'terms' => $selected_genre,
+        'terms' => $selectedGenre,
       ),
     ),
   );
@@ -82,11 +84,11 @@ if ($first_posts_related_to_current_post) {
   $query = new WP_query($arguments);
   $index = 0;
 } else {
-  $visibility = false;
+  $isVisible = false;
 }
 ?>
 
-<?php if ($visibility) : ?>
+<?php if ($isVisible) : ?>
 
   <section>
     <div id="check-also-box" class="post-listing check-also-<?php echo $check_also_position ?> show-check-also">
