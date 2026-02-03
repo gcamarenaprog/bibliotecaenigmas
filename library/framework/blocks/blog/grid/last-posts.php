@@ -7,76 +7,75 @@
    *  Author URL:         http://gcamarenaprog.com
    *  File name:          last-posts.php
    *  Description:        This file displays the last posts on the grid blog.
-   *  Date:               25-08-2025
+   *  Date:               03-02-2026
    */
+
+$term = get_queried_object();
+$slug =  $term->slug;
+$tieIcon = '';
+
+if ($slug === "blog-forteano"){
+    $tieIcon = 'tie_fortean';
+} else if ($slug === "blog-del-autor"){
+    $tieIcon = 'tie_author';
+}else if ($slug === "cuentos-del-autor"){
+    $tieIcon = 'tie_story';
+}
+
 ?>
 
   <section>
     <div class="tb-head">
-      <h1>= ÚLTIMAS NOVEDADES =</h1>
+      <h1>= ÚLTIMAS PUBLICACIONES =</h1>
     </div>
   </section>
 
   <section>
     <div class="tb-box">
-      <div class="container_">
-        <div class="row_">
-          
-          <?php
-            if ($wp_query->have_posts ()) : while ($wp_query->have_posts ()) : $wp_query->the_post (); ?>
-              
-              <?php $postTitle = get_the_title (); ?>
 
-              <div class="col_-xxl-4 col_-xl-4  col_-md-4 col_-sm-12 col_xs-12">
-                <article class="card-blog">
+      <!-- Items cards -->
+      <div class="row_ test">
 
-                  <!-- Data -->
-                  <div class="blog">
-                    <div class="tbh-thumbnail">
-
-                      <div class="post-thumbnail tie-appear tbh-post-thumbnail"
-                           style=" ">
-                        <a href="<?php the_permalink (); ?>" rel="bookmark">
-                          <?php the_post_thumbnail (); ?>
-                          <li
-                              class="fa overlay-icon tbh-overlay-icon">
-                          </li>
-                        </a>
-                      </div>
-
-                      <div class="tbh-thumbnail-title">
-                        <h1>
-                          <a class="title" href="<?php the_permalink (); ?>" rel="bookmark">
-                            <?php echo $postTitle; ?>
-                          </a>
-                        </h1>
-                      </div>
-
-                    </div><!--/.tb-thumbnails-->
-                  </div><!--/.blog-->
-
-                </article><!--/.card-blog-->
-
-              </div><!--/.cols-->
+        <?php
+          if ($wp_query->have_posts ()) : while ($wp_query->have_posts ()) : $wp_query->the_post (); ?>
             
-            <?php endwhile; ?>
+            <?php $postTitle = get_the_title (); ?>
 
-              <!-- No posts -->
-            <?php else : ?>
+            <div class="col_-xxl-4 col_-xl-4 col_-md-4  col_-sm-6 col_xs-12 text-center mb10">
+              <div class="tb-card-blog">
 
-              <!-- No books message /-->
-              <article>
-                <div class="item-list">
-                  <div class="tb-no-more-books">
-                    No hay publicaciones.
-                  </div>
+                <div class="post-thumbnail <?php echo $tieIcon; ?> tb-card-blog-thumbnail tie-appear">
+                  <a href="<?php the_permalink (); ?>" rel="bookmark">
+                    <?php the_post_thumbnail (); ?>
+                    <li class="fa overlay-icon tb-card-blog-overlay-icon"></li>
+                  </a>
                 </div>
-              </article>
-            
-            <?php endif ?>
 
-        </div><!--/.row_-->
-      </div><!--/.container_-->
+                <figcaption class="tb-card-blog-text">
+                  <a href="<?php the_permalink (); ?>" rel="bookmark"><?php echo $postTitle; ?></a>
+                  <span class="tb-card-blog-text-paragraph-end"></span>
+                </figcaption>
+
+              </div><!--/.tbh-card-item-->
+            </div><!--/.cols-->
+          
+          <?php endwhile; ?>
+
+            <!-- No posts -->
+          <?php else : ?>
+
+            <!-- No more posts /-->
+            <div class="tb-no-more-books">
+              <p>No hay publicaciones.</p>
+            </div>
+          
+          <?php endif ?>
+        
+        <?php wp_reset_query (); ?>
+
+
+      </div><!--/.row_-->
+
     </div><!--/.tb-box-->
   </section>
 
