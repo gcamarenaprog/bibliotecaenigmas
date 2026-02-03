@@ -60,7 +60,7 @@
                     <?php
                       $be_theme_check = get_post_meta ($post->ID, 'be_theme_check', true);
                       if ($be_theme_check != 'yes') {
-                        echo '<div  class="post-thumbnail tie_check tie-appear tb-card-book-thumbnail"';
+                        echo '<div  class="post-thumbnail tie_check tie-appear tb-card-book-thumbnail">';
                       } else {
                         echo '<div  class="post-thumbnail tie_book tie-appear tb-card-book-thumbnail">';
                       }
