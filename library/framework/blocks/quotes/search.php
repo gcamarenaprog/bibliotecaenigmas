@@ -1,15 +1,16 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/taxonomy/
-   * File name:          search.php
-   * Description:        This file shows a search quotes page.
-   * Date:               25-08-2025
-   */
+
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/taxonomy/
+ * File name:          search.php
+ * Description:        This file shows a search quotes page.
+ * Date:               02-12-2025
+ */
 ?>
 
 <?php
@@ -56,108 +57,104 @@ $listQuotes = $wpdb->get_results($query, ARRAY_A);
 if (empty($listQuotes)) {
   return array();
 }
-
 ?>
 
-<!-- Title /-->
+<!--/Information-->
 <section>
-  <div class="tb-head">
-    <h1>= <?php the_title(); ?> =</h1>
+  <div class="entry mt10">
+    <p>Esta herramienta permite la búsqueda de alguna frase en especial. Puede buscar términos en: el <strong>autor,
+        texto de la frase, información extra y categoría.</strong></p>
+    <p>La búsqueda distingue entre <strong>“mayúsculas y minúsculas”</strong>, es decir, toma en cuenta los acentos,
+      mayúsculas, etc., además, puede ordenar las columnas de manera <strong>ascendente</strong> y
+      <strong>descendente</strong>.
+    </p>
+    <p><strong>Nota:</strong> algunas columnas pueden estar ocultas, para mostrarlas haga clic en el botón <strong>“Ver
+        columnas”.</strong></p>
   </div>
 </section>
 
-<!-- Table /-->
+<hr>
+
+<!--/Table-->
 <section>
-  <article <?php post_class('post-listing post'); ?> id="the-post">
-    <div class="post-inner">
-      <div class="entry"><br>
+  <table id="table" class="display compact" style="width:100%">
 
-        <!-- Content /-->
-        <?php the_content(); ?>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>AUTOR</th>
+        <th>FRASE</th>
+        <th>INFORMACIÓN EXTRA</th>
+        <th>CATEGORÍA</th>
+      </tr>
+    </thead>
 
-        <!-- Search table /-->
-        <section>
-          <table id="table" class="display compact" style="width:100%">
+    <tbody>
 
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>AUTOR</th>
-                <th>FRASE</th>
-                <th>INFORMACIÓN EXTRA</th>
-                <th>CATEGORÍA</th>
-              </tr>
-            </thead>
+      <?php foreach ($listQuotes as $key => $value): ?>
 
-            <tbody>
+        <?php
+        $quoteId = $value['befrases_id'];
+        $authorId = $value['befrases_author'];
+        $authorExtra = $value['befrases_author_extra'];
+        $quote = $value['befrases_quote'];
+        $categoryId = $value['befrases_category'];
+        $quoteCategory = '';
+        $quoteAuthor = '';
 
-              <?php foreach ($listQuotes as $key => $value): ?>
+        $nameOfCategory = $wpdb->get_results("SELECT befrases_cat_name, befrases_cat_id FROM  {$wpdb->prefix}befrases_cat	WHERE	befrases_cat_id = {$categoryId}", ARRAY_A);
 
-                <?php
-                $quoteId = $value['befrases_id'];
-                $authorId = $value['befrases_author'];
-                $authorExtra = $value['befrases_author_extra'];
-                $quote = $value['befrases_quote'];
-                $categoryId = $value['befrases_category'];
-                $quoteCategory = '';
-                $quoteAuthor = '';
+        foreach ($nameOfCategory as $key => $value) {
+          $quoteCategory = $value['befrases_cat_name'];
+        }
+        $nameOfAuthor = $wpdb->get_results("SELECT befrases_aut_name FROM  {$wpdb->prefix}befrases_aut	WHERE	befrases_aut_id = {$authorId}", ARRAY_A);
+        foreach ($nameOfAuthor as $key => $value) {
+          $quoteAuthor = $value['befrases_aut_name'];
+        }
 
-                $nameOfCategory = $wpdb->get_results("SELECT befrases_cat_name, befrases_cat_id FROM  {$wpdb->prefix}befrases_cat	WHERE	befrases_cat_id = {$categoryId}", ARRAY_A);
+        if ($authorExtra == '') {
+          $authorExtra = 'Sin información';
+        }
 
-                foreach ($nameOfCategory as $key => $value) {
-                  $quoteCategory = $value['befrases_cat_name'];
-                }
-                $nameOfAuthor = $wpdb->get_results("SELECT befrases_aut_name FROM  {$wpdb->prefix}befrases_aut	WHERE	befrases_aut_id = {$authorId}", ARRAY_A);
-                foreach ($nameOfAuthor as $key => $value) {
-                  $quoteAuthor = $value['befrases_aut_name'];
-                }
+        $quote = stripslashes($quote);
+        $author = stripslashes($author);
+        $authorExtra = stripslashes($authorExtra);
+        ?>
 
+        <tr>
 
-                if($authorExtra == ''){
-                  $authorExtra = 'Sin información';
-                }
-                ?>
+          <!--/#-->
+          <td><?php echo $quoteId; ?></td>
 
-                <tr>
+          <!--/Writer-->
+          <td> <?php echo $quoteAuthor; ?></a></td>
 
-                  <!-- # /-->
-                  <td><?php echo $quoteId; ?></td>
+          <!--/Quote-->
+          <td> <?php echo $quote; ?></a></td>
 
-                  <!-- Writer /-->
-                  <td> <?php echo $quoteAuthor; ?></a></td>
+          <!--/Extra information-->
+          <td><?php echo $authorExtra; ?></td>
 
-                  <!-- Quote /-->
-                  <td> <?php echo $quote; ?></a></td>
+          <!--/Category-->
+          <td><?php echo $quoteCategory; ?></td>
 
-                  <!-- Extra information /-->
-                  <td><?php echo $authorExtra; ?></td>
+        </tr>
 
-                  <!-- Category /-->
-                  <td><?php echo $quoteCategory; ?></td>
+      <?php endforeach; ?>
+    </tbody>
 
-                </tr>
+    <tfoot>
+      <tr>
+        <th>#</th>
+        <th>AUTOR</th>
+        <th>FRASE</th>
+        <th>INFORMACIÓN EXTRA</th>
+        <th>CATEGORÍA</th>
+      </tr>
+    </tfoot>
 
-              <?php endforeach; ?>
-            </tbody>
-
-            <tfoot>
-              <tr>
-                <th>#</th>
-                <th>AUTOR</th>
-                <th>FRASE</th>
-                <th>INFORMACIÓN EXTRA</th>
-                <th>CATEGORÍA</th>
-              </tr>
-            </tfoot>
-
-          </table>
-        </section>
-
-      </div>
-      <div class="clear"></div>
-
-    </div>
-  </article>
+  </table>
 </section>
 
+<div class="clear"></div>
 <?php wp_reset_query(); ?>
