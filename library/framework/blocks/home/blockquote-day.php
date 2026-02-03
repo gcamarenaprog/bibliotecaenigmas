@@ -1,18 +1,24 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/home/
-   * File name:          blockquote-day.php
-   * Description:        This file shows the blockquote day section in home page.
-   * Date:               25-08-2025
-   */
+
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/home/
+ * File name:          blockquote-day.php
+ * Description:        This file shows 1 of the last 10 phrases in the blockquote day section on the home page.
+ * Date:               03-02-2026
+ */
 ?>
 
 <?php
+/**
+ * Get author name with author Id.
+ * @param int $authorId
+ * @return array
+ */
 function getAuthorNameWithAuthorId_(int $authorId): array
 {
   global $wpdb;
@@ -20,7 +26,9 @@ function getAuthorNameWithAuthorId_(int $authorId): array
 }
 
 global $wpdb;
-$listQuotes = $wpdb->get_results("SELECT * FROM  {$wpdb->prefix}befrases", ARRAY_A);
+
+# Get the last 10 quotes
+$listQuotes = $wpdb->get_results("SELECT * FROM  {$wpdb->prefix}befrases ORDER BY befrases_id DESC LIMIT 10", ARRAY_A);
 $author = '';
 $quote = '';
 
@@ -29,7 +37,7 @@ $length = count($listQuotes);
 
 # Get author and quote with randomize number
 if ($length == 0) { // If there are no quotes.
-  echo '<p style="text-align: center;">No hay frases para mostrar.</p>';
+  echo '<p class="text-center">No hay frases para mostrar.</p>';
 } elseif ($length == 1) { // If there is a quote.
   foreach ($listQuotes as $key => $value) {
     $quote = $value['befrases_quote'];
@@ -61,23 +69,37 @@ if ($authorExtra == 'Sin información.') {
 } else {
   $authorExtra = ', ' . $authorExtra;
 }
+
+# Remove the character "\" from the strings
+$quote = stripslashes($quote);
+$author = stripslashes($author);
+$authorExtra = stripslashes($authorExtra);
 ?>
 
+<!-- Title /-->
 <section>
-  <div class="tb-head">
-    <h1>= FRASE DEL DÍA =</h1>
-  </div>
+    <div class="tb-head">
+        <h2>= ÚLTIMAS FRASES =</h2>
+    </div><!--/.tb-head-->
 </section>
 
+<!-- Content /-->
 <section>
   <div class="tb-box">
-    <blockquote>
-      <p> "<?php echo $quote; ?>" <br><b>— <?php echo $author; ?><?php echo $authorExtra; ?> </b></p>
-    </blockquote>
 
+    <!-- Blockquote /-->
     <section>
-      <div class="tbh-button">
-        <a title="Ir a Colección de Frases" href="https://bibliotecaenigmas.com/coleccion-de-frases/" class="shortc-button tbh  ">Ir a Colección de Frases</a>
+      <blockquote>
+        <p> "<?php echo $quote; ?>" <br><b>— <?php echo $author; ?><?php echo $authorExtra; ?> </b></p>
+      </blockquote>
+    </section>
+
+    <hr>
+
+    <!-- Button /-->
+    <section>
+      <div class="text-center">
+        <a title="Ir a colección de frases" href="https://bibliotecaenigmas.com/coleccion-de-frases/" class="tb-button">Ir a la sección</a>
       </div>
     </section>
 
