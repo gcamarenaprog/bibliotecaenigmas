@@ -14,7 +14,8 @@
 
 
 global $get_meta;
-$category = get_the_category();    $cat_id =  $category[0]->cat_ID;
+$category = get_the_category();
+$cat_id =  $category[0]->cat_ID;
 $res = get_category_parents($cat_id);
 print_r($res);
 var_dump($res);
