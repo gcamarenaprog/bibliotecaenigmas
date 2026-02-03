@@ -8,28 +8,44 @@
    * Path:               /library/framework/blocks/book/single/
    * File name:          thumbnail.php
    * Description:        This file shows the thumbnail section of the single book page.
-   * Date:               25-08-2025
+   * Date:               03-02-2026
    */
 ?>
 
+<?php
+  $classCodeTieCheck = 'tie_check';
+  $postId = $post->ID;
+  $category = get_the_terms($postId, 'genre');
+  $parentCategoryId = $category[0]->parent;
+  if($parentCategoryId == 1523){
+    $classCodeTie = 'tie_play';
+  }else{
+    $classCodeTie = 'tie_book';
+  }
+?>
+
 <section>
-  <div class="tb-single-thumbnail">
-    <div class="tb-single-img ">
+  <?php
+    if (function_exists ("has_post_thumbnail") && has_post_thumbnail ()) : ?>
       <?php
-      if (function_exists("has_post_thumbnail") && has_post_thumbnail()) : ?>
-        <?php
-        $be_theme_check = get_post_meta($post->ID, 'be_theme_check', true);
-        if ($be_theme_check != 'yes') {
-          echo '<div class="post-thumbnail tie_check tie-appear m0 ">';
+      $be_theme_check = get_post_meta ($post->ID, 'be_theme_check', true); ?>
+      <div class="post-thumbnail tb-book-thumbnail
+      <?php
+        if ($be_theme_check == 'yes') {
+          echo $classCodeTie;
         } else {
-          echo '<div class="post-thumbnail tie_book tie-appear m0 ">';
+          echo $classCodeTieCheck;
         }
-        ?>
-        <a href="<?php echo tie_thumb_src('tie-library'); ?>" class="fancybox image">
-          <img src="<?php echo tie_thumb_src('tie-library'); ?>" alt="" width="auto" height="auto" class="tie-appear">
+      ?> tie-appear">
+        <a href="<?php echo tie_thumb_src ('tie_library'); ?>"
+           class="fancybox image"
+           aria-controls="fancybox-wrap"
+           aria-haspopup="dialog">
+          <img src="<?php echo tie_thumb_src ('tie_library'); ?>"
+               title="<?php the_title (); ?>"
+               class="tie-appear">
           <li class="fa overlay-icon"></li>
         </a>
-      <?php endif; ?>
-    </div>
-  </div>
+      </div>
+    <?php endif; ?>
 </section>
