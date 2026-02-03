@@ -8,267 +8,708 @@
 	Path: 						  /library/css/
 	File Name: 					template-be.css
 	Description: 	      General style file the Biblioteca Enigmas Theme.
-	Date:               25-08-2025
+	Date:               03-02-2026
+**************************************************************************/
+
+/*************************************************************************
+  # General styles
+    ## Head
+    ## Main box
+    ## Meta box
+    ## Advice
+    ## Buttons
+
+  # Single book styles
+    ## Data (Single book)
+    ## Thumbnail (Single book)
+    ## Related (Single book)
+    ## Check also (Single book)
+
+  # Single blog styles
+    ## Related (Single blog)
+    ## Check also (Single blog)
+
+  # Home page styles
+    ## Card blog
+    ## Card book
+    ## Digital services
+
+  # Taxonomies
+
+  # Responsive
+    ## 1200px Monitors, Desktops
+    ## 992px Laptops and Desktops
+    ## 768px Tablets
+    ## 576px Phones
+    ## 420px Smaller devices
+    ## 320px Smartwatches
 **************************************************************************/
 
 @import url('bootstrap-grid.min.css');
 
+/**
+ * *****************************************************************************
+ * General styles
+ * *****************************************************************************
+ */
 
-/* Header */
-.tb-title-and-meta-box {
-  padding: 10px 20px;
-  background: #2d2d2d;
-  color: #000;
-  box-shadow: 0 0 3px 0 #979797;
-  text-align: center;
-  line-height: 20px;
-}
-
-.tb-title-and-meta-box h2 {
-  font-family: 'Lekton', serif;
-  font-size: 1.25em;
-  text-align: center;
-  text-transform: uppercase;
-  color: #dddddd;
-  text-shadow: 0 0 0 #dddddd;
-}
-
-.tb-title-and-meta-box h3 {
-  font-family: 'Lekton', serif;
-  font-size: 1.2em;
-  text-shadow: 0 0 1px #2d2d2d;
-  text-transform: uppercase;
-  text-align: center;
-  font-style: italic;
-  color: #dddddd;
-}
-
-a.tb-header-title {
-  color: #67523d;
-  font-size: 1.25rem;
-  text-shadow: 0 0 0 #67523d1c;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Heads */
+/**
+  * Head
+  * -----------------------------------------------------------------------------
+  */
 .tb-head {
   text-align: center;
   overflow: hidden;
   float: left;
   width: 100%;
-  box-shadow: 0 0 3px 0 #979797;
   background: #2d2d2d;
   padding-bottom: 5px;
   padding-top: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
 }
 
-/* Titles for heads */
 .tb-head h1 {
   text-align: center;
   color: #dddddd;
-  font-size: 1.2em;
   text-shadow: 0 0 0 #dddddd;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 .tb-head h2 {
-  font-size: 1.1em;
   text-align: center;
   color: #dddddd;
   text-shadow: 0 0 0 #dddddd;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 .tb-head h3 {
-  font-size: 1.0em;
   text-align: center;
   color: #dddddd;
   text-shadow: 0 0 0 #dddddd;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 .tb-head h4 {
   text-align: center;
   color: #dddddd;
-  text-shadow: 0px 0px 0px #dddddd;
-  font-size: 0.95em;
+  text-shadow: 0 0 0 #dddddd;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
-.tb-head b {
-  font-size: 1.1rem !important;
-  text-shadow: 0px 0px 0px #fff;
-  font-weight: bold;
-}
-
-/* Content grid */
-.tb-content-grid {
-  clear: both;
-  padding: 10px 10px 10px;
-  background: #fdfdfc;
-  border-bottom: 4px solid #67523d;
-  -webkit-box-shadow: 0 0 3px #CACACA;
-  -moz-box-shadow: 0 0 3px #cacaca;
-  box-shadow: 0 0 3px #CACACA;
-  display: flex;
-  min-height: fit-content;
-  height: 176%;
-  max-height: fit-content;
-  flex-wrap: wrap;
-}
-
-.tb-content {
-  clear: both;
-  padding: 20px;
-  background: #fdfdfc;
-  border-bottom: 4px solid #67523d;
-  -webkit-box-shadow: 0 0 3px #CACACA;
-  -moz-box-shadow: 0 0 3px #cacaca;
-  box-shadow: 0 0 3px #CACACA;
-}
-
-/* Main box */
+/**
+  * Main box
+  * -----------------------------------------------------------------------------
+  */
 .tb-box {
   clear: both;
   padding: 10px 10px;
   background: #fdfdfc;
   border-bottom: 4px solid #67523d;
-  -webkit-box-shadow: 0 0 3px #CACACA;
   -moz-box-shadow: 0 0 3px #cacaca;
-  box-shadow: 0 0 3px #CACACA;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
+  font-weight: normal;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-/* Columns for grid */
-.one_third {
-  width: 29.3% !important;
+/**
+  * Meta box
+  * -----------------------------------------------------------------------------
+  */
+.tb-meta-box {
+  line-height: 2em;
+  text-align: center;
+  overflow: hidden;
+  float: left;
+  width: 100%;
+  background: #2d2d2d;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
 }
 
-.last {
-  margin-right: 0 !important;
-  clear: right;
+.tb-meta-box h1 {
+  font-family: 'Lekton', serif;
+  font-weight: normal;
+  text-align: center;
+  color: #dddddd;
+  text-shadow: 0 0 0 #dddddd;
 }
 
-/* Card grid */
-article.card {
-  max-width: 330px;
-  padding: 0;
-  height: 175px;
-  width: 310px;
+.tb-meta-box h2 {
+  font-family: 'Lekton', serif;
+  font-weight: normal;
+  text-align: center;
+  color: #dddddd;
+  text-shadow: 0 0 0 #dddddd;
+}
+
+hr.tb-meta {
+  border-bottom: 1px dotted #dddddd !important;
+  overflow: hidden !important;
+  clear: both !important;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+
+/**
+  * Advice
+  * -----------------------------------------------------------------------------
+  */
+.tb-advice {
+  text-align: center;
+  text-shadow: 0 0 0 #000;
+  overflow: hidden;
+  padding: 5px 5px;
+  background: #f7f7f7;
+  margin: 0 -9px -9px;
+  box-shadow: 0 0 0 1px #e7e7e7;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tb-advice p {
+  text-align: center;
+  font-size: 1.15em;
+  font-style: italic;
+}
+
+/**
+* Buttons
+* -----------------------------------------------------------------------------
+*/
+.tb-button {
+  text-align: center;
+}
+
+a.tb-button {
+  font-weight: 300;
+  background: #67523e !important;
+  width: 15%;
+  text-align: center;
+  color: #fbfbfb !important;
+  font-size: 1.2em !important;
+  text-shadow: 0 0 0 #dddddd !important;
+  border-radius: 12px;
   display: inline-block;
-  margin: 10px;
   position: relative;
+  text-decoration: none;
+  height: 26px;
+  opacity: .9;
+  overflow: hidden;
+  line-height: 1.9em;
+}
+
+a.tb-button:hover {
+  opacity: 1;
+  color: #FFFFFF !important;
+}
+
+
+/**
+ * *****************************************************************************
+ * Single book styles
+ * *****************************************************************************
+ */
+
+/**
+ * Data (Single book)
+ * -----------------------------------------------------------------------------
+ */
+.tb-book-data {
   text-align: left;
+  font-size: 1.20em;
+  text-shadow: 0 0 0 #000000;
+  padding: 0 0 0 11px;
+  border-left: 3px solid #333333;
+  line-height: 1.3em;
+  background: #fdfdfc;
+}
+
+hr.tb-book-data {
+  border-bottom: 2px dotted #323232 !important;
+  overflow: hidden !important;
+  clear: both !important;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+
+/**
+ * Thumbnail (Single book)
+ * -----------------------------------------------------------------------------
+ */
+.tb-book-thumbnail {
+  width: 100%;
+  display: inline-block;
+  background: none repeat scroll 0 0 #fff;
+  box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  max-width: 300px;
+  margin-right: -15px;
+}
+
+/**
+* Related (Single book)
+* -----------------------------------------------------------------------------
+*/
+.tb-book-related-cover {
+  position: relative;
   vertical-align: top;
   white-space: normal;
   overflow: hidden;
   background: none repeat scroll 0 0 #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
-  text-decoration: none;
+  box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
 }
 
-article.card .data {
-  margin-left: 112px;
-  height: 155px;
-  box-sizing: border-box;
+.tb-book-related-title {
+  position: relative;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.tb-book-related-title-text {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1.20em;
+  max-height: 20px;
+  min-height: 20px;
   display: block;
   overflow: hidden;
-  padding: 7px 10px 0;
   position: relative;
-}
-
-article.card .data h2 {
-  padding: 0;
-}
-
-article.card .data .writer,
-article.card .data .writer a {
-  overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  text-decoration: none;
-  font-weight: normal;
-  text-shadow: 0 0 0 #67523d !important;
 }
 
-article.card .data .writer:hover {
-  text-decoration: underline;
+.tb-book-related-subtitle {
+  position: relative;
+  white-space: nowrap;
 }
 
-article.card .data .title {
+.tb-book-related-subtitle-text {
   color: #67523d;
-  font-weight: 300;
   text-shadow: 0 0 0 #67523d !important;
   font-size: 1.10em;
-  font-family: Lekton, serif;
-  line-height: 24px;
-  max-height: 48px;
-  min-height: 18px;
+  max-height: 20px;
+  min-height: 20px;
   display: block;
   overflow: hidden;
   position: relative;
-  text-decoration: none;
   white-space: nowrap;
 }
 
-article.card .data .title:hover {
-  text-decoration: underline;
-}
-
-article.card .data .excerpt {
-  display: block;
-  max-height: 106px;
-  min-height: 50px;
-  color: #8d8d8d;
-  font-size: 12px;
-  margin-top: -5px;
+.tb-book-related-writer {
   position: relative;
-  text-align: left;
-  white-space: normal;
-  line-height: 18px;
+  white-space: nowrap;
+}
+
+.tb-book-related-writer-text {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1em;
+  max-height: 20px;
+  min-height: 20px;
+  display: block;
   overflow: hidden;
+  position: relative;
+  white-space: nowrap;
 }
 
-article.card .data .excerpt p {
-  font-size: 1.15em;
-  color: #000000;
-  text-shadow: 0px 0px 0px #000000;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-family: Lekton, serif;
-  text-align: left;
-}
-
-article.card .data .excerpt .paragraph-end {
-  height: 30px;
-  width: 90px;
-}
-
-article.card .data .paragraph-end {
-  height: 24px;
+.tb-book-related-paragraph-end {
+  height: 20px;
   width: 45px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(251 251 251)) repeat scroll 0 0 rgba(0, 0, 0, 0);
   bottom: 0;
   max-height: 100%;
   position: absolute;
   right: 0;
 }
 
-/* No more books */
-.tb-no-more-books {
-  font-size: 1.10em;
-  font-weight: 300;
-  text-align: center;
-  color: black;
-  text-shadow: 0 0 0 #000000;
+/**
+ * Check also (Single book)
+ * -----------------------------------------------------------------------------
+ */
+.tb-book-check-also {
   clear: both;
+  padding: 10px 10px;
   background: #fdfdfc;
-  overflow: hidden;
+  -moz-box-shadow: 0 0 3px #cacaca;
+  font-weight: normal;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
-/* Taxonomies */
+.tb-book-check-also-width {
+  width: 220px !important;
+}
+
+.tb-book-check-also-thumbnail {
+  box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 5px;
+}
+
+.tb-book-check-also-title-book {
+  position: relative;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.tb-book-check-also-title-book-text {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1.20em;
+  max-height: 20px;
+  min-height: 20px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-book-check-also-subtitle-book {
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-book-check-also-subtitle-book-text {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1.10em;
+  max-height: 20px;
+  min-height: 20px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-book-check-also-writer {
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-book-check-also-writer-text {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1em;
+  max-height: 20px;
+  min-height: 20px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-book-check-also-paragraph-end {
+  height: 20px;
+  width: 45px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(251 251 251)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 0;
+  max-height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+
+/**
+ * *****************************************************************************
+ * Single blog styles
+ * *****************************************************************************
+ */
+
+/**
+ * Related (Single blog)
+ * -----------------------------------------------------------------------------
+ */
+.tb-blog-related-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tb-blog-related-item {
+  line-height: 18px;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  overflow: hidden;
+  background: none repeat scroll 0 0 #fff;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+  margin-bottom: 5px;
+}
+
+.tb-blog-related-item-thumbnail {
+  width: 100%;
+}
+
+.tb-blog-related-item-title {
+  position: relative;
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-height: 20px;
+  font-size: 1.2em;
+}
+
+.tb-blog-related-paragraph-end {
+  height: 48px;
+  width: 120px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(251 251 251)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 0;
+  max-height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+/**
+ * Check also (Single blog)
+ * -----------------------------------------------------------------------------
+ */
+.tb-blog-check-also {
+  position: relative;
+  line-height: 18px;
+  padding: 10px;
+  max-height: 230px;
+  height: 100%;
+}
+
+.tb-blog-check-also-thumbnail {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  line-height: 0;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+}
+
+.tb-blog-check-also-title {
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  font-size: 1.20em;
+  text-align: center;
+  margin: 10px;
+  font-weight: normal;
+}
+
+.tb-blog-check-also-paragraph-end {
+  height: 48px;
+  width: 120px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(251 251 251)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 0;
+  max-height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+
+/**
+ * *****************************************************************************
+ * Home page styles
+ * *****************************************************************************
+ */
+
+/**
+ * Card blog
+ * -----------------------------------------------------------------------------
+ */
+.tb-card-blog {
+  position: relative;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+  line-height: 18px;
+  padding: 10px;
+  max-height: 380px;
+  height: 100%;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 6px;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.tb-card-blog-thumbnail {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  line-height: 0;
+}
+
+.tb-card-blog-text {
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  font-size: 1.20em;
+  text-align: center;
+  margin: 10px;
+  font-weight: normal;
+}
+
+.tb-card-blog-text-paragraph-end {
+  height: 18px;
+  width: 80px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(253 253 252)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 31px;
+  max-height: 100%;
+  position: absolute;
+  right: 10px;
+}
+
+.tb-card-blog-overlay-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/**
+ * Card book
+ * -----------------------------------------------------------------------------
+ */
+.tb-card-book {
+  padding: 0;
+  height: 175px;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  overflow: hidden;
+  background: none repeat scroll 0 0 #fff;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tb-card-book-data {
+  margin-left: 112px;
+  height: 175px;
+  display: block;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+}
+
+.tb-card-book-thumbnail {
+  width: 112px;
+  position: absolute;
+}
+
+.tb-card-book-overlay-icon {
+  width: 112px;
+  height: 175px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tb-card-book-title a {
+  color: #67523d;
+  text-shadow: 0 0 0 #67523d !important;
+  font-size: 1.20em;
+  max-height: 20px;
+  min-height: 20px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tb-card-book-title-paragraph-end {
+  height: 15px;
+  width: 80px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 144px;
+  max-height: 100%;
+  position: absolute;
+  right: 10px;
+}
+
+.tb-card-book-writer {
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  font-weight: normal;
+  line-height: 1.1em;
+  margin-top: 5px;
+}
+
+.tb-card-book-writer-paragraph-end {
+  height: 15px;
+  width: 80px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 121px;
+  max-height: 100%;
+  position: absolute;
+  right: 10px;
+}
+
+.tb-card-book-excerpt {
+  margin: 0;
+  padding-top: 10px;
+}
+
+.tb-card-book-excerpt p {
+  font-style: normal;
+  line-height: 1em;
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  font-size: 1.10em;
+  font-weight: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 7;
+  text-align: justify;
+}
+
+.tb-card-book-excerpt-paragraph-end {
+  height: 15px;
+  width: 80px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  bottom: 17px;
+  max-height: 100%;
+  position: absolute;
+  right: 10px;
+}
+
+/**
+ * Digital services
+ * -----------------------------------------------------------------------------
+ */
+ul.ds {
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+}
+
+
+/**
+ * *****************************************************************************
+ * Taxonomies
+ * *****************************************************************************
+ */
+
 p.tb-tax-description {
   word-wrap: break-word;
   line-height: 22px;
@@ -283,15 +724,18 @@ p.tb-tax-description {
 
 .tb-tax-image {
   text-align: center;
-  padding-top: 20px;
 }
 
-.tb-tax-image-writer {
+.tb-tax-image img {
+  border-radius: 12px;
+}
+
+.tb-taxonomy-writer-img {
   text-align: center;
   padding-top: 20px;
 }
 
-.tb-tax-image-writer img {
+.tb-taxonomy-writer-img img {
   box-shadow: 0 0 10px #afafaf;
   width: 170px;
   height: 170px;
@@ -299,418 +743,97 @@ p.tb-tax-description {
   object-fit: cover;
 }
 
-/* Thumbnail */
-.tb-thumbnail {
-  margin: 0 auto;
-  max-width: 320px;
-  width: 100%;
+/**
+ * *****************************************************************************
+ * Responsive
+ * *****************************************************************************
+ */
+
+/**
+ * 1200px Monitors, Desktops
+ * -----------------------------------------------------------------------------
+ */
+@media only screen and (max-width: 1200px) {
 }
 
-.tb-overlay-icon {
-  width: 112px !important;
-  height: 175px !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-/* Advice */
-.tb-advice {
-  text-align: center;
-  text-shadow: 0 0 0 #000;
-  overflow: hidden;
-  margin: -9px -10px !important;
-  padding: 5px 10px;
-  background: #f7f7f7;
-  color: #000;
-  margin: 0 -15px 0px;
-  box-shadow: 0 0 0 1px #e7e7e7;
-}
-
-.tb-advice p {
-  text-align: center;
-  margin: 0;
-  font-style: italic;
-  font-weight: 300;
-  color: #000;
-}
-
-/* Toggle advice */
-.tb-toggle-advice {
-  text-align: center;
-  text-shadow: 0 0 0 #000;
-  overflow: hidden;
-  margin: 0 !important;
-  padding: 5px 10px;
-  background: #f7f7f7;
-  margin: 0 -15px 0px;
-  box-shadow: 0 0 0 1px #e7e7e7;
-}
-
-.tb-toggle-advice p {
-  text-align: center;
-  margin: 0;
-  font-style: italic;
-  font-weight: 300;
-  color: #000;
-}
-
-/* Pagination */
-.pagination a,
-.pagination span.extend,
-.pagination span.current {
-  float: none !important;
-}
-
-.pagination .pages {
-  padding: 0px 0 0px !important;
-}
-
-/* Others */
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-/* Check also */
-.check-also {
-  padding: 10px;
-  padding-top: 0px
-}
-
-.card-blog-check-also {
-  margin: 0 !important;
-}
-
-.check-also-title-and-subtitle {
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-  color: black;
-  font-family: 'Lekton';
-  margin-bottom: 10px;
-}
-
-.check-also-title-and-subtitle a.title {
-  color: #67523d;
-  font-weight: 300;
-  text-shadow: 0 0 0 #67523d !important;
-  font-size: 1.10em;
-  font-family: Lekton, serif;
-  line-height: 24px;
-  max-height: 48px;
-  min-height: 18px;
-  display: block;
-  position: relative;
-  text-decoration: none;
-  margin: 0 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.check-also-title-and-subtitle a.subtitle {
-  color: #67523d;
-  font-weight: 300;
-  text-shadow: 0 0 0 #67523d !important;
-  font-size: 1em;
-  font-family: Lekton, serif;
-  line-height: 24px;
-  max-height: 48px;
-  min-height: 18px;
-  display: block;
-  position: relative;
-  text-decoration: none;
-  margin: 0 20px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-/* Search page */
-.image-crash {
-  text-align: center;
-}
-
-.image-crash img {
-  background: #fdfdfc !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Single page */
-.tb-single-row {
-  align-items: center !important;
-}
-
-.tb-single-data {
-  text-align: left;
-  font-size: 1.10em;
-  text-shadow: 0 0 0 #000000;
-  padding: 0;
-  padding-left: 11px;
-  border-left: 2px solid #67523d;
-  line-height: 1.3em;
-  background: #fdfdfc;
-}
-
-.tb-single-thumbnail {
-  padding: 0;
-  background: #fdfdfc;
-}
-
-.tb-single-img {
-  margin: 0 7px;
-  max-width: 320px;
-  width: 100%;
-}
-
-.tb-single-book-related-book {
-  margin: 2% 2% 2% 2%;
-  padding-right: 0;
-  position: relative;
-  float: left;
-  width: 21%;
-}
-
-
-.tb-single-check-also-thumbnail {
-  width: 139px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-
-/* Blog ------------------------------------------------------- */
-
-/* Article card blog */
-article.card-blog {
-  padding: 0;
-  height: 175px;
-  width: 100%;
-  display: inline-block;
-  margin: 10px 0px;
-  position: relative;
-  text-align: left;
-  vertical-align: top;
-  white-space: normal;
-  overflow: hidden;
-  background: none repeat scroll 0 0 #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
-  text-decoration: none;
-  background: #000000;
-}
-
-article.card-blog .card-click-target {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 10;
-}
-
-article.card-blog img.cover {
-  width: 112px;
-  height: 175px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-article.card-blog .book {
-  margin-left: 112px;
-  height: 155px;
-  box-sizing: border-box;
-  display: block;
-  overflow: hidden;
-  padding: 7px 10px 0;
-  position: relative;
-}
-
-article.card-blog .book h2 {
-  padding: 0;
-}
-
-article.card-blog .blog {
-  margin: 0px;
-  margin-top: 147px;
-  width: 100%;
-}
-
-article.card-blog .blog h2 {
-  margin: 0 10px;
-}
-
-article.card-blog .blog .title {
-  color: rgb(255, 255, 255);
-  display: block;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  text-overflow: clip;
-  text-overflow: ellipsis;
-  margin-left: 10px;
-  margin-right: 10px;
-  font-weight: normal;
-  text-shadow: 0 0 0 #000000 !important;
-}
-
-/* Thumbnail post */
-.tbh-thumbnail {
-  max-width: 310px;
-  width: 100%;
-}
-
-.tbh-post-thumbnail {
-  width: 310px;
-  height: 175px;
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.tbh-post-thumbnail img {
-  box-shadow: 0 0 200px #ffffff !important;
-}
-
-.tbh-overlay-icon {
-  width: 305px;
-  height: 173px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.tbh-thumbnail-title {
-  display: block;
-  background: #000000ad;
-  position: relative;
-}
-
-/* Single */
-.tb-thumbnail-box {
-  margin: 0 auto;
-  max-width: 100%;
-  width: 100%;
-  text-align: center;
-}
-
-/* 1200px Monitors, Desktops */
-@media only screen and (max-width: 1200px) {}
-
-/* 992px Laptops and Desktops */
+/**
+ * 992px Laptops and Desktops
+ * -----------------------------------------------------------------------------
+ */
 @media only screen and (max-width: 992px) {
-  .one_third {
-    float: none !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    width: 50% !important;
-    height: auto !important;
+
+  a.tb-button {
+    width: 25% !important;
   }
 
-  article.card {
-    max-width: max-content;
-    padding: 0;
-    height: 175px;
-    width: 96%;
-    display: inline-block;
-    margin: 10px;
-    position: relative;
-    text-align: left;
-    vertical-align: top;
-    white-space: normal;
-    overflow: hidden;
-    background: none repeat scroll 0 0 #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
-    text-decoration: none;
-  }
-
-  .tb-single-img {
-    margin: 0 10.5%;
-    max-width: 80%;
-    width: 100%;
-  }
 }
 
-/* 768px Tablets */
+/**
+ * 768px Tablets
+ * -----------------------------------------------------------------------------
+ */
 @media only screen and (max-width: 768px) {
-
-  .tbh-thumbnail {
-    max-width: 310px;
-    width: 100%;
-    margin: 0 auto;
+  a.tb-button {
+    width: 40% !important;
   }
-
-  .tb-single-data {
-    border-left: 0 solid #67523d !important;
-    border-top: 2px solid #67523d;
-    padding-top: 10px !important;
-  }
-
-  .tb-single-img {
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 320px;
-    width: 100%;
-  }
-
 }
 
-/* 576px Phones */
+/**
+ * 576px Phones
+ * -----------------------------------------------------------------------------
+ */
 @media only screen and (max-width: 576px) {
-  article.card {
-    max-width: max-content;
-    padding: 0;
-    height: 175px;
-    width: 97%;
-    display: inline-block;
-    margin: 10px;
-    position: relative;
-    text-align: left;
-    vertical-align: top;
-    white-space: normal;
-    overflow: hidden;
-    background: none repeat scroll 0 0 #fff;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
-    text-decoration: none;
+
+  .tb-card-blog {
+    max-height: 380px;
+    height: 100%;
+    max-width: 660px;
+    width: 100%;
   }
 
-  .one_third {
-    float: none !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
+  a.tb-button {
+    width: 50% !important;
   }
 
-  .tb-tax-image-writer img {
+  .tb-taxonomy-writer-img img {
     box-shadow: 0 0 10px #afafaf;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
   }
+
 }
 
-/* 420px Smaller devices */
+/**
+ * 420px Smaller devices
+ * -----------------------------------------------------------------------------
+ */
 @media only screen and (max-width: 420px) {
-  .tb-tax-image-writer img {
+
+  a.tb-button {
+    width: 100% !important;
+  }
+
+  .tb-taxonomy-writer-img img {
     box-shadow: 0 0 10px #afafaf;
     width: 130px;
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
   }
+
+  .tb-blog-related-item-title {
+    -webkit-line-clamp: 2;
+    font-size: 1em;
+    line-height: 15px;
+  }
+
 }
 
-/* 320px Smartwatches */
-@media only screen and (max-width: 320px) {}
+/**
+ * 320px Smartwatches
+ * -----------------------------------------------------------------------------
+ */
+@media only screen and (max-width: 320px) {
+}
