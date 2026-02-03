@@ -1,53 +1,41 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/home/
-   * File name:          digital-services.php
-   * Description:        This file shows the digital services section in home page.
-   * Date:               25-08-2025
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/home/
+ * File name:          digital-services.php
+ * Description:        This file shows the digital services section in home page.
+ * Date:               03-02-2026
+ */
 ?>
 
 <section>
-  <div class="tb-head">
-    <h1>= SERVICIOS DIGITALES =</h1>
-  </div>
+    <div class="tb-head">
+        <h1>= SERVICIOS DIGITALES =</h1>
+    </div>
 </section>
 
 <section>
-  <div class="tb-box">
-    <p>Los siguientes servicios solo están disponibles para temática <b>forteana:</b></p>
+    <div class="tb-box">
 
-    <hr class="brown">
-    <div class="mt20">
+        <p style="text-align: center;"># Traducción de libros al español de: inglés, francés, aleman y portugues. #</p>
+        <p style="text-align: center;"># Maquetación de libros en formato EPUB y PDF. #</p>
+        <p style="text-align: center;"># Creación y conversión de libros digitales a audiolibros. #</p>
+        <p style="text-align: center;"># Creación y traducción de portadas. #</p>
+        <p style="text-align: center;"># Conversión y maquetación de formatos: PDF, DOCX a EPUB. #</p>
+        <p style="text-align: center;"># Conversión y maquetación de libros digitales PDF en imagenes a texto PDF o
+            EPUB. #</p>
+        <p style="text-align: center;"># Digitalización de obras en papel a formato digital EPUB y PDF. #</p>
+        <p style="text-align: center;"># Digitalización de video VHS, BETA, MiniDV, DVD, VCD a MP4 o MKV. #</p>
+        <p style="text-align: center;"># Digitalización de audio casette o vinyl a MP3. #</p>
+        <p style="text-align: center;"># Remasterización de audio y video con IA. #</p>
 
-      <ul class="fs-110em ds">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Traducción de libros al español de: ingles, francés, aleman y portugues.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Maquetación de libros en formato EPUB y PDF.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Creación de portadas.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Conversión y maquetación de formatos: PDF, DOCX a EPUB.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Conversión y maquetación de libros digitales PDF en imagenes a texto PDF o EPUB.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Digitalización de obras en papel a formato digital EPUB y PDF.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Digitalización de video VHS, BETA, MiniDV, DVD, VCD a MP4 o MKV.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb0 ml3p mr3p"> <b>#</b> Digitalización de audio casette o vinyl a MP3.</li>
-        <hr class="ml3p mr3p">
-        <li class="mb20 ml3p mr3p"> <b>#</b> Remasterización de audio y video con IA.</li>
-      </ul>
+        <hr>
 
+        <p class="text-center"> Más información escribir a: <a href="mailto: bibliotecaenigmas@outlook.com">bibliotecaenigmas@outlook.com</a>
+        </p>
     </div>
-
-    <hr class="brown">
-    <p class="text-right"> Más información: <a href="mailto: bibliotecaenigmas@outlook.com">bibliotecaenigmas@outlook.com</a></p>
-  </div>
 </section>

@@ -15,7 +15,7 @@
 
 <section>
   <div class="tb-head">
-    <h1>= ÚLTIMOS MULTIMEDIA =</h1>
+    <h1>= LO ÚLTIMO EN MULTIMEDIA =</h1>
   </div>
 </section>
 

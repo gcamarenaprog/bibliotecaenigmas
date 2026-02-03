@@ -15,7 +15,7 @@
 
 <section>
   <div class="tb-head">
-    <h1>= ÚLTIMOS LIBROS =</h1>
+    <h1>= LO ÚLTIMO EN LIBROS =</h1>
   </div>
 </section>
 
