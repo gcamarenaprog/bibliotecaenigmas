@@ -76,7 +76,7 @@ $custom_meta_fields = array(
         'icon' => 'dashicons dashicons-book',
         'title' => 'Datos',
         'label' => 'No. Edición',
-        'description' => 'Número de edición del libro o contenido si aplica.',
+        'description' => 'Número de edición si aplica.',
         'id' => $prefix . 'edition',
         'name' => $prefix . 'edition',
         'value' => '',
@@ -119,7 +119,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'language',
         'value' => '',
         'placeholder' => '',
-        'options' => array('Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma'),
+        'options' => array('Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma', 'Desconocido'),
     ),
 
   # 7. Pages
@@ -292,7 +292,6 @@ function show_custom_meta_box(): void
   $digitalClassificationProgramaDeTV = (str_contains($digitalClassificationString, 'Programa de TV')) ? 'checked' : ' ';
   $digitalClassificationSerieDeTv = (str_contains($digitalClassificationString, 'Serie de TV')) ? 'checked' : ' ';
   $digitalClassificationPodcast = (str_contains($digitalClassificationString, 'Pódcast')) ? 'checked' : ' ';
-  $digitalClassificationProgramaDeRadio = (str_contains($digitalClassificationString, 'Programa de radio')) ? 'checked' : ' ';
   $digitalClassificationStreaming = (str_contains($digitalClassificationString, 'Streaming')) ? 'checked' : ' ';
   $digitalClassificationNoClasificable = (str_contains($digitalClassificationString, 'No clasificable')) ? 'checked' : ' ';
   $digitalClassificationOtro = (str_contains($digitalClassificationString, 'Otro')) ? 'checked' : ' ';
@@ -519,7 +518,6 @@ function show_custom_meta_box(): void
 
         <!-- Edition /-->
         <div class="bea-tab-box-information">
-
           <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
             <strong><?php echo $editionMeta['label']; ?></strong>
           </p>
@@ -542,10 +540,10 @@ function show_custom_meta_box(): void
 
         <!-- Year /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $yearMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $yearMeta['label']; ?></b>
-            </li>
             <li>
               <input type="text"
                      class='bea-input-text'
@@ -562,10 +560,10 @@ function show_custom_meta_box(): void
 
         <!-- Country /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $countryMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $countryMeta['label']; ?></b>
-            </li>
             <li>
               <select class="form-select bea-select"
                       id="<?php echo $countryMeta['id']; ?>"
@@ -584,10 +582,10 @@ function show_custom_meta_box(): void
 
         <!-- Language /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $languageMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $languageMeta['label']; ?></b>
-            </li>
             <li>
               <select class="form-select bea-select"
                       id="<?php echo $languageMeta['id']; ?>"
@@ -608,10 +606,10 @@ function show_custom_meta_box(): void
 
         <!-- Pages /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $pagesMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $pagesMeta['label']; ?></b>
-            </li>
             <li>
               <input type="text" class='bea-input-text'
                      name="<?php echo $pagesMeta['name']; ?>"
@@ -629,10 +627,10 @@ function show_custom_meta_box(): void
 
         <!-- State /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $stateMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $stateMeta['label']; ?></b>
-            </li>
             <li>
               <select class="form-select bea-select"
                       id="<?php echo $stateMeta['id']; ?>"
@@ -653,10 +651,10 @@ function show_custom_meta_box(): void
 
         <!-- Get book /-->
         <div class="bea-tab-box-information last">
+          <p><i class="<?php echo $custom_meta_fields[3]['icon']; ?>"></i>
+            <strong><?php echo $getBookMeta['label']; ?></strong>
+          </p>
           <ul>
-            <li>
-              <b><?php echo $getBookMeta['label']; ?></b>
-            </li>
             <li>
               <input type="text" class='bea-input-text'
                      name="<?php echo $getBookMeta['name']; ?>"
@@ -683,117 +681,107 @@ function show_custom_meta_box(): void
             <div class="row_">
 
               <!-- Label /-->
-              <div class=" col_-12 bea-mb05 bea-mt09">
-                <b><?php echo $digitalClassificationMeta['label']; ?></b>
-              </div>
+              <p><i class="<?php echo $digitalClassificationMeta['icon']; ?>"></i>
+                <strong><?php echo $digitalClassificationMeta['label']; ?></strong>
+              </p>
 
               <!-- eBook /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkEbook"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="eBook" <?php echo $digitalClassificationEbook; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkEbook"
                        class="bea-mr15">eBook</label>
               </div>
 
               <!-- Audiolibro /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkAudiolibro"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Audiolibro" <?php echo $digitalClassificationAudiolibro; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkAudiolibro"
                        class="bea-mr15">Audiolibro</label>
               </div>
 
               <!-- Película /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkPelicula"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Película" <?php echo $digitalClassificationPelicula; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkPelicula"
                        class="bea-mr15">Película</label>
               </div>
 
               <!-- Documental /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkDocumental"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Documental" <?php echo $digitalClassificationDocumental; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkDocumental"
                        class="bea-mr15">Documental</label>
               </div>
 
               <!-- Programa de TV /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkProgramaTV"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Programa de TV" <?php echo $digitalClassificationProgramaDeTV; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkProgramaTV"
                        class="bea-mr15">Programa de TV</label>
               </div>
 
               <!-- Serie de TV /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkSerieTV"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Serie de TV" <?php echo $digitalClassificationSerieDeTv; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkSerieTV"
                        class="bea-mr15">Serie de TV</label>
               </div>
 
-              <!-- Pódcast /-->
+              <!-- Pódcast / Radio /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkPodcastRadio"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
-                       value="Pódcast" <?php echo $digitalClassificationPodcast; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
-                       class="bea-mr15">Pódcast</label>
-              </div>
-
-              <!-- Programa de Radio /-->
-              <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
-                <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
-                       name="<?php echo $digitalClassificationMeta['name']; ?>[]"
-                       value="Programa de Radio" <?php echo $digitalClassificationProgramaDeRadio; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
-                       class="bea-mr15">Programa de Radio</label>
+                       value="Pódcast / Programa de radio" <?php echo $digitalClassificationPodcast; ?>>
+                <label for="chkPodcastRadio"
+                       class="bea-mr15">Pódcast / Radio</label>
               </div>
 
               <!-- Streaming /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkStreaming"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Streaming " <?php echo $digitalClassificationStreaming; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkStreaming"
                        class="bea-mr15">Streaming</label>
               </div>
 
               <!-- No clasificable /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkNoClasificable"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="No clasificable" <?php echo $digitalClassificationNoClasificable; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkNoClasificable"
                        class="bea-mr15">No clasificable</label>
               </div>
 
               <!-- Otro /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalClassificationMeta['id']; ?>"
+                       id="chkOtro"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
                        value="Otro" <?php echo $digitalClassificationOtro; ?>>
-                <label for="<?php echo $digitalClassificationMeta['id']; ?>"
+                <label for="chkOtro"
                        class="bea-mr15">Otro</label>
               </div>
 
