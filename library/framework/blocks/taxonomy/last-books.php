@@ -31,8 +31,6 @@ if ($category) {
   $categoryId = $category->term_id;
 }
 
-echo $categoryId;
-
 // Select name of collection
 if ($categoryId) {
   if ($categoryId == 298) {
