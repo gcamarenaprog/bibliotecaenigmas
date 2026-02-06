@@ -304,14 +304,13 @@ function show_custom_meta_box(): void
   $digitalFormatPlanText = (str_contains($digitalFormatString, 'Texto plano')) ? 'checked' : ' ';
   $digitalFormatOCRScan = (str_contains($digitalFormatString, 'Escaneo (OCR)')) ? 'checked' : ' ';
   $digitalFormatImagesScan = (str_contains($digitalFormatString, 'Escaneo (imágenes)')) ? 'checked' : ' ';
-  $digitalFormatImages = (str_contains($digitalFormatString, 'Imágenes')) ? 'checked' : ' ';
+  $digitalFormatPhotosScan = (str_contains($digitalFormatString, 'Escaneo (fotografía)')) ? 'checked' : ' ';
+  $digitalFormatPhotocopiesScan = (str_contains($digitalFormatString, 'Escaneo (fotocopias)')) ? 'checked' : ' ';
   $digitalFormatPhotos = (str_contains($digitalFormatString, 'Fotografiado')) ? 'checked' : ' ';
-  $digitalFormatInteractive = (str_contains($digitalFormatString, 'Interactivo')) ? 'checked' : ' ';
   $digitalFormatAudio = (str_contains($digitalFormatString, 'Audio')) ? 'checked' : ' ';
   $digitalFormatVoiceToText = (str_contains($digitalFormatString, 'Texto a voz')) ? 'checked' : ' ';
-  $digitalFormatOther = (str_contains($digitalFormatString, 'Otro tipo')) ? 'checked' : ' ';
   $digitalFormatNoApply = (str_contains($digitalFormatString, 'No aplica')) ? 'checked' : ' ';
-  $digitalFormatUnknown = (str_contains($digitalFormatString, 'Desconocido')) ? 'checked' : ' ';
+  $digitalFormatOther = (str_contains($digitalFormatString, 'Otro')) ? 'checked' : ' ';
 
   # Extension
   $extensionMeta = $custom_meta_fields[12];
@@ -331,7 +330,6 @@ function show_custom_meta_box(): void
   $extensionAVI = (str_contains($extensionString, 'avi')) ? 'checked' : ' ';
   $extensionFLV = (str_contains($extensionString, 'flv')) ? 'checked' : ' ';
   $extensionOther = (str_contains($extensionString, 'Otro')) ? 'checked' : ' ';
-  $extensionUnknown = (str_contains($extensionString, 'Desconocido')) ? 'checked' : ' ';
   $extensionNoApply = (str_contains($extensionString, 'No aplica')) ? 'checked' : ' ';
 
   # File size field
@@ -798,119 +796,113 @@ function show_custom_meta_box(): void
             <div class="row_">
 
               <!-- Label /-->
-              <div class=" col_-12 bea-mb05 bea-mt09">
-                <b><?php echo $digitalFormatMeta['label']; ?></b>
-              </div>
+              <p><i class="<?php echo $digitalClassificationMeta['icon']; ?>"></i>
+                <strong><?php echo $digitalFormatMeta['label']; ?></strong>
+              </p>
 
-              <!-- Texto plano /-->
+
+              <!-- Texto /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkTexto"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Texto plano" <?php echo $digitalFormatPlanText; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Texto plano</label>
+                <label for="chkTexto"
+                       class="bea-mr15">Texto</label>
               </div>
 
               <!-- Escaneo (OCR) /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkEscaneoOCR"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Escaneo (OCR)" <?php echo $digitalFormatOCRScan; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
+                <label for="chkEscaneoOCR"
                        class="bea-mr15">Escaneo (OCR)</label>
               </div>
 
               <!-- Escaneo (imágenes) /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkEscaneoImagenes"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Escaneo (imágenes)" <?php echo $digitalFormatImagesScan; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
+                <label for="chkEscaneoImagenes"
                        class="bea-mr15">Escaneo (imágenes)</label>
               </div>
 
-              <!-- Imágenes /-->
+              <!-- Escaneo (fotografías) /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkEscaneoImagenes"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
-                       value="Imágenes" <?php echo $digitalFormatImages; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Imágenes</label>
+                       value="Imágenes" <?php echo $digitalFormatPhotosScan; ?>>
+                <label for="chkEscaneoImagenes"
+                       class="bea-mr15">Escaneo (fotografías)</label>
+              </div>
+
+              <!-- Escaneo (fotocopias) /-->
+              <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
+                <input type="checkbox"
+                       id="chkEscaneoFotocopias"
+                       name="<?php echo $digitalFormatMeta['name']; ?>[]"
+                       value="Fotografiado" <?php echo $digitalFormatPhotocopiesScan; ?>>
+                <label for="chkEscaneoFotocopias"
+                       class="bea-mr15">Escaneo (fotocopias)</label>
               </div>
 
               <!-- Fotografiado /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkFotografiado"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
-                       value="Fotografiado" <?php echo $digitalFormatPhotos; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
+                       value="Interactivo" <?php echo $digitalFormatPhotos; ?>>
+                <label for="chkFotografiado"
                        class="bea-mr15">Fotografiado</label>
-              </div>
-
-              <!-- Interactivo /-->
-              <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
-                <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
-                       name="<?php echo $digitalFormatMeta['name']; ?>[]"
-                       value="Interactivo" <?php echo $digitalFormatInteractive; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Interactivo</label>
               </div>
 
               <!-- Audio /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkAudio"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Audio" <?php echo $digitalFormatAudio; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
+                <label for="chkAudio"
                        class="bea-mr15">Audio</label>
               </div>
 
               <!-- Texto a voz /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkAudioTextoVoz"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Texto a voz" <?php echo $digitalFormatVoiceToText; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Texto a voz</label>
-              </div>
-
-              <!-- Otro tipo /-->
-              <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
-                <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
-                       name="<?php echo $digitalFormatMeta['name']; ?>[]"
-                       value="Otro tipo" <?php echo $digitalFormatOther; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Otro tipo</label>
+                <label for="chkAudioTextoVoz"
+                       class="bea-mr15">Audio (Texto a voz)</label>
               </div>
 
               <!-- No aplica /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkNoAplica"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="No aplica" <?php echo $digitalFormatNoApply; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
+                <label for="chkNoAplica"
                        class="bea-mr15">No aplica</label>
               </div>
 
-              <!-- Desconocido /-->
+              <!-- Otro /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $digitalFormatMeta['id']; ?>"
+                       id="chkOtroTipo"
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
-                       value="Desconocido" <?php echo $digitalFormatUnknown; ?>>
-                <label for="<?php echo $digitalFormatMeta['id']; ?>"
-                       class="bea-mr15">Desconocido</label>
+                       value="Otro tipo" <?php echo $digitalFormatOther; ?>>
+                <label for="chkOtroTipo"
+                       class="bea-mr15">Otro</label>
               </div>
+
+              <!-- Description /-->
+              <em><?php echo $digitalFormatMeta['description']; ?></em>
 
             </div>
           </div>
@@ -922,159 +914,153 @@ function show_custom_meta_box(): void
             <div class="row_">
 
               <!-- Label /-->
-              <div class=" col_-12 bea-mb05 bea-mt09">
-                <b><?php echo $extensionMeta['label']; ?></b>
-              </div>
+              <p><i class="<?php echo $digitalClassificationMeta['icon']; ?>"></i>
+                <strong><?php echo $extensionMeta['label']; ?></strong>
+              </p>
 
               <!-- *.pdf /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkPDF"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="pdf" <?php echo $extensionPDF; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkPDF"
                        class="bea-mr15">*.pdf</label>
               </div>
 
               <!-- *.epub /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkEPUB"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="epub" <?php echo $extensionEPUB; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkEPUB"
                        class="bea-mr15">*.epub</label>
               </div>
 
               <!-- *.docx /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkDOCX"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="docx" <?php echo $extensionDOCX; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
-                       class="bea-mr15">*.docx</label>
+                <label for="chkDOCX"
+                       class="bea-mr15">*.docx / *.doc</label>
               </div>
 
               <!-- *.mobi /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkMOBI"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="mobi" <?php echo $extensionMOBI; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkMOBI"
                        class="bea-mr15">*.mobi</label>
               </div>
 
               <!-- *.lit /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkLIT"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="lit" <?php echo $extensionLIT; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkLIT"
                        class="bea-mr15">*.lit</label>
               </div>
 
               <!-- *.djvu /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkDJVU"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="djvu" <?php echo $extensionDJVU; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkDJVU"
                        class="bea-mr15">*.djvu</label>
               </div>
 
               <!-- *.txt /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkTXT"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="txt" <?php echo $extensionTXT; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkTXT"
                        class="bea-mr15">*.txt</label>
               </div>
 
               <!-- *.mp3 /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkMP3"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="mp3" <?php echo $extensionMP3; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkMP3"
                        class="bea-mr15">*.mp3</label>
               </div>
 
               <!-- *.mp4 /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkMP4"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="mp4" <?php echo $extensionMP4; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkMP4"
                        class="bea-mr15">*.mp4</label>
               </div>
 
               <!-- *.m4a /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkM4A"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="m4a" <?php echo $extensionM4A; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkM4A"
                        class="bea-mr15">*.m4a</label>
               </div>
 
               <!-- *.avi /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkAVI"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="avi" <?php echo $extensionAVI; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkAVI"
                        class="bea-mr15">*.avi</label>
               </div>
 
               <!-- *.flv /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkFLV"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="flv" <?php echo $extensionFLV; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkFLV"
                        class="bea-mr15">*.flv</label>
               </div>
 
               <!-- Otro /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkOTRO"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="Otro" <?php echo $extensionOther; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkOTRO"
                        class="bea-mr15">Otro</label>
-              </div>
-
-              <!-- Desconocido /-->
-              <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
-                <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
-                       name="<?php echo $extensionMeta['name']; ?>[]"
-                       value="Desconocido" <?php echo $extensionUnknown; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
-                       class="bea-mr15">Desconocido</label>
               </div>
 
               <!-- No aplica /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="<?php echo $extensionMeta['id']; ?>"
+                       id="chkNoAplica"
                        name="<?php echo $extensionMeta['name']; ?>[]"
                        value="No aplica" <?php echo $extensionNoApply; ?>>
-                <label for="<?php echo $extensionMeta['id']; ?>"
+                <label for="chkNoAplica"
                        class="bea-mr15">No aplica</label>
               </div>
+
+              <!-- Description /-->
+              <em><?php echo $extensionMeta['description']; ?></em>
+
 
             </div>
           </div>
