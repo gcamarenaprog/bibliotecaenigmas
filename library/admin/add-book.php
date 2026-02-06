@@ -1071,7 +1071,9 @@ function show_custom_meta_box(): void
           <ul>
 
             <!-- Label /-->
-            <li><b><?php echo $fileSizeMeta['label']; ?></b></li>
+            <p><i class="<?php echo $digitalClassificationMeta['icon']; ?>"></i>
+              <strong><?php echo $fileSizeMeta['label']; ?></strong>
+            </p>
 
             <!-- Placeholder /-->
             <li>
