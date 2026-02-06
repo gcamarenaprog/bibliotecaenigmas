@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e325da0f-d3db-46b3-9617-c878c1378cfa" name="Changes" comment="- New functions were added to the toolbar on the editing screen">
+      <change afterPath="$PROJECT_DIR$/.idea/biblioteca.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/admin/inc/notifier/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/framework/admin/inc/notifier/update-notifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/framework/blocks/taxonomy/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-genres.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sidebar-sitemap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single-book.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taxonomy-editorial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taxonomy-genre.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taxonomy-writer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-books-grid.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-info-other-categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-search-book.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-search-fortean-blog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template-be-search-writer-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/editor-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/admin/updates.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/admin/updates.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/admin/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/admin/verification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/functions/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/functions/breadcrumbs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/functions/common-scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/functions/common-scripts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/functions/theme-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/functions/theme-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/loops/loop-default.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/loops/loop-default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/loops/loop-timeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/loops/loop-timeline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/parts/check-also.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/parts/check-also.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/parts/meta-post.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/parts/meta-post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/parts/not-found.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/parts/not-found.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/parts/related-posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/parts/related-posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/shortcodes/shortcodes.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/shortcodes/shortcodes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/widgets/widget-flickr.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/widgets/widget-flickr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework/widgets/widget-slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/framework/widgets/widget-slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/images/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/admin/add-book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/admin/add-book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/admin/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/admin/book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/css/personalized.css" beforeDir="false" afterPath="$PROJECT_DIR$/library/css/personalized.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/css/template-be-home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/grid/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/grid/information.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/grid/list-posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/grid/list-posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/map/fortean-blog-map.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/map/writer-blog-map.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/search/fast-search-fortean-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/search/fast-search-fortean-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/search/fast-search-writer-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/search/fast-search-writer-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/author.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/check-also.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/check-also.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/related.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/related.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/blog/single/share.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/blog/single/share.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/descriptions/biblioteca-basica-espacio-y-tiempo.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/descriptions/biblioteca-basica-espacio-y-tiempo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/descriptions/duda-semanal.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/descriptions/duda-semanal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/grid/blockquote-day.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/grid/blockquote-day.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/grid/last-books.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/grid/last-books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/grid/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/grid/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/maps/editorial.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/maps/genre.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/maps/writer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/author.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/check-also.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/check-also.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/data.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/related.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/related.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/book/single/share.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/book/single/share.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/home/advice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/home/breaking-news.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/home/buttons.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/home/buttons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/home/information.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/taxonomy/biography.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/taxonomy/biography.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/taxonomy/description.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/taxonomy/description.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/taxonomy/list-books.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/taxonomy/list-books.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/blocks/taxonomy/query.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/blocks/taxonomy/query.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/framework/widgets/widget-randomize-images.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/framework/widgets/widget-randomize-images.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/js/datables.js" beforeDir="false" afterPath="$PROJECT_DIR$/framework/admin/inc/notifier/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/library-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/library-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loop.php" beforeDir="false" afterPath="$PROJECT_DIR$/loop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page.php" beforeDir="false" afterPath="$PROJECT_DIR$/page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-sitemap.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-sitemap.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;gcamarenaprog&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gcamarenaprog/bibliotecaenigmas.git&quot;,
+    &quot;accountId&quot;: &quot;c55e6658-beea-49ab-9665-8081f32a207b&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2xqb2nMWweZxEqIUbthZc60l3CV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "D:/xaamp/htdocs/bibliotecaenigmas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.PHP",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PS-252.28238.9" />
+        <option value="bundled-php-predefined-a98d8de5180a-58f58c5035b3-com.jetbrains.php.sharedIndexes-PS-252.28238.9" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="HTML" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e325da0f-d3db-46b3-9617-c878c1378cfa" name="Changes" comment="" />
+      <created>1748668346109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748668346109</updated>
+      <workItem from="1748668347090" duration="60369000" />
+      <workItem from="1753245535606" duration="43000" />
+      <workItem from="1756150767205" duration="1785000" />
+      <workItem from="1756157337433" duration="935000" />
+      <workItem from="1756839220145" duration="22205000" />
+      <workItem from="1758235812009" duration="277000" />
+      <workItem from="1758236843273" duration="761000" />
+      <workItem from="1758237681201" duration="734000" />
+      <workItem from="1758865997570" duration="3000" />
+      <workItem from="1758869564649" duration="3000" />
+      <workItem from="1758869604230" duration="2872000" />
+      <workItem from="1760392342006" duration="912000" />
+      <workItem from="1760571766645" duration="21000" />
+      <workItem from="1760571797775" duration="16246000" />
+      <workItem from="1762431792312" duration="29000" />
+      <workItem from="1762431881310" duration="7000" />
+      <workItem from="1762444116860" duration="2929000" />
+      <workItem from="1762460914909" duration="289072000" />
+      <workItem from="1765182707721" duration="403000" />
+      <workItem from="1765187236407" duration="4000" />
+      <workItem from="1765246376508" duration="6000" />
+      <workItem from="1765246602241" duration="38000" />
+      <workItem from="1765246759788" duration="606000" />
+      <workItem from="1765406807938" duration="4226000" />
+      <workItem from="1766013914164" duration="105000" />
+      <workItem from="1766014028774" duration="133000" />
+      <workItem from="1768975465855" duration="8000" />
+      <workItem from="1769155284301" duration="5000" />
+      <workItem from="1770099702077" duration="20509000" />
+      <workItem from="1770123609692" duration="38028000" />
+    </task>
+    <task id="LOCAL-00001" summary="- Refactor 404.php file.">
+      <option name="closed" value="true" />
+      <created>1756162425861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1756162425861</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- Add comments in 404.php file.">
+      <option name="closed" value="true" />
+      <created>1756163063426</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756163063426</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Add images for library theme.">
+      <option name="closed" value="true" />
+      <created>1756164001047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756164001047</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- Add library files.">
+      <option name="closed" value="true" />
+      <created>1756164653993</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756164653993</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- Added refactored library files.">
+      <option name="closed" value="true" />
+      <created>1757024248948</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757024248948</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- Added refactored library files.">
+      <option name="closed" value="true" />
+      <created>1757024281502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1757024281502</updated>
+    </task>
+    <task id="LOCAL-00007" summary="For the search.php file belonging to the &quot;phrase collection&quot; section:&#10;&#10;- Added information about the section.&#10;- Added a function to remove the backslash character from strings.&#10;- Refactored the file.">
+      <option name="closed" value="true" />
+      <created>1770100431361</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1770100431361</updated>
+    </task>
+    <task id="LOCAL-00008" summary="template-be.css&#10;&#10;- The file was refactored.&#10;- Duplicate and unused classes were removed.">
+      <option name="closed" value="true" />
+      <created>1770110323894</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1770110323894</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- Refactor the welcome.php file in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770111380573</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1770111380573</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- Refactor the notices-updates.php file in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770111956507</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770111956507</updated>
+    </task>
+    <task id="LOCAL-00011" summary="- Refactor the work-center-gallery.php file in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770112279168</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770112279168</updated>
+    </task>
+    <task id="LOCAL-00012" summary="- Refactor the last-post-book.php file in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770112510568</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770112510568</updated>
+    </task>
+    <task id="LOCAL-00013" summary="- Refactor the last-post-book.php file in the home directory.&#10;- The error where the superimposed icon did not appear on the image was corrected.">
+      <option name="closed" value="true" />
+      <created>1770113036967</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1770113036967</updated>
+    </task>
+    <task id="LOCAL-00014" summary="- Refactor the last-post-multimedia.php file in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770113329937</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1770113329937</updated>
+    </task>
+    <task id="LOCAL-00015" summary="- Refactoring all files in the home directory.">
+      <option name="closed" value="true" />
+      <created>1770115041023</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1770115041023</updated>
+    </task>
+    <task id="LOCAL-00016" summary="- Refactoring the blockquote-day.php">
+      <option name="closed" value="true" />
+      <created>1770115185889</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770115185889</updated>
+    </task>
+    <task id="LOCAL-00017" summary="- Bug fix for image linking to the post on the check-also.php">
+      <option name="closed" value="true" />
+      <created>1770116242346</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1770116242346</updated>
+    </task>
+    <task id="LOCAL-00018" summary="- Bug fix for next and previous link on the navigation.php for sigle book page.">
+      <option name="closed" value="true" />
+      <created>1770116629491</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1770116629491</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- Bug fix for icon image on last-posts.php in blog/grid directory">
+      <option name="closed" value="true" />
+      <created>1770118379790</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1770118379790</updated>
+    </task>
+    <task id="LOCAL-00020" summary="- Bug fix for icon image on thumbnail.php.php in section blog.">
+      <option name="closed" value="true" />
+      <created>1770119047648</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1770119047648</updated>
+    </task>
+    <task id="LOCAL-00021" summary="- Bug fix for icon image and title on last-books.php for taxonomy.">
+      <option name="closed" value="true" />
+      <created>1770123156311</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1770123156311</updated>
+    </task>
+    <task id="LOCAL-00022" summary="- Refactor last-books.php file.">
+      <option name="closed" value="true" />
+      <created>1770128326352</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1770128326352</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- Refactor thumbnail.php for book section.">
+      <option name="closed" value="true" />
+      <created>1770128420476</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1770128420476</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- Refactor thumbnail.php for book section.">
+      <option name="closed" value="true" />
+      <created>1770128706760</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1770128706761</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- Lekton fonts were added.">
+      <option name="closed" value="true" />
+      <created>1770128800953</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1770128800953</updated>
+    </task>
+    <task id="LOCAL-00026" summary="- The last-books.php file in the taxonomy directory was refactored">
+      <option name="closed" value="true" />
+      <created>1770348482640</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1770348482640</updated>
+    </task>
+    <task id="LOCAL-00027" summary="- Minor bugs fixed.">
+      <option name="closed" value="true" />
+      <created>1770348573161</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1770348573161</updated>
+    </task>
+    <task id="LOCAL-00028" summary="- The 'Unknown' option was added to the Edit No. field on the 'Data' tab.&#10;- The 'Sidebar' option was added to the second tab.">
+      <option name="closed" value="true" />
+      <created>1770350946152</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1770350946152</updated>
+    </task>
+    <task id="LOCAL-00029" summary="- Add new images.">
+      <option name="closed" value="true" />
+      <created>1770362941216</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1770362941216</updated>
+    </task>
+    <task id="LOCAL-00030" summary="- New functions were added to the toolbar on the editing screen">
+      <option name="closed" value="true" />
+      <created>1770363081044</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1770363081044</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Refactor the welcome.php file in the home directory." />
+    <MESSAGE value="- Refactos the notices-updates.php file in the home directory." />
+    <MESSAGE value="- Refactor the notices-updates.php file in the home directory." />
+    <MESSAGE value="- Refactor the work-center-gallery.php file in the home directory." />
+    <MESSAGE value="- Refactor the last-post-book.php file in the home directory." />
+    <MESSAGE value="- Refactor the last-post-book.php file in the home directory.&#10;- The error where the superimposed icon did not appear on the image was corrected." />
+    <MESSAGE value="- Refactor the last-post-multimedia.php file in the home directory." />
+    <MESSAGE value="- Refactoring all files in the home directory." />
+    <MESSAGE value="- Refactoring the blockquote-day.php" />
+    <MESSAGE value="- Bug fix for image linking to the post on the check-also.php" />
+    <MESSAGE value="- Bug fix for next and previous link on the navigation.php" />
+    <MESSAGE value="- Bug fix for next and previous link on the navigation.php for sigle book page." />
+    <MESSAGE value="- Bug fix for icon image on last-posts.php" />
+    <MESSAGE value="- Bug fix for icon image on last-posts.php in blog/grid directory" />
+    <MESSAGE value="- Bug fix for icon image on thumbnail.php.php in section blog." />
+    <MESSAGE value="- Bug fix for icon image and title on last-books.php for taxonomy." />
+    <MESSAGE value="- Refactor last-books.php file." />
+    <MESSAGE value="- Refactor thumbnail.php for book section." />
+    <MESSAGE value="- Lekton fonts were added." />
+    <MESSAGE value="- The last-books.php file in the taxonomy directory was refactored" />
+    <MESSAGE value="- Minor bugs fixed." />
+    <MESSAGE value="- Se añadió la opción 'Desconocido' para el campo No. de edición de la pestaña ' Datos'&#10;- Se añadió la opción 'Barra lateral' a la segunda pestaña." />
+    <MESSAGE value="- The 'Unknown' option was added to the Edit No. field on the 'Data' tab.&#10;- The 'Sidebar' option was added to the second tab." />
+    <MESSAGE value="- Add new images." />
+    <MESSAGE value="- New functions were added to the toolbar on the editing screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="- New functions were added to the toolbar on the editing screen" />
+  </component>
+  <component name="WordPressConfiguration">
+    <wordpressPath />
+  </component>
+</project>
