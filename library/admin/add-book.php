@@ -211,10 +211,10 @@ $custom_meta_fields = array(
     array(
         'icon' => 'dashicons dashicons-table-col-before',
         'title' => 'Barra lateral',
-        'label' => 'Ocultar barra lateral',
-        'description' => 'Ocultar o ver barra lateral',
-        'id' => $prefix . 'check',
-        'name' => $prefix . 'check',
+        'label' => 'Activar barra lateral',
+        'description' => 'Activar la barra lateral',
+        'id' => $prefix . 'style',
+        'name' => $prefix . 'style',
         'value' => 'yes',
         'placeholder' => '',
     ),
@@ -390,12 +390,12 @@ function show_custom_meta_box(): void
 
         <!-- Specifications for the title /-->
         <div class="bea-tab-box-information">
+          <p><i class="<?php echo $custom_meta_fields[0]['icon']; ?>"></i>
+            <strong>Instrucciones para escribir un título</strong>
+          </p>
           <ul>
             <li class="bea-none">
               <ul>
-                <li>
-                  <b>Instrucciones para escribir un título</b>
-                </li>
                 <li class="bea-information">
                   El nombre del título se toma del campo título de la publicación.
                 </li>
@@ -413,10 +413,13 @@ function show_custom_meta_box(): void
 
         <!-- Specifications for the title /-->
         <div class="bea-tab-box-information last">
+          <p><i class="<?php echo $custom_meta_fields[0]['icon']; ?>"></i>
+            <strong>Especificaciones de la imagen</strong>
+          </p>
           <ul>
             <li class="bea-none">
               <ul>
-                <li><b>Especificaciones de la imagen</b></li>
+                <li><b></b></li>
                 <li class="bea-information">Dimensiones: 300px x 470px</li>
                 <li class="bea-information">Calidad: Comprensión 90%</li>
                 <li class="bea-information">Formato: *.jpg</li>
@@ -427,16 +430,16 @@ function show_custom_meta_box(): void
 
       </div>
 
-      <!-- Verification and views tab /-->
+      <!-- Verification, views and sidebar tab /-->
       <div id="verification-views-tab" class="tabs-panel bea-tabs-panel-close">
         <form method="post" action="' . $_SERVER['PHP_SELF'] . '">
 
           <!-- Book verification /-->
           <div class="bea-tab-box-information">
+            <p><i class="<?php echo $custom_meta_fields[1]['icon']; ?>"></i>
+              <strong><?php echo $bookVerificationMeta['label']; ?></strong>
+            </p>
             <ul>
-              <li>
-                <b><?php echo $bookVerificationMeta['label']; ?></b>
-              </li>
               <li>
                 <label>
                   <input value="<?php echo $bookVerificationMeta['value']; ?>"
@@ -461,7 +464,6 @@ function show_custom_meta_box(): void
               <strong><?php echo $sidebarVerificationMeta['label']; ?></strong>
             </p>
             <ul>
-
               <li>
                 <label>
                   <input value="<?php echo $sidebarVerificationMeta['value']; ?>"
@@ -474,17 +476,17 @@ function show_custom_meta_box(): void
                 </label>
               </li>
               <li>
-                <em><?php echo $bookVerificationMeta['description']; ?></em>
+                <em><?php echo $sidebarVerificationMeta['description']; ?></em>
               </li>
             </ul>
           </div>
 
           <!-- Number of views /-->
           <div class="bea-tab-box-information last">
+            <p><i class="<?php echo $custom_meta_fields[2]['icon']; ?>"></i>
+              <strong><?php echo $numbersOfViewsMeta['label']; ?></strong>
+            </p>
             <ul>
-              <li>
-                <b><?php echo $numbersOfViewsMeta['label']; ?></b>
-              </li>
               <li>
                 <input type="text"
                        class='bea-input-text'
