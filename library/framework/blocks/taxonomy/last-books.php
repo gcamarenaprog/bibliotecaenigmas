@@ -8,55 +8,64 @@
  * Author URL:         http://gcamarenaprog.com
  * Path:               /library/framework/blocks/taxonomy/
  * File name:          last-books.php
- * Description:        This file shows the last books in books collections, encyclopedia collection or taxonomy file.
+ * Description:        This file shows the last books in books collections, encyclopedia collection or genre taxonomy file.
  * Date:               03-02-2026
  */
-?>
 
-<?php
 // Get genre image
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 $filename = $term->slug . '.jpg';
 $imageUrl = get_template_directory_uri() . '/library/images/genres/' . $filename;
+
+$slug = null;
+$categoryId = null;
+$collectionsName = null;
+$category = null;
+
+// Get slug
 $slug = $term->slug;
 
-$parent_term_id = null;
+// Get the ID for a category slug
+$category = get_term_by('slug', $slug, 'genre');
+if ($category) {
+  $categoryId = $category->term_id;
+}
 
-if ($slug == 'coleccion-de-libros') {
-  $parent_term_id = 603;
-  $slug = true;
-} elseif ($slug == 'coleccion-de-enciclopedias') {
-  $parent_term_id = 298;
-  $slug = true;
+echo $categoryId;
+
+// Select name of collection
+if ($categoryId) {
+  if ($categoryId == 298) {
+    $collectionsName = 'ENCICLOPEDIAS';
+  } elseif ($categoryId == 603) {
+    $collectionsName = 'LIBROS';
+  }
 }
 ?>
 
-<?php if ($parent_term_id): // Books collection or Encyclopedias collection
-  ?>
+<!-- If it's a book collection or an encyclopedia collection -->
+<?php if ($collectionsName): ?>
 
   <?php
   $taxonomies = array(
       'genre',
   );
   $args = array(
-      'parent' => $parent_term_id,
+      'parent' => $categoryId,
       'orderby' => 'term_order',
   );
   $terms = get_terms($taxonomies, $args);
   ?>
 
-  <!-- Title /-->
+  <!-- Title-->
   <section>
     <div class="tb-head">
-      <?php if ($parent_term_id == 298): ?>
-        <h1>= COLECCIONES DE ENCICLOPEDIAS =</h1>
-      <?php elseif ($parent_term_id == 603): ?>
-        <h1>= COLECCIONES DE LIBROS =</h1>
-      <?php endif; ?>
+      <h1>= COLECCIONES DE <?php echo $collectionsName; ?> =</h1>
     </div>
   </section>
+  <!-- Title /-->
 
-  <!-- Content -->
+  <!-- Content: Image and title on grid -->
   <section>
     <div class="tb-box">
       <div class="row_">
@@ -97,9 +106,10 @@ if ($slug == 'coleccion-de-libros') {
       </div><!--/.row_-->
     </div><!--/.tb-box-->
   </section>
+  <!-- Content: Image and title on grid /-->
 
-<?php else: // Books and multimedia genres  ?>
-
+  <!-- Books, genres and multimedia -->
+<?php else: ?>
 
   <!-- Title /-->
   <section>
@@ -118,7 +128,7 @@ if ($slug == 'coleccion-de-libros') {
     </div>
   </section>
 
-  <!-- Content /-->
+  <!-- Content: Image and title on grid -->
   <section>
     <div class="tb-box">
       <div class="row_">
@@ -138,22 +148,22 @@ if ($slug == 'coleccion-de-libros') {
 
                   <!-- Cover book -->
                   <section>
-                    <?php
-                    $be_theme_check = get_post_meta($post->ID, 'be_theme_check', true);
-                    if ($be_theme_check != 'yes') {
-                      echo '<div  class="post-thumbnail tie_check tie-appear tb-card-book-thumbnail">';
-                    } else {
-                      echo '<div  class="post-thumbnail ';
-                      echo $tieIcon;
-                      echo ' tie-appear tb-card-book-thumbnail">';
-                    }
-                    ?>
-                    <a href="<?php the_permalink(); ?>" rel="bookmark">
-                      <?php the_post_thumbnail(); ?>
-                      <li
-                          class="fa overlay-icon tb-card-book-overlay-icon">
-                      </li>
-                    </a>
+                    <?php $be_theme_check = get_post_meta($post->ID, 'be_theme_check', true); ?>
+
+                    <?php if ($be_theme_check != 'yes'): ?>
+                    <div class="post-thumbnail tie_check tie-appear tb-card-book-thumbnail">
+
+                      <?php else: ?>
+                      <div class="post-thumbnail <?php echo $tieIcon; ?> tie-appear tb-card-book-thumbnail">
+
+                        <?php endif; ?>
+
+                        <a href="<?php the_permalink(); ?>" rel="bookmark">
+                          <?php the_post_thumbnail(); ?>
+                          <li
+                              class="fa overlay-icon tb-card-book-overlay-icon">
+                          </li>
+                        </a>
                   </section>
 
                 <?php endif; ?>
@@ -218,5 +228,7 @@ if ($slug == 'coleccion-de-libros') {
     </section>
 
   </section>
+  <!-- Content: Image and title on grid /-->
 
 <?php endif; ?>
+<!-- Books, genres and multimedia /-->
