@@ -144,7 +144,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'state',
         'value' => '',
         'placeholder' => 'Estado',
-        'options' => array('Desconocido', 'Completo', 'Incompleto'),
+        'options' => array('Desconocido', 'Completo', 'Incompleto', 'No aplica'),
     ),
 
   # 9. Get a book
@@ -200,11 +200,11 @@ $custom_meta_fields = array(
         'icon' => 'dashicons dashicons-edit-page',
         'title' => 'Propiedades',
         'label' => 'Tamaño de archivo',
-        'description' => 'Tamaño del archivo digital en disco: Bytes, KB, MB, GB ≈.',
+        'description' => 'Tamaño del archivo digital en disco: Bytes, KB, MB, GB ≈ o no aplica.',
         'id' => $prefix . 'size',
         'name' => $prefix . 'size',
         'value' => '',
-        'placeholder' => '0.00 KB',
+        'placeholder' => '0 KB',
     ),
 
   # 14. Style page
@@ -1083,7 +1083,7 @@ function show_custom_meta_box(): void
                      class='bea-input-text'
                      name="<?php echo $fileSizeMeta['name']; ?>"
                      id="<?php echo $fileSizeMeta['id']; ?>"
-                     value="<?php echo $fileSizeValue; ?>"
+                     value=""
                      placeholder="<?php echo $fileSizeValue; ?>">
             </li>
 
