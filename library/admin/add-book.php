@@ -256,7 +256,8 @@ function show_custom_meta_box(): void
   # Year field
   $yearMeta = $custom_meta_fields[4];
   $yearValue = get_post_meta($post->ID, $yearMeta['id'], true);
-  $yearValue = (empty($yearValue)) ? $yearMeta['placeholder'] : $yearValue;
+  $yearValue = (empty($yearValue)) ? '' : $yearValue;
+  $yearPlaceholder =  $yearMeta['placeholder'];
 
   # Country field
   $countryMeta = $custom_meta_fields[5];
@@ -551,7 +552,7 @@ function show_custom_meta_box(): void
                      name="<?php echo $yearMeta['name']; ?>"
                      id="<?php echo $yearMeta['id']; ?>"
                      value="<?php echo $yearValue; ?>"
-                     placeholder="<?php echo $yearValue; ?>">
+                     placeholder="<?php echo $yearPlaceholder; ?>">
             </li>
             <li>
               <em><?php echo $yearMeta['description']; ?></em>
