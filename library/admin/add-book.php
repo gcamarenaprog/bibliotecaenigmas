@@ -119,7 +119,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'language',
         'value' => '',
         'placeholder' => '',
-        'options' => array('Desconocido', 'No aplica', 'No aplica', 'Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma'),
+        'options' => array('Desconocido', 'No aplica', 'Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma'),
     ),
 
   # 7. Pages
@@ -335,7 +335,8 @@ function show_custom_meta_box(): void
   # File size field
   $fileSizeMeta = $custom_meta_fields[13];
   $fileSizeValue = get_post_meta($post->ID, $fileSizeMeta['id'], true);
-  $fileSizeValue = (empty($fileSizeValue)) ? $fileSizeMeta['placeholder'] : $fileSizeValue;
+  $fileSizeValue = (empty($fileSizeValue)) ? '' : $fileSizeValue;
+  $fileSizePlaceholder =  $fileSizeMeta['placeholder'];
 
   ?>
 
@@ -1083,8 +1084,8 @@ function show_custom_meta_box(): void
                      class='bea-input-text'
                      name="<?php echo $fileSizeMeta['name']; ?>"
                      id="<?php echo $fileSizeMeta['id']; ?>"
-                     value=""
-                     placeholder="<?php echo $fileSizeValue; ?>">
+                     value="<?php echo $fileSizeValue; ?>"
+                     placeholder="<?php echo $fileSizePlaceholder; ?>">
             </li>
 
             <!-- Description /-->
