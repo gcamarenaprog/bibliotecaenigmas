@@ -8,7 +8,7 @@
  * Path:               /library/admin/
  * File name:          add-book.php
  * Description:        This file contains the functions for add custom meta.
- * Date:               05-02-2026
+ * Date:               16-02-2026
  */
 
 
@@ -106,7 +106,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'country',
         'value' => '',
         'placeholder' => '',
-        'options' => array('Desconocido', 'México', 'Argentina', 'Brasil', 'Chile', 'España', 'Estados Unidos', '- - - - - - - - - - - - - - - - -', 'Afghanistan', 'Alandia', 'Albania', 'Alemania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua', 'Antilles', 'Arabia Saudita', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Banglades', 'Barbados', 'Belgica', 'Belice', 'Benin', 'Bermuda', 'Bielorrusia', 'Birmania', 'Blanco', 'Bolivia', 'Bosnia Herzegovina', 'Botsuana', 'Bouvet', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Butan', 'Camboya', 'Camerun', 'Canada', 'Cape Verde', 'Chad', 'China', 'Chipre', 'Colombia', 'Comoras', 'Congo', 'Corea del Norte', 'Corea del Sur', 'Costa de Marfil', 'Costa Rica', 'Croacia', 'Cuba', 'Curacao', 'Czechoslovakia', 'Dinamarca', 'Djibuti', 'Dominica', 'East Timor', 'Ecuador', 'Egipto', 'El Salvador', 'Emiratos Arabes Unidos', 'Eritrea', 'Escocia', 'Eslovenia', 'Estonia', 'Etiopia', 'Europa', 'Falklands', 'Fidji', 'Filipinas', 'Finlandia', 'Francia', 'Gabon', 'Gales', 'Gambia', 'Georgia', 'Ghana', 'Gibraltar', 'Gran Bretania', 'Grecia', 'Grenada', 'Groenlandia', 'Guam', 'Guatemala', 'Guinea', 'Guinea Bissau', 'Guinea Equatorial', 'Guyana', 'Haiti', 'Holanda', 'Honduras', 'Hong Kong', 'Hungria', 'India', 'Indonesia', 'Inglaterra', 'Iran', 'Iraq', 'Irlanda', 'Isla de Pascuas', 'Islandia', 'Isla Norfolk', 'Islas Caiman', 'IslasCocos', 'Islas Cook', 'Islas Faroe', 'Islas Georgias', 'Islas Marianas', 'Islas Marshall', 'Islas Salomon', 'Islas Virginias', 'Israel', 'Italia', 'Jamaica', 'Japon', 'Jordania', 'Kazajstan', 'Kenia', 'Kirguistan', 'Kiribati', 'Kuwait', 'Laos', 'Lesotho', 'Letonia', 'Libano', 'Liberia', 'Libia', 'Liechtenstein', 'Lituania', 'Luxemburgo', 'Macao', 'Macedonia', 'Madagascar', 'Malasia', 'Malawi', 'Maldivas', 'Mali', 'Malta', 'Marruecos', 'Mauricio', 'Mauritania', 'Micronesia', 'Moldavia', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Mozambique', 'Namibia', 'Nauru', 'Negro', 'Nepal', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Noruega', 'Nueva Zelanda', 'Oman', 'Pakistan', 'Palau', 'Palestina', 'Panama', 'Paraguay', 'Peru', 'Polonia', 'Portugal', 'Puerto Rico', 'Qatar', 'Reino Unido', 'Republica Centroafricana', 'Republica Checa', 'Republica Dominicana', 'Republica Eslovaca', 'Romania', 'Ruanda', 'Rusia', 'Saint Kitts', 'Samoa', 'Samoa Americana', 'San Marino', 'Santa Helena', 'Santa Lucia', 'San Vincente', 'Sao Tome', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leona', 'Singapur', 'Siria', 'Somalia', 'Sri Lanka', 'Sudafrica', 'Sudan', 'Suecia', 'Suiza', 'Suriname', 'Swazilandia', 'Tailandia', 'Taiwan', 'Tanzania', 'Tayikistan', 'Tenerife', 'Togo', 'Tokelau', 'Tonga', 'Trinidad y Tobago', 'Tunez', 'Turkmenistan', 'Turquia', 'Tuvalu', 'Ucrania', 'Uganda', 'Union Sovietica', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vaticano', 'Venezuela', 'Vietnam', 'Yemen', 'Yugoslavia', 'Zaire', 'Zambia', 'Zimbabwe')
+        'options' => array('Desconocido', 'No aplica', 'México', 'Argentina', 'Brasil', 'Chile', 'España', 'Estados Unidos', '- - - - - - - - - - - - - - - - -', 'Afghanistan', 'Alandia', 'Albania', 'Alemania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua', 'Antilles', 'Arabia Saudita', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Banglades', 'Barbados', 'Belgica', 'Belice', 'Benin', 'Bermuda', 'Bielorrusia', 'Birmania', 'Blanco', 'Bolivia', 'Bosnia Herzegovina', 'Botsuana', 'Bouvet', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Butan', 'Camboya', 'Camerun', 'Canada', 'Cape Verde', 'Chad', 'China', 'Chipre', 'Colombia', 'Comoras', 'Congo', 'Corea del Norte', 'Corea del Sur', 'Costa de Marfil', 'Costa Rica', 'Croacia', 'Cuba', 'Curacao', 'Czechoslovakia', 'Dinamarca', 'Djibuti', 'Dominica', 'East Timor', 'Ecuador', 'Egipto', 'El Salvador', 'Emiratos Arabes Unidos', 'Eritrea', 'Escocia', 'Eslovenia', 'Estonia', 'Etiopia', 'Europa', 'Falklands', 'Fidji', 'Filipinas', 'Finlandia', 'Francia', 'Gabon', 'Gales', 'Gambia', 'Georgia', 'Ghana', 'Gibraltar', 'Gran Bretania', 'Grecia', 'Grenada', 'Groenlandia', 'Guam', 'Guatemala', 'Guinea', 'Guinea Bissau', 'Guinea Equatorial', 'Guyana', 'Haiti', 'Holanda', 'Honduras', 'Hong Kong', 'Hungria', 'India', 'Indonesia', 'Inglaterra', 'Iran', 'Iraq', 'Irlanda', 'Isla de Pascuas', 'Islandia', 'Isla Norfolk', 'Islas Caiman', 'IslasCocos', 'Islas Cook', 'Islas Faroe', 'Islas Georgias', 'Islas Marianas', 'Islas Marshall', 'Islas Salomon', 'Islas Virginias', 'Israel', 'Italia', 'Jamaica', 'Japon', 'Jordania', 'Kazajstan', 'Kenia', 'Kirguistan', 'Kiribati', 'Kuwait', 'Laos', 'Lesotho', 'Letonia', 'Libano', 'Liberia', 'Libia', 'Liechtenstein', 'Lituania', 'Luxemburgo', 'Macao', 'Macedonia', 'Madagascar', 'Malasia', 'Malawi', 'Maldivas', 'Mali', 'Malta', 'Marruecos', 'Mauricio', 'Mauritania', 'Micronesia', 'Moldavia', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Mozambique', 'Namibia', 'Nauru', 'Negro', 'Nepal', 'Nicaragua', 'Niger', 'Nigeria', 'Niue', 'Noruega', 'Nueva Zelanda', 'Oman', 'Pakistan', 'Palau', 'Palestina', 'Panama', 'Paraguay', 'Peru', 'Polonia', 'Portugal', 'Puerto Rico', 'Qatar', 'Reino Unido', 'Republica Centroafricana', 'Republica Checa', 'Republica Dominicana', 'Republica Eslovaca', 'Romania', 'Ruanda', 'Rusia', 'Saint Kitts', 'Samoa', 'Samoa Americana', 'San Marino', 'Santa Helena', 'Santa Lucia', 'San Vincente', 'Sao Tome', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leona', 'Singapur', 'Siria', 'Somalia', 'Sri Lanka', 'Sudafrica', 'Sudan', 'Suecia', 'Suiza', 'Suriname', 'Swazilandia', 'Tailandia', 'Taiwan', 'Tanzania', 'Tayikistan', 'Tenerife', 'Togo', 'Tokelau', 'Tonga', 'Trinidad y Tobago', 'Tunez', 'Turkmenistan', 'Turquia', 'Tuvalu', 'Ucrania', 'Uganda', 'Union Sovietica', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vaticano', 'Venezuela', 'Vietnam', 'Yemen', 'Yugoslavia', 'Zaire', 'Zambia', 'Zimbabwe')
     ),
 
   # 6. Language
@@ -119,7 +119,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'language',
         'value' => '',
         'placeholder' => '',
-        'options' => array('Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma', 'Desconocido'),
+        'options' => array('Desconocido', 'No aplica', 'No aplica', 'Español', 'Inglés', 'Portugués', 'Latín', 'Francés', 'Alemán', 'Otro idioma'),
     ),
 
   # 7. Pages
@@ -144,7 +144,7 @@ $custom_meta_fields = array(
         'name' => $prefix . 'state',
         'value' => '',
         'placeholder' => 'Estado',
-        'options' => array('Desconocido', 'Completo', 'Incompleto', 'No aplica'),
+        'options' => array('Desconocido', 'No aplica', 'Completo', 'Incompleto'),
     ),
 
   # 9. Get a book
@@ -204,7 +204,7 @@ $custom_meta_fields = array(
         'id' => $prefix . 'size',
         'name' => $prefix . 'size',
         'value' => '',
-        'placeholder' => '0 KB',
+        'placeholder' => '0',
     ),
 
   # 14. Style page
@@ -242,7 +242,7 @@ function show_custom_meta_box(): void
   $sidebarVerificationMeta = $custom_meta_fields[14];
   $sidebarVerificationValue = get_post_meta($post->ID, $sidebarVerificationMeta['id'], true);
   $sidebarVerificationChecked = ($sidebarVerificationValue == "yes") ? 'checked' : '';
-  $sidebarVerificationText = ($sidebarVerificationValue == "yes") ? '<span>¡La barra lateral no se muestra!</span>' : '<span>¡La barra lateral se muestra!</em>';
+  $sidebarVerificationText = ($sidebarVerificationValue == "yes") ? '<span>¡Barra lateral oculta!</span>' : '<span>¡Se muestra la barra lateral!</em>';
 
   # Numbers of views field
   $numbersOfViewsMeta = $custom_meta_fields[2];
