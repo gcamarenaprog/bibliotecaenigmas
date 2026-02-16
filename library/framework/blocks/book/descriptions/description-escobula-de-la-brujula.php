@@ -3,10 +3,13 @@ global $wpdb;
 $query = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}wpdatatable_109");
 
 echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
+
+        
   pageLength: -1,
   paging: true,
   responsive: true,
   search: true,
+  order: [[2, "asc"]],
   lengthMenu: [ [3, 5, 10, 20, 30, -1], [3, 5, 10, 20, 30, "Todos"] ],
   layout: {
     "top": {
@@ -16,8 +19,8 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
     "topEnd":     "search"
   },
   columnDefs: [
-    { "orderable": false, "targets": [1] },
-    { "targets": [1,5,6,7,8], visible: false },
+    { "orderable": true, "targets": [1] },
+    { "targets": [1], visible: false },
   ],
   language: {
     "search":     "Buscar",
@@ -38,9 +41,15 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 ?>
 
 <script type="text/javascript">
-    jQuery(window).on('load', function() {
+    jQuery(window).on('load', function () {
         let table = new DataTable('#table');
         table.page.len(5).draw();
+    });
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+
     });
 </script>
 
@@ -50,9 +59,11 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <thead>
     <tr>
-      <th>PORTADA</th>
+      <th>PORTADA</th>  
       <th>VISTO</th>
+      <th>#</th>
       <th>NO.</th>
+      <th>EP.</th>
       <th>TÍTULO</th>
       <th>DESCRIPCIÓN</th>
       <th>TEMPORADA</th>
@@ -72,25 +83,22 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
       <tr>
 
         <!-- Portada /-->
-        <td style="width: 20px;">
+        <td style="width: 20px; padding: 10px;">
           <?php
-          $imageString = $fila->portada;
-          if ($imageString != null) {
+          $imageString = $fila->ep;
+          if ($imageString != 'No existe') {
 
-            $charNeedle = '|';
-            $delimiterPosition = strpos($imageString, $charNeedle);
-
-            $fullImagePath = substr($imageString, $delimiterPosition + 2, strlen($imageString));
-            $smallImagePath = substr($imageString, 0, $delimiterPosition);
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/la-escobula-de-la-brujula/' . $imageString . '.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/la-escobula-de-la-brujula/small/' . $imageString . '.jpg';
 
           } else {
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/genres/no-cover.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/genres/no-cover-small.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-cover.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-cover-small.jpg';
           }
 
           ?>
 
-          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear">
+          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0px; width: 94px;">
             <a href="<?php echo $fullImagePath; ?>"
                class="fancybox image"
                style="width: 95px;"
@@ -108,23 +116,32 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
         <!-- Visto /-->
         <td><?php echo $fila->visto; ?></td>
 
+        <!-- # /-->
+        <td><?php echo $fila->wdtcolumn; ?></td>
+
         <!-- No. /-->
         <td><?php echo $fila->no; ?></td>
+
+        <!-- Ep. /-->
+        <td><?php echo $fila->ep; ?></td>
 
         <!-- Título /-->
         <td><?php echo $fila->titulo; ?></td>
 
-        <!-- Título /-->
-        <td><?php echo $fila->descripcion; ?></td>
-        <!-- Título /-->
-        <td><?php echo $fila->temporada; ?></td>
-        <!-- Título /-->
-        <td><?php echo $fila->fecha; ?></td>
-        <!-- Título /-->
-        <td><?php echo $fila->ano; ?></td>
-        <!-- Título /-->
-        <td><?php echo $fila->duracion; ?></td>
+        <!-- Descripción /-->
+        <td style="text-align: justify;"><?php echo $fila->descripcion; ?></td>
 
+        <!-- Temporada /-->
+        <td><?php echo $fila->temporada; ?>
+
+          <!-- Fecha /-->
+        <td><?php echo $fila->fecha; ?></td>
+
+        <!-- Año /-->
+        <td><?php echo $fila->ano; ?></td>
+
+        <!-- Duración /-->
+        <td><?php echo $fila->duracion; ?></td>
 
       </tr>
 
@@ -134,9 +151,11 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <tfoot>
     <tr>
-      <th>PORTADA</th>
+      <th>PORTADA</th>  
       <th>VISTO</th>
+      <th>#</th>
       <th>NO.</th>
+      <th>EP.</th>
       <th>TÍTULO</th>
       <th>DESCRIPCIÓN</th>
       <th>TEMPORADA</th>
