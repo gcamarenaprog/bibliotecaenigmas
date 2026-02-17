@@ -8,41 +8,44 @@
  * Path:               /library/framework/blocks/book/single/
  * File name:          thumbnail.php
  * Description:        This file shows the thumbnail section of the single book page.
- * Date:               16-02-2026
+ * Date:               17-02-2026
  */
 ?>
 
 <?php
-$parentCategoryId = null;
-$category = null;
+global $post;
+$parentGenreId = 0;
+$allGenres = '';
 $hasThumbnail = false;
 
-$noBookCover = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-book-cover.jpg';
-$classCodeTieCheck = 'tie_check';
-
+$cover = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-book-cover.jpg';
 $postId = $post->ID;
-$category = get_the_terms($postId, 'genre');
+
+# Get all genres
+$allGenres = get_the_terms($postId, 'genre');
+
+# Check has thumbnail
 $hasThumbnail = (has_post_thumbnail($postId));
 
-// Select icon for Multimedia or Book section
-if ($category) {
-  $parentCategoryId = $category[0]->parent;
-  if ($parentCategoryId == 1523) {
+# Select icon for Multimedia or Book section
+if ($allGenres) {
+  $parentGenreId = $allGenres[0]->parent;
+  if ($parentGenreId == 1523) {
     $classCodeTie = 'tie_play';
   } else {
     $classCodeTie = 'tie_book';
   }
 }
 
-// Check post status
+# Check post status
 $checkStatus = get_post_meta($post->ID, 'be_theme_check', true);
 if (!$checkStatus == 'yes') {
-  $classCodeTie = $classCodeTieCheck;
+  $classCodeTie = 'tie_check';
 }
 
-// Check image status
+# Check image status
 if ($hasThumbnail) {
-  $noBookCover = tie_thumb_src('tie_library');
+  $cover = tie_thumb_src('tie_library');
 }
 ?>
 
@@ -52,7 +55,7 @@ if ($hasThumbnail) {
        class="fancybox image"
        aria-controls="fancybox-wrap"
        aria-haspopup="dialog">
-      <img src="<?php echo $noBookCover ?>"
+      <img src="<?php echo $cover ?>"
            title="<?php the_title(); ?>"
            class="tie-appear">
       <li class="fa overlay-icon"></li>
