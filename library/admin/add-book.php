@@ -270,7 +270,7 @@ function show_custom_meta_box(): void
   # Pages field
   $pagesMeta = $custom_meta_fields[7];
   $pagesValue = get_post_meta($post->ID, $pagesMeta['id'], true);
-  $pagesValue = (empty($yearValue)) ? '' : $pagesValue;
+  $pagesValue = (empty($pagesValue)) ? '' : $pagesValue;
   $pagesPlaceholder =  $pagesMeta['placeholder'];
 
   # State field
