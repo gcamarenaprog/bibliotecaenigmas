@@ -294,7 +294,7 @@ function show_custom_meta_box(): void
   $digitalClassificationProgramaDeTV = (str_contains($digitalClassificationString, 'Programa de TV')) ? 'checked' : ' ';
   $digitalClassificationSerieDeTv = (str_contains($digitalClassificationString, 'Serie de TV')) ? 'checked' : ' ';
   $digitalClassificationPodcast = (str_contains($digitalClassificationString, 'Pódcast')) ? 'checked' : ' ';
-  $digitalClassificationStreaming = (str_contains($digitalClassificationString, 'Streaming')) ? 'checked' : ' ';
+  $digitalClassificationYouTube = (str_contains($digitalClassificationString, 'YouTube')) ? 'checked' : ' ';
   $digitalClassificationNoClasificable = (str_contains($digitalClassificationString, 'No clasificable')) ? 'checked' : ' ';
   $digitalClassificationOtro = (str_contains($digitalClassificationString, 'Otro')) ? 'checked' : ' ';
 
@@ -758,14 +758,14 @@ function show_custom_meta_box(): void
                        class="bea-mr15">Pódcast / Radio</label>
               </div>
 
-              <!-- Streaming /-->
+              <!-- YouTube /-->
               <div class="col_12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
-                       id="chkStreaming"
+                       id="chkYouTube"
                        name="<?php echo $digitalClassificationMeta['name']; ?>[]"
-                       value="Streaming " <?php echo $digitalClassificationStreaming; ?>>
-                <label for="chkStreaming"
-                       class="bea-mr15">Streaming</label>
+                       value="YouTube " <?php echo $digitalClassificationYouTube; ?>>
+                <label for="chkYouTube"
+                       class="bea-mr15">YouTube</label>
               </div>
 
               <!-- No clasificable /-->
@@ -805,7 +805,6 @@ function show_custom_meta_box(): void
                 <strong><?php echo $digitalFormatMeta['label']; ?></strong>
               </p>
 
-
               <!-- Texto /-->
               <div class=" col_-12 col_-lg-3 col_-md-6 bea-mb15">
                 <input type="checkbox"
@@ -813,7 +812,7 @@ function show_custom_meta_box(): void
                        name="<?php echo $digitalFormatMeta['name']; ?>[]"
                        value="Texto plano" <?php echo $digitalFormatPlanText; ?>>
                 <label for="chkTexto"
-                       class="bea-mr15">Texto</label>
+                       class="bea-mr15">Texto plano</label>
               </div>
 
               <!-- Escaneo (OCR) /-->
@@ -919,7 +918,7 @@ function show_custom_meta_box(): void
             <div class="row_">
 
               <!-- Label /-->
-              <p><i class="<?php echo $digitalClassificationMeta['icon']; ?>"></i>
+              <p><i class="<?php echo $digitalFormatMeta['icon']; ?>"></i>
                 <strong><?php echo $extensionMeta['label']; ?></strong>
               </p>
 
