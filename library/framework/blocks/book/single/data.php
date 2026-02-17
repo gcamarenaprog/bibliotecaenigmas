@@ -1,126 +1,256 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/book/single/
-   * File name:          data.php
-   * Description:        This file shows the data section of the single book page.
-   * Date:               25-08-2025
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/book/single/
+ * File name:          data.php
+ * Description:        This file shows the data section of the single book page.
+ * Date:               17-02-2026
+ */
 ?>
 
 <?php
-$fullTitle = get_the_title();
-$title = getTitle($fullTitle);
-$subtitle = getSubtitle($fullTitle);
+global $post;
+
+$metaFullTitle = '';
+$metaTitle = '';
+$metaSubtitle = '';
+
+$metaWriter = '';
+$metaPublisher = '';
+$metaGenre = '';
+$metaEdition = '';
+$metaYear = '';
+$metaCountry = '';
+$metaLanguage = '';
+$metaPages = '';
+$metaState = '';
+$metaClassification = '';
+$metaType = '';
+$metaExtension = '';
+$metaSize = '';
+
 $metaState = false;
-$metaKind = false;
+$metaClassification = false;
 $metaType = false;
 
+$metaFullTitle = get_the_title();
+
+// Get title and subtitle
+if (empty(!$metaFullTitle)) {
+  $metaTitle = getTitle($metaFullTitle);
+  $metaSubtitle = getSubtitle($metaFullTitle);
+} else {
+  $metaTitle = 'No asignado';
+  $metaSubtitle = false;
+}
+
+// Get writer
+$metaWriter = get_the_term_list($post->ID, 'writer', '', ', ', '');
+if (empty($metaWriter)) {
+  $metaWriter = 'No asignado';
+}
+
+// Get publisher
+$metaPublisher = get_the_term_list($post->ID, 'editorial', '', ', ', '');
+if (empty($metaPublisher)) {
+  $metaPublisher = 'No asignado';
+}
+
+// Get genre
+$metaGenre = get_the_term_list($post->ID, 'genre', '', ', ', '');
+if (empty($metaGenre)) {
+  $metaGenre = 'No asignado';
+}
+
+// Get edition
+$metaEdition = get_post_meta($post->ID, 'be_theme_edition', true);
+if (empty($metaEdition)) {
+  $metaEdition = 'No asignado';
+} else {
+  if ($metaEdition === 'No aplica') {
+    $metaEdition = false;
+  }
+}
+
+// Get year
+$metaYear = get_post_meta($post->ID, 'be_theme_year', true);
+if (empty($metaYear)) {
+  $metaYear = 'No asignado';
+}
+
+// Get country
+$metaCountry = get_post_meta($post->ID, 'be_theme_country', true);
+if (empty($metaCountry)) {
+  $metaCountry = 'No asignado';
+} else {
+  if ($metaCountry === 'No aplica') {
+    $metaCountry = false;
+  }
+}
+
+// Get language
+$metaLanguage = get_post_meta($post->ID, 'be_theme_language', true);
+if (empty($metaLanguage)) {
+  $metaLanguage = 'No asignado';
+} else {
+  if ($metaLanguage === 'No aplica') {
+    $metaLanguage = false;
+  }
+}
+
+// Get pages
+$metaPages = get_post_meta($post->ID, 'be_theme_pages', true);
+if (empty($metaPages)) {
+  $metaPages = 'No asignado';
+} else {
+  if ($metaPages === 'No aplica') {
+    $metaPages = false;
+  } else {
+    $metaPages = $metaPages . ' pags.';
+  }
+}
+
+// Get state
 $metaState = get_post_meta($post->ID, 'be_theme_state', true);
-if (!$metaState) {
-  $metaState = 'Dato no registrado';
-}
-
-$metaKind = get_post_meta($post->ID, 'be_theme_kind', true);
-$typeof = gettype($metaKind);
-if (!$metaKind) {
-  $metaKind = 'Dato no registrado';
+if (empty($metaState)) {
+  $metaState = 'No asignado';
 } else {
-  if ($typeof == 'string') {
-  } else {
-    $kind = implode(" , ", $metaKind);
-    $metaKind = $kind;
+  if ($metaState === 'No aplica') {
+    $metaState = false;
   }
 }
 
+// Get classification
+$metaClassification = get_post_meta($post->ID, 'be_theme_kind', true);
+if (empty($metaClassification)) {
+  $metaClassification = 'No asignado';
+} else {
+  $metaClassification = implode(", ", $metaClassification);
+}
+
+// Get type
 $metaType = get_post_meta($post->ID, 'be_theme_digitization', true);
-$typeof = gettype($metaType);
-if (!$metaType) {
-  $metaType = 'Dato no registrado';
+if (empty($metaType)) {
+  $metaType = 'No asignado';
 } else {
-  if ($typeof == 'string') {
+  $hasNoApply = str_contains(implode(", ", $metaType), 'No aplica');
+  if ($hasNoApply) {
+    $metaType = false;
   } else {
-    $kind = implode(" , ", $metaType);
-    $metaType = $kind;
+    $metaType = implode(", ", $metaType);
   }
 }
 
-$be_theme_file_extension = get_post_meta($post->ID, 'be_theme_extension', true);
-if ($be_theme_file_extension == '') {
-  $file_extension = "*.pdf";
+// Get extension
+$metaExtension = get_post_meta($post->ID, 'be_theme_extension', true);
+if (empty($metaExtension)) {
+  $metaExtension = 'No asignado';
 } else {
-  $file_extension = implode(" , *.", $be_theme_file_extension);
-  $file_extension = "*." . $file_extension;
+  $hasNoApply = str_contains(implode(", ", $metaExtension), 'No aplica');
+  if ($hasNoApply) {
+    $metaExtension = false;
+  } else {
+    $metaExtension = implode(", ", $metaExtension);
+  }
 }
+
+// Get size
+$metaSize = get_post_meta($post->ID, 'be_theme_size', true);
+if (empty($metaSize)) {
+  $metaSize = 'No asignado';
+} else {
+  if ($metaSize === 'No aplica') {
+    $metaSize = false;
+  }
+}
+
 ?>
 
 <section>
-  <div class="tb-single-data">
+  <div class="tb-book-data">
 
     <!-- Title /-->
-    <b>Título: </b><?php echo $title; ?>
-    <hr>
+    <hr class="tb-book-data">
+    <span title="Título"><strong>Título: </strong><?php echo $metaTitle; ?></span>
+    <hr class="tb-book-data">
 
     <!-- Subtitle /-->
-    <?php if ($subtitle) : ?>
-      <b>Subtítulo: </b><em><?php echo $subtitle; ?></em>
-      <hr>
+    <?php if ($metaSubtitle) : ?>
+      <span title="Subtítulo"><strong>Subtítulo: </strong><?php echo $metaSubtitle; ?></span>
+      <hr class="tb-book-data">
     <?php endif; ?>
 
     <!-- Writer /-->
-    <b>Autor/es: </b><?php echo get_the_term_list($post->ID, 'writer', '', ', ', ''); ?>
-    <hr>
+    <span title="Autor/es"><strong>Autor/es: </strong><?php echo $metaWriter; ?></span>
+    <hr class="tb-book-data">
 
-    <!-- Editorial /-->
-    <b>Editorial: </b><?php echo get_the_term_list($post->ID, 'editorial', '', ', ', ''); ?>
-    <hr>
+    <!-- Publisher /-->
+    <span title="Editorial"> <strong>Editorial: </strong><?php echo $metaPublisher; ?></span>
+    <hr class="tb-book-data">
 
     <!-- Genre /-->
-    <b>Género/s: </b><?php echo get_the_term_list($post->ID, 'genre', '', ', ', ''); ?>
-    <hr>
+    <span title="Género"> <strong>Género/s: </strong><?php echo $metaGenre; ?></span>
+    <hr class="tb-book-data">
 
     <!-- Edition /-->
-    <b>Edición: </b><?php echo get_post_meta($post->ID, 'be_theme_edition', true); ?>
-    <hr>
+    <?php if ($metaEdition) : ?>
+      <span title="No. de edición"><strong>Edición: </strong><?php echo $metaEdition; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Year /-->
-    <b>Año: </b><?php echo get_post_meta($post->ID, 'be_theme_year', true); ?>
-    <hr>
+    <span title="Año de publicación"><strong>Año: </strong><?php echo $metaYear; ?></span>
+    <hr class="tb-book-data">
 
     <!-- Country /-->
-    <b>País: </b><?php echo get_post_meta($post->ID, 'be_theme_country', true); ?>
-    <hr>
+    <?php if ($metaCountry) : ?>
+      <span title="País de orígen"><strong>País: </strong><?php echo $metaCountry; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Language /-->
-    <b>Idioma: </b><?php echo get_post_meta($post->ID, 'be_theme_language', true); ?>
-    <hr>
+    <?php if ($metaLanguage) : ?>
+      <span title="Idioma"><strong>Idioma: </strong><?php echo $metaLanguage; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Pages /-->
-    <b>Páginas: </b><?php echo get_post_meta($post->ID, 'be_theme_pages', true); ?> págs.
-    <hr>
+    <?php if ($metaPages) : ?>
+      <span title="Número de páginas"><strong>Páginas: </strong><?php echo $metaPages; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Status /-->
-    <b>Estado: </b><?php echo $metaState; ?>
-    <hr>
+    <?php if ($metaState) : ?>
+      <span title="Estado del libro"><strong>Estado: </strong><?php echo $metaState; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Classification /-->
-    <b>Clasificación: </b><?php echo $metaKind; ?>
-    <hr>
+    <span title="Clasificación digital"><strong>Clasificación: </strong><?php echo $metaClassification; ?></span>
+    <hr class="tb-book-data">
 
     <!-- Type /-->
-    <b>Tipo: </b><?php echo $metaType; ?>
-    <hr>
+    <?php if ($metaType) : ?>
+    <span title="Tipo de digitalización"><strong>Tipo: </strong><?php echo $metaType; ?></span>
+    <hr class="tb-book-data">
+    <?php endif; ?>
 
-    <!-- Format /-->
-    <b>Formato: </b><?php echo $file_extension; ?>
-    <hr>
+    <!-- Extension /-->
+    <?php if ($metaExtension) : ?>
+      <span title="Extensión de archivo"><strong>Extensión: </strong><?php echo $metaExtension; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Size /-->
-    <b>Tamaño: </b><?php echo get_post_meta($post->ID, 'be_theme_size', true); ?>
+    <?php if ($metaSize) : ?>
+      <span title="Tamaño de archivo"><strong>Tamaño: </strong><?php echo $metaSize; ?></span>
+      <hr class="tb-book-data">
+    <?php endif; ?>
 
   </div>
   <div class="clear"></div>
