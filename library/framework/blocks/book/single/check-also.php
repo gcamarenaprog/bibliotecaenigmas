@@ -1,195 +1,198 @@
 <?php global $post;
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/book/single/
-   * File name:          check-also.php
-   * Description:        This file shows the check also section of the single book page.
-   * Date:               03-02-2026
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/book/single/
+ * File name:          check-also.php
+ * Description:        This file shows the check also section of the single book page.
+ * Date:               17-02-2026
+ */
 ?>
 
 <?php
-  global $post_id, $post_name, $check_also_position;
-  $currentPostId = $post->ID;
-  $visibility = null;
-  $arrayNamesGenresCurrentPost = null;
-  $index = 0;
-  $classCodeTieCheck = 'tie_check';
-  $classCodeTieBook = 'tie_book';
-  
-  // Get all genres of current post
-  $allGenresOfCurrentPost = wp_get_post_terms ($post->ID, 'genre', array('fields' => 'slugs'));
-  
-  // Get total genres of current post
-  $totalGenresOfCurrentPost = sizeof ($allGenresOfCurrentPost);
-  
-  // Get random number between 0 to total genres of current post
-  if ($totalGenresOfCurrentPost <= 1) {
-    $randomNumber = 0;
+global $post_id, $check_also_position;
+
+$isVisibleChekAlso = false;
+$currentPostId = $post->ID;
+$visibility = false;
+$arrayNamesGenresCurrentPost = '';
+$firstPostIdRelatedToCurrentPosts = '';
+$idsPostsSelected = [];
+$index = 0;
+
+$noCover = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-book-cover.jpg';
+$postId = $post->ID;
+
+# Get all genres
+$termsOfCurrentPost = get_the_terms($postId, 'genre');
+
+# Check if It has thumbnail image
+$hasThumbnail = (has_post_thumbnail($postId));
+
+# Select icon for Multimedia or Book section
+if ($termsOfCurrentPost) {
+  $parentGenreIdOfCurrentPost = $termsOfCurrentPost[0]->parent;
+  if ($parentGenreIdOfCurrentPost == 1523) {
+    $classCodeTie = 'tie_play';
   } else {
-    $randomNumber = rand (0, $totalGenresOfCurrentPost - 1);
+    $classCodeTie = 'tie_book';
   }
-  
-  // Convert string to array
-  $arrayNamesGenresCurrentPost = (array)$allGenresOfCurrentPost;
-  
-  if ($arrayNamesGenresCurrentPost != null) {
-    $selectedGenre = $arrayNamesGenresCurrentPost[$randomNumber];
-    
-    $arguments = array(
-      'post_type' => 'book',
-      'posts_per_page' => -1,
-      'tax_query' => array(
+}
+
+# Check post status for icon
+$checkStatus = get_post_meta($post->ID, 'be_theme_check', true);
+if (!$checkStatus == 'yes') {
+  $classCodeTie = 'tie_check';
+}
+
+# Get all genres ids of current post
+$idsGenresOfCurrentPost = wp_get_post_terms($post->ID, 'genre', array('fields' => 'ids'));
+
+# Get total genres of current post
+$totalGenresOfCurrentPost = sizeof($idsGenresOfCurrentPost);
+
+# Get random number between 0 to total genres of current post
+if ($totalGenresOfCurrentPost <= 1) {
+  $randomNumber = 0;
+} else {
+  $randomNumber = rand(0, $totalGenresOfCurrentPost - 1);
+}
+
+# Select random genre id of all genres list
+$selectedGenre = $idsGenresOfCurrentPost[$randomNumber];
+
+# Query of 10 posts with the selected genre
+$args = array(
+    'post_type' => 'book',
+    'posts_per_page' => 10,
+    'tax_query' => array(
         array(
-          'taxonomy' => 'genre',
-          'field' => 'slug',
-          'terms' => $selectedGenre,
-        ),
-      ),
-    );
-    
-    // Get the first four post IDs that are different from the current publication ID
-    $query_FirstPostIds = new WP_Query($arguments);
-    
-    if ($query_FirstPostIds->have_posts ()) {
-      while ($query_FirstPostIds->have_posts ()) {
-        
-        $query_FirstPostIds->the_post ();
-        $postId = $query_FirstPostIds->post->ID;
-        
-        if ($postId != $currentPostId) {
-          $firstPostIdRelatedToCurrentPosts[] = $postId;
-          if ($index > 1) {
-            break;
-          }
-          $index++;
-        }
-      }
-    }
-    
-    wp_reset_query ();
-    
-    // Get the first four posts related with current post
-    if ($firstPostIdRelatedToCurrentPosts) {
-      $visibility = true;
-      $arguments = array(
-        'post_type' => 'book',
-        'posts_per_page' => 1,
-        'post__in' => $firstPostIdRelatedToCurrentPosts,
-        'tax_query' => array(
-          array(
             'taxonomy' => 'genre',
-            'field' => 'slug',
+            'field' => 'term_id',
             'terms' => $selectedGenre,
-          ),
         ),
-      );
-      $query_FirstPost = new WP_query($arguments);
-    } else {
-      $visibility = false;
-    }
+    ),
+);
+
+$query = new WP_Query($args);
+
+while ($query->have_posts()) {
+  $query->the_post();
+  $postId = $query->post->ID;
+  if ($postId != $currentPostId) { // Check if post id selected is not equal to current post id
+    $idsPostsSelected[] = $postId;
   }
+}
+
+# Get total posts selected
+$totalIdsPostsSelected = sizeof($idsPostsSelected);
+
+# Get random number between 0 to total posts selected
+if ($totalIdsPostsSelected <= 1) {
+  $randomNumber = 0;
+} else {
+  $isVisibleChekAlso = true; // If ids post select <= 1 is visible check also module
+  $randomNumber = rand(0, $totalIdsPostsSelected - 1);
+}
+
+# Select post with random number
+$selectedPost = $idsPostsSelected[$randomNumber];
+
+# Get book or multimedia post data
+$fullTitle = get_the_title($selectedPost);
+$title = getTitle($fullTitle);
+$subtitle = getSubtitle($fullTitle);
+$writer = get_the_taxonomies($selectedPost);
+$writer = cleanWriterTextOfTaxonomies($writer);
+
+# Get thumbnail image url
+$imageUrl = getThumbnailUrl('tie-book', $selectedPost);
+
+# If no exist thumbnail image
+if (!$imageUrl) {
+  $imageUrl = $noCover;
+}
 ?>
 
-<?php if ($visibility) : ?>
-  
-  <?php
-  while ($query_FirstPost->have_posts ()) : $query_FirstPost->the_post () ?>
-    
-    <?php
-    // Get data from the book
-    $fullTitleBook = get_the_title ();
-    $titleBook = getTitle ($fullTitleBook);
-    $subtitleBook = getSubtitle ($fullTitleBook);
-    $writerBook = get_the_taxonomies ($post->ID);
-    $writerBook = cleanWriterText ($writerBook);
-    ?>
 
-    <section>
-      <div id="check-also-box" class=" tb-book-check-also-width post-listing check-also-<?php echo $check_also_position ?> show-check-also">
-        <a href="#" id="check-also-close"><i class="fa fa-close"></i></a>
+<?php if ($isVisibleChekAlso): ?>
+  <section>
+    <div id="check-also-box"
+         class=" tb-book-check-also-width post-listing check-also-<?php echo $check_also_position ?> show-check-also">
+      <a href="#" id="check-also-close"><i class="fa fa-close"></i></a>
 
-        <!-- Title section /-->
-        <section>
-          <div class="block-head">
-            <h1><?php _eti ('Check Also'); ?></h1>
-          </div>
-        </section>
+      <!-- Title section /-->
+      <section>
+        <div class="block-head">
+          <h1><?php _eti('Check Also'); ?></h1>
+        </div>
+      </section>
 
-        <!-- Content /-->
-        <section>
-          <div class="row_ align_-items-center">
-            <div class="col_-12 text-center">
+      <!-- Content /-->
+      <section>
+        <div class="row_ align_-items-center">
+          <div class="col_-12 text-center">
 
-              <article>
+            <article>
 
-                <div class="tb-book-check-also">
-                  <?php if (function_exists ("has_post_thumbnail") && has_post_thumbnail ()) : ?>
-                    <?php $be_theme_check = get_post_meta ($post->ID, 'be_theme_check', true); ?>
+              <div class="tb-book-check-also">
+                <?php if (function_exists("has_post_thumbnail") && has_post_thumbnail()) : ?>
+                  <?php $be_theme_check = get_post_meta($selectedPost, 'be_theme_check', true); ?>
 
-                    <!--/Thumbnail image-->
-                    <div class="post-thumbnail tb-book-check-also-thumbnail
-                    <?php
-                      if ($be_theme_check == 'yes') {
-                        echo $classCodeTieBook;
-                      } else {
-                        echo $classCodeTieCheck;
-                      }
-                    ?> tie-appear mr0">
-                      <a href="<?php the_permalink() ?>" rel="bookmark">
-                        <img src="<?php echo tie_thumb_src ('tie-'); ?>" alt="">
-                        <li class="fa overlay-icon"></li>
-                      </a>
-                    </div>
-                  <?php endif; ?>
-
-                  <!--/Title-->
-                  <div class="tb-book-check-also-title-book">
-                    <a class='tb-book-check-also-title-book-text'
-                       href='<?php the_permalink (); ?>'
-                       rel='bookmark'>
-                      <?php echo $titleBook; ?>
-                      <span class='tb-book-check-also-paragraph-end'></span>
+                  <!--/Thumbnail image-->
+                  <div class="post-thumbnail tb-book-check-also-thumbnail <?php echo $classCodeTie ?> tie-appear mr0">
+                    <a href="<?php the_permalink($selectedPost) ?>" rel="bookmark">
+                      <img src="<?php echo $imageUrl; ?>" alt="">
+                      <li class="fa overlay-icon"></li>
                     </a>
                   </div>
+                <?php endif; ?>
 
-                  <!--/Subtitle-->
-                  <?php if ($subtitleBook): ?>
-                    <div class="tb-book-check-also-subtitle-book">
-                      <a class='tb-book-check-also-subtitle-book-text'
-                         href='<?php the_permalink (); ?>'
-                         rel='bookmark'>
-                        <?php echo $subtitleBook; ?>
-                        <span class='tb-book-check-also-paragraph-end'></span>
-                      </a>
-                    </div>
-                  <?php endif; ?>
-
-                  <!--/Writer-->
-                  <div class="tb-book-check-also-writer">
-                    <a class='tb-book-check-also-writer-text'
-                       href='<?php the_permalink (); ?>'
-                       rel='bookmark'>
-                      <?php echo $writerBook; ?>
-                      <span class='tb-book-check-also-paragraph-end'></span>
-                    </a>
-                  </div>
+                <!--/Title-->
+                <div class="tb-book-check-also-title-book">
+                  <a class='tb-book-check-also-title-book-text'
+                     href='<?php the_permalink($selectedPost); ?>'
+                     rel='bookmark'>
+                    <?php echo $title; ?>
+                    <span class='tb-book-check-also-paragraph-end'></span>
+                  </a>
                 </div>
-                
-              </article>
-              
-            </div>
+
+                <!--/Subtitle-->
+                <?php if ($subtitle): ?>
+                  <div class="tb-book-check-also-subtitle-book">
+                    <a class='tb-book-check-also-subtitle-book-text'
+                       href='<?php the_permalink($selectedPost); ?>'
+                       rel='bookmark'>
+                      <?php echo $subtitle; ?>
+                      <span class='tb-book-check-also-paragraph-end'></span>
+                    </a>
+                  </div>
+                <?php endif; ?>
+
+                <!--/Writer-->
+                <div class="tb-book-check-also-writer">
+                  <a class='tb-book-check-also-writer-text'
+                     href='<?php the_permalink($selectedPost); ?>'
+                     rel='bookmark'>
+                    <?php echo $writer; ?>
+                    <span class='tb-book-check-also-paragraph-end'></span>
+                  </a>
+                </div>
+              </div>
+
+            </article>
+
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
-    </section>
-  
-  <?php endwhile; ?>
-
+    </div>
+  </section>
 <?php endif; ?>
-<?php wp_reset_query (); ?>
+<?php //endif; ?>
+
+<?php wp_reset_query(); ?>
