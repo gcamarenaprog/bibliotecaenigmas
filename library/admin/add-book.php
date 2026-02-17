@@ -187,7 +187,7 @@ $custom_meta_fields = array(
     array(
         'icon' => 'dashicons dashicons-edit-page',
         'title' => 'Propiedades',
-        'label' => 'Extensión',
+        'label' => 'Extensión de archivo',
         'description' => 'Extensión del archivo digital: *.pdf, *.epub, *.docx, *.mobi, , *.lit, *.djvu, *.txt, *.mp3, *.mp4, *.m4a, *.avi, *.flv, desconocido o no aplica.',
         'id' => $prefix . 'extension',
         'name' => $prefix . 'extension',
