@@ -26,11 +26,14 @@ Description: Used to style the TinyMCE editor.
  * ----------------------------------------------------------------------------
  */
 
-html .mceContentBody {
-	margin-right: 20px;
-	margin-left: 20px;
-	font-size: 100%;
-	max-width: 800px;
+ html .mceContentBody { /* @beChanged */
+  margin: 20px;
+  max-width: 800px;
+  font-size: 0.99rem;
+  color: #000000;
+  text-shadow: 0 0 0 #000000;
+  text-align: justify;
+  font-family: Lekton, serif !important;
 }
 
 body {

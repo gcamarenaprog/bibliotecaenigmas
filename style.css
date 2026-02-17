@@ -5,7 +5,7 @@
 	Description: The Ultimate WordPress News Theme you have been waiting for!
 	Author: TieLabs
 	Author URI: http://tielabs.com/
-	Version: 5.8.5
+	Version: 5.8.2
 	License: license purchased
 	License URI: http://themeforest.net/licenses/regular_extended
 
@@ -4097,33 +4097,24 @@ footer #wp-calendar caption {
 /* Flickr Widget */
 
 .flickr-widget .flickr_badge_image {
-  width: 33.33333%;
-  padding: 0 2px 4px;
-  position: relative;
-  min-height: 1px;
-  float: left;
-  line-height: 0;
-  text-align: center;
+	float: left;
+	width: 25%;
+	padding: 2px;
+	line-height: 0;
+	max-width:90px;
 }
 
-.flickr-widget .flickr-images-wrapper {
-  margin: 0 -2px;
-  margin-bottom: 10px;
+.flickr-widget .flickr_badge_image a{
+	display: block;
 }
 
-.flickr-widget a {
-  display: block;
+.flickr-widget .flickr_badge_image img {
+	opacity: 1;
+	width: 100%;
+	height: auto;
 }
-
-.flickr-widget img {
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-  transition: 0.3s;
-}
-
-.flickr-widget img:hover {
-  opacity: 0.8;
+.flickr-widget .flickr_badge_image a:hover img {
+	opacity: 0.6;
 }
 
 /* Search Widget */
