@@ -19,7 +19,7 @@ $metaSubtitle = '';
 $metaGenres = '';
 $metaViews = '';
 
-// Get title and subtitle
+# Get title and subtitle
 $metaFullTitle = get_the_title();
 if (empty(!$metaFullTitle)) {
   $metaTitle = getTitle($metaFullTitle);
@@ -29,13 +29,13 @@ if (empty(!$metaFullTitle)) {
   $metaSubtitle = false;
 }
 
-// Get genres
+# Get genres
 $metaGenres = get_the_term_list($post->ID, 'genre', '', ', ', '');
 if (!$metaGenres) {
   $metaGenres = 'Sin género';
 }
 
-// Get views
+# Get views
 $text = __ti('Views');
 $metaViews = tie_views($text);
 

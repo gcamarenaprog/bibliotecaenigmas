@@ -8,7 +8,7 @@
    * Path:               /library/framework/blocks/book/single/
    * File name:          navigation.php
    * Description:        This file shows the navigation section of the single book page.
-   * Date:               03-02-2026
+   * Date:               17-02-2026
    */
 ?>
 

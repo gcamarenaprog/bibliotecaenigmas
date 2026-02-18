@@ -173,15 +173,6 @@ if (!$imageUrl) {
                   </div>
                 <?php endif; ?>
 
-                <!--/Writer-->
-                <div class="tb-book-check-also-writer">
-                  <a class='tb-book-check-also-writer-text'
-                     href='<?php the_permalink($selectedPost); ?>'
-                     rel='bookmark'>
-                    <?php echo $writer; ?>
-                    <span class='tb-book-check-also-paragraph-end'></span>
-                  </a>
-                </div>
               </div>
 
             </article>

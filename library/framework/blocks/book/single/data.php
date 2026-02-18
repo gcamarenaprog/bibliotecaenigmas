@@ -50,14 +50,26 @@ if (empty(!$metaFullTitle)) {
 
 // Get writer
 $metaWriter = get_the_term_list($post->ID, 'writer', '', ', ', '');
+$metaWriterString = json_encode($metaWriter);
+$hasNoApply = str_contains($metaWriterString, 'No aplica');
 if (empty($metaWriter)) {
   $metaWriter = 'No asignado';
+} else {
+  if ($hasNoApply) {
+    $metaWriter = false;
+  }
 }
 
 // Get publisher
 $metaPublisher = get_the_term_list($post->ID, 'editorial', '', ', ', '');
+$metaPublisherString = json_encode($metaPublisher);
+$hasNoApply = str_contains($metaPublisherString, 'No aplica');
 if (empty($metaPublisher)) {
   $metaPublisher = 'No asignado';
+} else {
+  if ($hasNoApply) {
+    $metaPublisher = false;
+  }
 }
 
 // Get genre
@@ -185,12 +197,16 @@ if (empty($metaSize)) {
     <?php endif; ?>
 
     <!-- Writer /-->
+    <?php if ($metaWriter) : ?>
     <span title="Autor/es"><strong>Autor/es: </strong><?php echo $metaWriter; ?></span>
     <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Publisher /-->
+    <?php if ($metaPublisher) : ?>
     <span title="Editorial"> <strong>Editorial: </strong><?php echo $metaPublisher; ?></span>
     <hr class="tb-book-data">
+    <?php endif; ?>
 
     <!-- Genre /-->
     <span title="Género"> <strong>Género/s: </strong><?php echo $metaGenre; ?></span>
