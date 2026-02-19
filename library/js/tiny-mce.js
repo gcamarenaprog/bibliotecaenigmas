@@ -39,9 +39,22 @@
       });
 
       ed.addButton('btnMasonic', {
-        title: 'Añadir marca',
+        title: 'Añadir símbolo Masonico',
         cmd: 'cmdBtnMasonic',
         image: url + '/masonic.svg'
+      });
+
+      ed.addButton('btnAlpha', {
+        title: 'Añadir símbolo Alpha',
+        cmd: 'cmdBtnAlpha',
+        image: url + '/alpha.svg'
+      });
+
+
+      ed.addButton('btnPhi', {
+        title: 'Añadir símbolo Phi',
+        cmd: 'cmdBtnPhi',
+        image: url + '/phi.svg'
       });
 
       ed.addButton('btnStrong', {
@@ -108,7 +121,7 @@
 
       ed.addCommand('cmdBtnSummary', function () {
         var selectedText = ed.selection.getContent({format: 'html'});
-        var text_1 = '<hr><strong>Sumario</strong><ul>';
+        var text_1 = '<hr /><h1 style="text-align: center;">Sumario</h1>';
         var text_2 = '<li>text</li>';
         var text_3 = '<li>text</li>';
         var text_4 = '<li>text</li>';
@@ -122,7 +135,7 @@
 
       ed.addCommand('cmdBtnReferences', function () {
         var selectedText = ed.selection.getContent({format: 'html'});
-        var text1 = '<hr><p><strong>Referencias</strong><ul></p>';
+        var text1 = '<hr><h1>Referencias</h1><ul>';
         var text2 = '<p><li> <em>[WIKIPEDIA]</em> TÍTULO. En Wikipedia. Recuperado el # de MES de AÑO de URL</li>';
         var text3 = '<li> <em>[LIBRO]</em> APELLIDO AUTOR, NOMBRE AUTOR, (AÑO), TÍTULO DEL LIBRO, <em>NOMBRE DEL TEMA</em>, PÁGS.(), CIUDAD, PAÍS, EDITORIAL</li>';
         var text4 = '<li> <em>[PODCAST]</em> APELLIDO AUTOR, NOMBRE AUTOR (AÑO, # de MES), TÍTULO DEL PROGRAMA [Audio podcast]. Recuperado de URL</li>';
@@ -135,7 +148,7 @@
 
       ed.addCommand('cmdBtnTitle', function () {
         var selectedText = ed.selection.getContent({format: 'html'});
-        var returnText = '<hr><p><strong>Título</strong></p><hr>';
+        var returnText = '<hr><h1>Título</h1>';
         ed.execCommand('mceInsertContent', 0, returnText);
       });
 
@@ -148,6 +161,19 @@
       ed.addCommand('cmdBtnMasonic', function () {
         var selectedText = ed.selection.getContent({format: 'html'});
         var returnText = ' ∴';
+        ed.execCommand('mceInsertContent', 0, returnText);
+      });
+
+      ed.addCommand('cmdBtnPhi', function () {
+        var selectedText = ed.selection.getContent({format: 'html'});
+        var returnText = ' Φ';
+        ed.execCommand('mceInsertContent', 0, returnText);
+      });
+
+
+      ed.addCommand('cmdBtnAlpha', function () {
+        var selectedText = ed.selection.getContent({format: 'html'});
+        var returnText = ' Δ';
         ed.execCommand('mceInsertContent', 0, returnText);
       });
 
