@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Main" transform="matrix(0.1,0,0,-0.1,-462,574)">
+        <g id="_2-4-imágenes" serif:id="2-4 imágenes" transform="matrix(1.555977,0.244862,-0.244862,1.555977,-1139.339798,-6651.891704)">
+            <g transform="matrix(0.095298,-0.014341,0.014183,0.094246,4519.336419,6321.707865)">
+                <path d="M3300,8969C3224,8963 3124,8932 3060,8896C2946,8831 2819,8690 2771,8574C2706,8420 2707,8199 2771,8045C2824,7920 2962,7775 3088,7711C3208,7651 3389,7631 3537,7663C3756,7710 3945,7885 4020,8110C4052,8204 4052,8416 4020,8510C3983,8621 3940,8690 3855,8775C3698,8933 3538,8988 3300,8969Z" style="fill-rule:nonzero;"/>
+            </g>
+            <g transform="matrix(0.095196,-0.015005,0.01484,0.094145,4514.87808,6326.87795)">
+                <path d="M5268,7533L4380,6645L3825,7200L2720,6095L2720,5420L7600,5420L7600,6981L6881,7701C6486,8096 6160,8420 6159,8420C6157,8420 5756,8021 5268,7533Z" style="fill-rule:nonzero;"/>
+            </g>
+            <g transform="matrix(0.192963,1.226182,27.97725,-4.402743,-1262.294968,7006.079226)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(-1.22027,0.192032,3.19849,20.324823,4774.995491,2334.351757)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(-1.22027,0.192032,3.114873,19.793478,5394.795842,2364.166426)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(0.192963,1.226182,27.97725,-4.402743,-1193.652596,7442.267524)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g id="_2-COL" serif:id="2 COL" transform="matrix(0.739807,-0.116422,-0.139636,-0.887317,4720.500153,7211.749326)">
+                <g transform="matrix(310.989888,0,0,310.989888,1020.336302,862.237659)">
+                </g>
+                <text x="138.388px" y="862.238px" style="font-family:'Ebrima-Bold', 'Ebrima';font-weight:700;font-size:310.99px;">4 IMG</text>
+            </g>
+        </g>
+    </g>
+</svg>

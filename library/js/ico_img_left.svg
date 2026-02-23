@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Main" transform="matrix(0.1,0,0,-0.1,-462,574)">
+        <g id="Images" transform="matrix(1.555977,0.244862,-0.244862,1.555977,-1139.339798,-6974.579441)">
+            <g transform="matrix(0.073266,0.028262,-0.02795,0.072458,4943.302998,6302.353963)">
+                <path d="M3300,8969C3224,8963 3124,8932 3060,8896C2946,8831 2819,8690 2771,8574C2706,8420 2707,8199 2771,8045C2824,7920 2962,7775 3088,7711C3208,7651 3389,7631 3537,7663C3756,7710 3945,7885 4020,8110C4052,8204 4052,8416 4020,8510C3983,8621 3940,8690 3855,8775C3698,8933 3538,8988 3300,8969Z" style="fill-rule:nonzero;"/>
+            </g>
+            <g transform="matrix(0.073461,0.02775,-0.027444,0.072651,4938.061628,6304.217843)">
+                <path d="M5268,7533L4380,6645L3825,7200L2720,6095L2720,5420L7600,5420L7600,6981L6881,7701C6486,8096 6160,8420 6159,8420C6157,8420 5756,8021 5268,7533Z" style="fill-rule:nonzero;"/>
+            </g>
+            <g transform="matrix(-0.357665,0.946104,21.58684,8.160695,573.176502,4456.237602)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(-0.941542,-0.355941,-5.928556,15.682338,6731.770854,3581.789999)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(-0.941542,-0.355941,-5.773567,15.27236,7158.660424,3852.763421)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(-0.357665,0.946104,21.58684,8.160695,445.944562,4792.794159)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+        </g>
+        <g id="Imagenes">
+        </g>
+    </g>
+</svg>
