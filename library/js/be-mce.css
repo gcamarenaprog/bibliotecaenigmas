@@ -126,10 +126,61 @@ i.be-ico_summary {
   background-image: url('ico_summary.svg');
 }
 
+
+/* YouTube */
 i.be-ico_youtube {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
   background-image: url('ico_youtube.svg');
+}
+
+i.be-ico_youtube_banner {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_banner.svg');
+}
+
+i.be-ico_youtube_books {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_books.svg');
+}
+
+i.be-ico_youtube_social {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_social.svg');
+}
+
+
+i.be-ico_youtube_author {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_author.svg');
+}
+
+i.be-ico_youtube_data_table {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_data_table.svg');
+}
+
+i.be-ico_youtube_update {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_update.svg');
 }

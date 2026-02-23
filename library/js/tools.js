@@ -1192,6 +1192,81 @@
             },
           ]
         },
+
+        {
+          text: 'YouTube',
+          icon: ' be-ico_youtube',
+          menu: [
+            {
+              text: 'Banner',
+              icon: ' be-ico_youtube_banner',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+            {
+              text: 'Acerca del autor',
+              icon: ' be-ico_youtube_author',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+            {
+              text: 'Libros publicados',
+              icon: ' be-ico_youtube_books',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+            {
+              text: 'Contacto y redes sociales',
+              icon: ' be-ico_youtube_social',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+            {
+              text: 'Ficha técnica',
+              icon: ' be-ico_youtube_data_table',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+
+            {
+              text: 'Actualización',
+              icon: ' be-ico_youtube_update',
+              onclick: function () {
+                editor.insertContent('<div class="row_">\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
+                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
+                  '</div>\n' +
+                  '&nbsp;');
+              }
+            },
+
+          ]
+        },
       ]
     });
   });
