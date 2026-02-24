@@ -89,10 +89,7 @@
               text: 'Alpha',
               icon: ' be-ico_elements_alpha',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('Δ\n' +
                   '&nbsp;');
               }
             },
@@ -100,10 +97,7 @@
               text: 'Phi',
               icon: ' be-ico_elements_phi',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('Φ\n' +
                   '&nbsp;');
               }
             },
@@ -111,10 +105,7 @@
               text: 'Mason',
               icon: ' be-ico_elements_mason',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('∴\n' +
                   '&nbsp;');
               }
             },
@@ -122,11 +113,64 @@
               text: 'Tabla',
               icon: ' be-ico_elements_table',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
-                  '&nbsp;');
+                editor.windowManager.open({
+                  title: 'Insertar tabla',
+                  body: [
+                    {
+                      type: 'checkbox',
+                      name: 'checkBoxTopHeading',
+                      label: 'Encabezados arriba',
+                    },
+                    {
+                      type: 'checkbox',
+                      name: 'checkBoxRightHeading',
+                      label: 'Encabezados izquierda',
+                    },
+                    {
+                      type: 'textbox',
+                      name: 'textBoxRows',
+                      id: 'textBoxRows',
+                      label: 'Insertar filas',
+                      value: '1',
+                      placeholder: '1'
+                    },
+                    {
+                      type: 'textbox',
+                      name: 'textBoxColumns',
+                      id: 'textBoxColumns',
+                      label: 'Insertar columnas',
+                      value: '1',
+                      placeholder: '1'
+                    },
+                  ],
+                  onsubmit: function (e) {
+                    let body_table = '';
+                    let table_body_rows = e.data.textBoxRows;
+                    let table_body_columns = e.data.textBoxColumns;
+
+                    if(table_body_rows == 0){
+                      table_body_rows = 1;
+                    }
+                    if(table_body_columns == 0){
+                      table_body_columns = 1;
+                    }
+
+                    let html_ = '<tr><td style="background: #474747 !important; text-align: left; color: #dddddd;" width="20%">LOREM</td><td>Lorem impsum</td></tr>';
+                    for (var i = 0; i < table_body_rows; i++) {
+                      body_table += html_;
+                    }
+                    editor.insertContent('<hr />' +
+                      '<table style="font-size: 1.20em;">' +
+                      '<tbody>' +
+                      '<tr style="background: #2d2d2d !important; color: #dddddd;">' +
+                      '<td style="background: #2d2d2d !important; text-align: center; font-weight: bold; color: #dddddd; text-shadow: 0 0 0 #000000;" colspan="2" width="599">FICHA TÉCNICA</td>' +
+                      '</tr>' +
+                      body_table +
+                      '</tbody>' +
+                      '</table>');
+                  },
+
+                });
               }
             },
             {
