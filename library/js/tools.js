@@ -18,10 +18,8 @@
               text: 'Encabezado h1',
               icon: ' be-ico_headings_h1',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h1 style="text-align: center;">Title</h1>\n' +
                   '&nbsp;');
               }
             },
@@ -29,10 +27,8 @@
               text: 'Encabezado h2',
               icon: ' be-ico_headings_h2',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h2 style="text-align: center;">Title</h2>\n' +
                   '&nbsp;');
               }
             },
@@ -40,10 +36,8 @@
               text: 'Encabezado h3',
               icon: ' be-ico_headings_h3',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h3 style="text-align: center;">Title</h3>\n' +
                   '&nbsp;');
               }
             },
@@ -51,10 +45,8 @@
               text: 'Encabezado h4',
               icon: ' be-ico_headings_h4',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h4 style="text-align: center;">Title</h4>\n' +
                   '&nbsp;');
               }
             },
@@ -62,10 +54,8 @@
               text: 'Encabezado h5',
               icon: ' be-ico_headings_h5',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h5 style="text-align: center;">Title</h5>\n' +
                   '&nbsp;');
               }
             },
@@ -73,10 +63,8 @@
               text: 'Encabezado h6',
               icon: ' be-ico_headings_h6',
               onclick: function () {
-                editor.insertContent('<div class="row_">\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                  '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                  '</div>\n' +
+                editor.insertContent('<hr />\n' +
+                  '<h6 style="text-align: center;">Title</h6>\n' +
                   '&nbsp;');
               }
             },
