@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="Main" transform="matrix(0.1,0,0,-0.1,-462,574)">
+        <g id="Secciones--Sumario" serif:id="Secciones, Sumario" transform="matrix(0.125142,-0,0,0.125142,4522.021252,4301.345318)">
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.161534,10646.626017)">
+                <rect x="372.989" y="128.344" width="28.243" height="401.356" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.161534,10646.626017)">
+                <rect x="545.424" y="211.588" width="38.649" height="148.65" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.161534,10646.626017)">
+                <rect x="372.989" y="329.022" width="99.596" height="107.028" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(0,15.623538,356.475371,-0,-74643.118782,648.269672)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(0,15.623538,356.475371,-0,-74643.118782,-4909.474052)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(15.544927,-0,0,-252.20089,-47.498948,62749.190002)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(15.544927,-0,0,-243.828394,-7695.634279,60941.939488)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.160849,9228.529584)">
+                <rect x="372.989" y="128.344" width="28.243" height="401.356" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.160849,9228.529584)">
+                <rect x="545.424" y="211.588" width="38.649" height="148.65" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(11.072878,-0,0,-12.892032,-903.160849,9228.529584)">
+                <rect x="372.989" y="329.022" width="99.596" height="107.028" style="fill-opacity:0;"/>
+            </g>
+            <g transform="matrix(0,23.994241,181.181747,-0,-35240.040638,-7316.456369)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(54.961992,0,0,-54.961992,-349.797192,10116.640862)">
+                <circle cx="46.28" cy="74.856" r="8.635"/>
+            </g>
+            <g transform="matrix(0,23.994241,181.181747,-0,-35240.040638,-8590.944028)">
+                <rect x="545.424" y="211.588" width="19.325" height="22.298"/>
+            </g>
+            <g transform="matrix(54.961992,0,0,-54.961992,-349.797192,8842.153203)">
+                <circle cx="46.28" cy="74.856" r="8.635"/>
+            </g>
+            <g transform="matrix(121.721212,0,0,-121.721212,-109.889906,12323.789807)">
+                <text x="11.028px" y="43.592px" style="font-family:'MicrosoftYaHei-Bold', 'Microsoft YaHei', sans-serif;font-weight:700;font-size:21px;">∴</text>
+                <g transform="matrix(21,0,0,21,68.993732,43.592316)">
+                </g>
+                <text x="30.829px" y="43.592px" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:21px;"><tspan x="30.829px 45.922px " y="43.592px 43.592px ">Δ </tspan>Φ</text>
+            </g>
+        </g>
+    </g>
+</svg>

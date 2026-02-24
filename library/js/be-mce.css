@@ -2,54 +2,173 @@ i.be-icon {
   background-image: url('ico_be.svg');
 }
 
-i.be-ico_imgs {
+
+/* Headings */
+i.be-ico_headings {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_imgs.svg');
+  background-image: url('ico_headings.svg');
 }
 
-i.be-ico_img_right {
+i.be-ico_headings_h1 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_img_right.svg');
+  background-image: url('ico_headings_h1.svg');
 }
-
-i.be-ico_img_left {
+i.be-ico_headings_h2 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_img_left.svg');
+  background-image: url('ico_headings_h2.svg');
 }
-
-i.be-ico_2_img {
+i.be-ico_headings_h3 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_2_img.svg');
+  background-image: url('ico_headings_h3.svg');
 }
-
-i.be-ico_3_img {
+i.be-ico_headings_h4 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_3_img.svg');
+  background-image: url('ico_headings_h4.svg');
 }
-
-i.be-ico_4_img {
+i.be-ico_headings_h5 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_4_img.svg');
+  background-image: url('ico_headings_h5.svg');
+}
+i.be-ico_headings_h6 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h6.svg');
 }
 
+/* Elements */
+i.be-ico_elements {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements.svg');
+}
+i.be-ico_elements_line {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_line.svg');
+}
+i.be-ico_elements_alpha {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_alpha.svg');
+}
+
+i.be-ico_elements_phi {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_phi.svg');
+}
+
+i.be-ico_elements_mason {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_mason.svg');
+}
+
+i.be-ico_elements_table {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_table.svg');
+}
+
+
+/* Sections */
+i.be-ico_sections {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections.svg');
+}
+
+i.be-ico_sections_summary {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_summary.svg');
+}
+i.be-ico_sections_references {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_references.svg');
+}
+
+i.be-ico_sections_digitalization {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_digitalization.svg');
+}
+
+i.be-ico_sections_translate {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_translate.svg');
+}
+
+i.be-ico_sections_update {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_update.svg');
+}
+
+
+i.be-ico_sections_gcamarenaprog {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_gcamarenaprog.svg');
+}
+
+i.be-ico_sections_library {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_library.svg');
+}
+
+/* Columns */
 i.be-ico_cols {
   width: 13px;
   height: 21px;
@@ -58,74 +177,86 @@ i.be-ico_cols {
   background-image: url('ico_cols.svg');
 }
 
-i.be-ico_1_col {
+i.be-ico_cols_1 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_1_col.svg');
+  background-image: url('ico_cols_1.svg');
 }
 
-i.be-ico_2_col {
+i.be-ico_cols_2 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_2_col.svg');
+  background-image: url('ico_cols_2.svg');
 }
 
-i.be-ico_3_col {
+i.be-ico_cols_3 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_3_col.svg');
+  background-image: url('ico_cols_3.svg');
 }
 
-
-i.be-ico_4_col {
+i.be-ico_cols_4 {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_4_col.svg');
+  background-image: url('ico_cols_4.svg');
 }
 
-i.be-ico_line {
+/* Images */
+i.be-ico_imgs {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_line.svg');
+  background-image: url('ico_imgs.svg');
 }
 
-i.be-elements {
-  line-height: 1;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  text-shadow: none;
-  margin: 0;
-  padding: 0;
-  background-image: url('ico_elements.svg');
-}
-
-i.be-heading {
+i.be-ico_imgs_right {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_heading.svg');
+  background-image: url('ico_imgs_right.svg');
 }
 
-i.be-ico_summary {
+i.be-ico_imgs_left {
   width: 13px;
   height: 21px;
   text-align: center;
   text-shadow: none;
-  background-image: url('ico_summary.svg');
+  background-image: url('ico_imgs_left.svg');
 }
 
+i.be-ico_imgs_2 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_2.svg');
+}
+
+i.be-ico_imgs_3 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_3.svg');
+}
+
+i.be-ico_imgs_4 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_4.svg');
+}
 
 /* YouTube */
 i.be-ico_youtube {
