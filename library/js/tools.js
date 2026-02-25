@@ -298,22 +298,10 @@
 
                     },
                   ],
-                  oninput: function (e) {
-                    //console.log(editor)
-                    let columnsTable = document.getElementById('columnsTable');
-                    let rowsTable = document.getElementById('rowsTable');
-
-                    console.log(columnsTable.value);
-                    console.log(rowsTable.value);
-                    if (columnsTable.value <= '1' || rowsTable.value <= '1' || rowsTable.value == '' || columnsTable.value == '') {
-                      console.log('Here');
-                    }
-
-                  },
                   onchange: function (e) {
                     let titleStatusTable = document.getElementById('titleStatusTable');
                     let titleTextTable = document.getElementById('titleTextTable');
-                    const isCheckedString = titleStatusTable.getAttribute("aria-checked");
+                    let isCheckedString = titleStatusTable.getAttribute("aria-checked");
                     titleTextTable.disabled = isCheckedString === 'true';
                   },
                   onsubmit: function (e) {
