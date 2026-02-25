@@ -78,7 +78,6 @@
               onclick: function () {
                 let changeSettings = false;
                 let htmlCode = '';
-
                 let win = editor.windowManager.open({
                   title: 'Insertar línea',
                   minWidth: 200,
@@ -182,7 +181,8 @@
                     // Change demo line
                     if (widthLine_.includes('false') || widthLine.value === '') {
                       demoLineError.style.display = 'block';
-                      demoLine.style.display = 'none';;
+                      demoLine.style.display = 'none';
+                      ;
                     } else {
                       changeSettings = true;
                       demoLineError.style.display = 'none';
@@ -209,24 +209,21 @@
               text: 'Alpha',
               icon: ' be-ico_elements_alpha',
               onclick: function () {
-                editor.insertContent('Δ\n' +
-                  '&nbsp;');
+                editor.insertContent('Δ &nbsp;');
               }
             },
             {
               text: 'Phi',
               icon: ' be-ico_elements_phi',
               onclick: function () {
-                editor.insertContent('Φ\n' +
-                  '&nbsp;');
+                editor.insertContent('Φ &nbsp;');
               }
             },
             {
               text: 'Mason',
               icon: ' be-ico_elements_mason',
               onclick: function () {
-                editor.insertContent('∴\n' +
-                  '&nbsp;');
+                editor.insertContent('∴ &nbsp;');
               }
             },
             {
@@ -239,101 +236,143 @@
                   body: [
                     {
                       type: 'textbox',
-                      name: 'checkTitleTable',
-                      id: 'checkTitleTable',
-                      label: 'Título de la tabla',
+                      name: 'titleTextTable',
+                      id: 'titleTextTable',
+                      label: 'Título',
                       value: 'Título',
-                      placeholder: 'Título de la tabla',
+                      placeholder: 'Título',
+                      disabled: false,
+                    },
+                    {
+                      type: 'checkbox',
+                      name: 'titleStatusTable',
+                      id: 'titleStatusTable',
+                      label: 'Habilitar',
+                      checked: true,
                     },
                     {
                       type: 'label',
-                      name: 'TwitterFollowButton',
-                      id: 'twitterFollowButton',
+                      name: 'separatorTable1',
+                      id: 'separatorTable1',
                       text: '',
-                      html: '<hr style="\n' +
-                        '    border: #000000;\n' +
-                        '    /* border-width: 10px; */\n' +
-                        '&lt;\n' +
-                        '    hr style=&quot;height: 2px;border-width:0;color:gray;background-color:gray&quot;&gt;;\n' +
-                        '    height: 1px;\n' +
-                        '    border-width:0;\n' +
-                        '    color:gray;\n' +
-                        '    background-color:gray;\n' +
-                        '">',
-
+                      html: '<hr style="height: 1px;\n' +
+                        '    background-color: #dcdcde;">',
                     },
                     {
                       type: 'checkbox',
-                      name: 'checkBoxTopHeading',
+                      name: 'topHeadingTable',
+                      id: 'topHeadingTable',
                       label: 'Encabezados superiores',
+                      checked: true,
                     },
                     {
                       type: 'checkbox',
-                      name: 'checkBoxRightHeading',
+                      name: 'rightHeadingTable',
+                      id: 'rightHeadingTable',
                       label: 'Encabezados laterales',
+                      checked: true,
+                    },
+                    {
+                      type: 'label',
+                      name: 'separatorTable2',
+                      id: 'separatorTable2',
+                      text: '',
+                      html: '<hr style="height: 1px;\n' +
+                        '    background-color: #dcdcde;">',
                     },
                     {
                       type: 'textbox',
-                      name: 'textBoxRows',
-                      id: 'textBoxRows',
-                      label: 'Insertar filas',
+                      name: 'columnsTable',
+                      id: 'columnsTable',
+                      label: 'Columnas',
+                      value: '1',
+                      placeholder: '1'
+                    },
+                    {
+                      type: 'textbox',
+                      name: 'rowsTable',
+                      id: 'rowsTable',
+                      label: 'Filas',
                       value: '1',
                       placeholder: '1',
 
                     },
-                    {
-                      type: 'textbox',
-                      name: 'textBoxColumns',
-                      id: 'textBoxColumns',
-                      label: 'Insertar columnas',
-                      value: '1',
-                      placeholder: '1'
-                    },
                   ],
-                  onkeydown: function (editor) {
-                    console.log(editor);
-                    console.log(document.getElementById('twitterFollowButton'));
+                  oninput: function (e) {
+                    //console.log(editor)
+                    let columnsTable = document.getElementById('columnsTable');
+                    let rowsTable = document.getElementById('rowsTable');
 
+                    console.log(columnsTable.value);
+                    console.log(rowsTable.value);
+                    if (columnsTable.value <= '1' || rowsTable.value <= '1' || rowsTable.value == '' || columnsTable.value == '') {
+                      console.log('Here');
+                    }
 
-                    let label = document.getElementById('twitterFollowButton');
-                    label.textContent = 'Nuevo texto cambiado';
-                    // console.log(this.getEl().getElementsByName('twitterFollowButton'));
-                    // this.settings.label  = "<br /><strong>dass</strong>";
-                    //console.log(editor.TwitterFollowButton.text);
-                    //e.data.textBoxRows.innerHTML = "<br /><strong>dass</strong>"
+                  },
+                  onchange: function (e) {
+                    let titleStatusTable = document.getElementById('titleStatusTable');
+                    let titleTextTable = document.getElementById('titleTextTable');
+                    const isCheckedString = titleStatusTable.getAttribute("aria-checked");
+                    titleTextTable.disabled = isCheckedString === 'true';
                   },
                   onsubmit: function (e) {
                     let htmlBody = '';
-                    let htmlRows = 0;
-                    let htmlCols = 1;
-                    htmlRows = e.data.textBoxRows;
-                    htmlColumns = e.data.textBoxColumns;
+                    let htmlTitle = '';
+                    let colSpan = 0;
+                    let topHeadingTableBreak = false;
 
-                    if (htmlRows === 0) {
-                      htmlRows = 1;
-                    }
-                    if (htmlColumns === 0) {
-                      htmlColumns = 1;
+                    // Add 1 a columns table if right heading table is true
+                    if (e.data.rightHeadingTable) {
+                      colSpan = e.data.columnsTable + 1;
                     }
 
-                    let htmlColumnsCode = '<tr><td>Lorem impsum</td></tr>';
-                    for (let i = 0; i < htmlRows; i++) {
-                      htmlBody += htmlColumnsCode;
+                    // Set title table
+                    if (e.data.titleStatusTable) {
+                      htmlTitle = '<tr><td style="' +
+                        'background: #2d2d2d !important; ' +
+                        'text-align: center; ' +
+                        'font-weight: bold;' +
+                        'text-transform: uppercase;' +
+                        'color: #dddddd;' +
+                        'text-shadow: 0 0 0 #000000;"' +
+                        'colspan="' + colSpan + '">' + e.data.titleTextTable + '</td>\n' +
+                        '</tr>';
+                    } else {
+                      htmlTitle = '';
                     }
 
-                    let htmlRowCode = '<tr><td style="background: #474747 !important; text-align: left; color: #dddddd;" width="20%">LOREM</td><td>Lorem impsum</td></tr>';
-                    for (let i = 0; i < htmlRows; i++) {
-                      htmlBody += htmlRowCode;
+                    // Set rows and columns table
+                    if (e.data.rowsTable < '1' && e.data.columnsTable < '1') {
+                      htmlBody = '<tr><td>Lorem</td></tr>';
+                    } else {
+                      for (let i = 0; i < e.data.columnsTable; i++) {
+                        if (e.data.topHeadingTable && topHeadingTableBreak == false) {
+                          htmlBody += '<tr>';
+                          if(topHeadingTableBreak == false){
+                            htmlBody += '<td></td>';
+                          }
+                          for (let i = 0; i < e.data.rowsTable; i++) {
+                            htmlBody += '<td style="background: #474747 !important; text-align: left; color: #dddddd;">T1</td>';
+                          }
+                          htmlBody += '</tr>';
+                          topHeadingTableBreak = true;
+                        }
+                        htmlBody += '<tr>';
+                        if (e.data.rightHeadingTable) {
+                          htmlBody += '<td style="background: #474747 !important; text-align: left; color: #dddddd;">Lorem</td>';
+                        }
+                        for (let i = 0; i < e.data.rowsTable; i++) {
+                          htmlBody += '<td>Lorem</td>';
+                        }
+                        htmlBody += '</tr>';
+                      }
+                      htmlRows = '';
                     }
 
                     editor.insertContent('<hr />' +
                       '<table style="font-size: 1.20em;">' +
-                      '<tbody>' +
-                      '<tr style="background: #2d2d2d !important; color: #dddddd;">' +
-                      '<td style="background: #2d2d2d !important; text-align: center; font-weight: bold; color: #dddddd; text-shadow: 0 0 0 #000000;" colspan="2" width="auto">FICHA TÉCNICA</td>' +
-                      '</tr>' +
-                      htmlBody +
-                      '</tbody>' +
+                      '<tbody>' + htmlTitle + htmlBody + '</tbody>' +
                       '</table>');
                   },
 
