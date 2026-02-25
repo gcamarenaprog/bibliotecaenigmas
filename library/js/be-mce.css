@@ -168,6 +168,14 @@ i.be-ico_sections_library {
   background-image: url('ico_sections_library.svg');
 }
 
+i.be-ico_sections_stories {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_stories.svg');
+}
+
 /* Columns */
 i.be-ico_cols {
   width: 13px;

@@ -447,7 +447,6 @@
                   editor.insertContent('<p style="text-align: right;"><strong>Biblioteca Enigmas ∴</strong></p>');
                 }
               },
-
               {
                 text: 'Cuento ∴',
                 icon: ' be-ico_sections_stories',
@@ -461,7 +460,6 @@
                     '<strong>Autor: Guillermo Camarena ∴</strong></p>');
                 }
               },
-
             ]
         }
         ,
@@ -477,8 +475,6 @@
                 onclick: function () {
                   editor.insertContent('<div class="row_">\n' +
                     '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
                     '&nbsp;');
                 }
               },
@@ -497,11 +493,11 @@
                 text: '3 Columnas',
                 icon: ' be-ico_cols_3',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 1 of 3</div>\n' +
-                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 2 of 3</div>\n' +
-                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 3 of 3</div>\n' +
-                    '</div>\n' +
+                  editor.insertContent('<div class="row_">' +
+                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 1 of 3</div>' +
+                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 2 of 3</div>' +
+                    '<div class="col_-xxl-4 col_-xl-4 col_-md-4 col_-sm-12 col_xs-12 text-center">Content column 3 of 3</div>' +
+                    '</div>' +
                     '&nbsp;');
                 }
               },
@@ -518,7 +514,6 @@
                     '&nbsp;');
                 }
               },
-
             ]
         }
         ,
@@ -1219,11 +1214,56 @@
                 text: 'Banner',
                 icon: ' be-ico_youtube_banner',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.windowManager.open({
+                    title: 'Seleccionar una imágen',
+                    body: [
+                      {
+                        type: 'textbox',
+                        name: 'textBoxURL',
+                        id: 'textBoxURL',
+                        label: 'URL de la imágen',
+                        placeholder: 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-banner.jpg',
+                        minWidth: 300,
+                        value: 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-banner.jpg',
+                      },
+                      {
+                        type: 'button',
+                        name: 'button',
+                        text: 'Seleccionar imágen',
+                        id: 'myButton',
+                        value: null,
+
+                        onclick: function () {
+                          let mediaUploader;
+                          if (mediaUploader) {
+                            mediaUploader.open();
+                            return;
+                          }
+                          mediaUploader = wp.media.frames.fle_frame = wp.media({
+                            title: 'Añadir banner',
+                            button: {
+                              text: 'Añadir'
+                            },
+                            multiple: false
+                          })
+                          mediaUploader.on('select', function () {
+                            attachment = mediaUploader.state().get('selection').first().toJSON();
+                            let textBoxURL = document.querySelector('#textBoxURL');
+                            textBoxURL.value = attachment['url'];
+                          });
+                          mediaUploader.open();
+                        }
+                      },
+                    ],
+                    onsubmit: function (e) {
+                      editor.insertContent('<a href="' + textBoxURL.value + '">' +
+                        '<img class="aligncenter wp-image-25929 size-full" ' +
+                        'src="' + textBoxURL.value + '" ' +
+                        'alt="" /></a>\n' +
+                        '&nbsp;');
+                    },
+
+                  });
                 }
               },
               {
