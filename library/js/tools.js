@@ -337,7 +337,7 @@
                       for (let i = 0; i < e.data.columnsTable; i++) {
                         if (e.data.topHeadingTable && topHeadingTableBreak == false) {
                           htmlBody += '<tr>';
-                          if(topHeadingTableBreak == false){
+                          if (topHeadingTableBreak == false) {
                             htmlBody += '<td></td>';
                           }
                           for (let i = 0; i < e.data.rowsTable; i++) {
@@ -367,78 +367,6 @@
                 });
               }
             },
-            {
-              text: 'Insertar línea',
-              icon:
-                ' be-ico_summary',
-
-              onclick:
-
-                function () {
-                  var win;
-                  var charMapPanel = {
-                    type: 'container',
-                    html: '<h1>dsfsdfds</h1>',
-                    onclick: function (e) {
-                      var target = e.target;
-                      if (/^(TD|DIV)$/.test(target.nodeName)) {
-
-                      }
-                    },
-                    onmouseover: function (e) {
-                      console.log('test');
-                    }
-                  };
-
-                  editor.windowManager.open({
-                    title: 'Special character',
-                    spacing: 10,
-                    padding: 10,
-                    items: [
-                      charMapPanel,
-                      {
-                        type: 'container',
-                        layout: 'flex',
-                        direction: 'column',
-                        align: 'center',
-                        spacing: 5,
-                        minWidth: 160,
-                        minHeight: 160,
-                        items: [
-                          {
-                            type: 'label',
-                            name: 'preview',
-                            text: ' fdsfsd',
-                            style: 'font-size: 40px; text-align: center',
-                            border: 1,
-                            minWidth: 140,
-                            minHeight: 80
-                          },
-                          {
-                            type: 'spacer',
-                            minHeight: 20
-                          },
-                          {
-                            type: 'label',
-                            name: 'previewTitle',
-                            text: ' dsfdsf',
-                            style: 'white-space: pre-wrap;',
-                            border: 1,
-                            minWidth: 140
-                          }
-                        ]
-                      }
-                    ],
-                    buttons: [{
-                      text: 'Close',
-                      onclick: function () {
-                        win.close();
-                      }
-                    }]
-                  });
-                }
-            }
-            ,
           ]
         },
         {
@@ -451,10 +379,15 @@
                 text: 'Sumario ∴ / Φ / Δ',
                 icon: ' be-ico_sections_summary',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
+                  editor.insertContent('<hr />\n' +
+                    '<h1 style="text-align: center;">Sumario ∴ / Φ / Δ</h1>\n' +
+                    '<ul>\n' +
+                    ' \t<li>text</li>\n' +
+                    ' \t<li>text</li>\n' +
+                    ' \t<li>text</li>\n' +
+                    ' \t<li>text</li>\n' +
+                    ' \t<li>text</li>\n' +
+                    '</ul>\n' +
                     '&nbsp;');
                 }
               },
@@ -462,67 +395,70 @@
                 text: 'Referencias',
                 icon: ' be-ico_sections_references',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.insertContent('<hr />\n' +
+                    '<h1 style="text-align: center;">Referencias</h1>\n' +
+                    '<ul>\n' +
+                    ' \t<li><strong>[WIKIPEDIA] = </strong>TÍTULO. En Wikipedia. Recuperado el DÍA de MES de AÑO de URL</li>\n' +
+                    ' \t<li><strong>[LIBRO] = </strong>APELLIDO DEL AUTOR, NOMBRE DEL AUTOR, (AÑO), TÍTULO DEL LIBRO, <em>CAPÍTULO/TEMA</em>, PÁGS. (##-##), CIUDAD, PAÍS, EDITORIAL.</li>\n' +
+                    ' \t<li><strong>[PODCAST] =</strong> APELLIDO DEL AUTOR, NOMBRE DEL AUTOR (AÑO, DÍA de MES), TÍTULO DEL PROGRAMA [Audio podcast]. Recuperado de URL</li>\n' +
+                    ' \t<li><strong>[REVISTA DIGITAL] =</strong> APELLIDO AUTOR, NOMBRE DEL AUTOR (AÑO, DÍA de MES), TÍTULO DEL ARTÍCULO. <em>NOMBRE DE LA REVISTA, (VOLUMEN)</em>, p. #PÁGINA/S.</li>\n' +
+                    ' \t<li><strong>[REVISTA] =</strong> NOMBRE DE LA REVISTA, (FECHA). TÍTULO DEL ARTÍCULO. <em>TÍTULO DE REVISTA</em>, (AÑO:NÚM.), p. #PÁGINA/S.</li>\n' +
+                    '</ul>');
                 }
               },
               {
                 text: 'Digitalización',
                 icon: ' be-ico_sections_digitalization',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.insertContent('<p style="text-align: center;">Digitalización por <strong>Biblioteca Enigmas ∴</strong></p>');
                 }
               },
               {
                 text: 'Traducción',
                 icon: ' be-ico_sections_translate',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.insertContent('<p style="text-align: center;">Traducción por <strong>Biblioteca Enigmas ∴</strong></p>');
                 }
               },
               {
                 text: 'Actualización',
                 icon: ' be-ico_sections_update',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  const today = new Date();
+                  const date = String(today.getDate()).padStart(2, '0') + '-' +
+                    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                    today.getFullYear();
+                  editor.insertContent('<p style="text-align: center;">Actualización: <strong>' + date + '</strong></p>');
                 }
               },
               {
                 text: 'Guillermo Camarena ∴',
                 icon: ' be-ico_sections_gcamarenaprog',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+
+                  editor.insertContent('<p style="text-align: right;"><strong>Guillermo Camarena ∴</strong></p>');
                 }
               },
-
               {
                 text: 'Biblioteca Enigmas ∴',
                 icon: ' be-ico_sections_library',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+
+                  editor.insertContent('<p style="text-align: right;"><strong>Biblioteca Enigmas ∴</strong></p>');
+                }
+              },
+
+              {
+                text: 'Cuento ∴',
+                icon: ' be-ico_sections_stories',
+                onclick: function () {
+                  const today = new Date();
+                  const date = String(today.getDate()).padStart(2, '0') + '-' +
+                    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                    today.getFullYear();
+                  editor.insertContent('<p style="text-align: right;"><strong>Fecha: ' + date + ' / 03:33 </strong><br>' +
+                    '<strong>Ilustración: Generada por Gemini AI </strong><br>' +
+                    '<strong>Autor: Guillermo Camarena ∴</strong></p>');
                 }
               },
 
