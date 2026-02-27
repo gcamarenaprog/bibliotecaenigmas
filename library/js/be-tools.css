@@ -1,0 +1,325 @@
+i.be-icon {
+  background-image: url('ico_be.png');
+}
+
+
+/* Headings */
+i.be-ico_headings {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings.svg');
+}
+
+i.be-ico_headings_h1 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h1.svg');
+}
+i.be-ico_headings_h2 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h2.svg');
+}
+i.be-ico_headings_h3 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h3.svg');
+}
+i.be-ico_headings_h4 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h4.svg');
+}
+i.be-ico_headings_h5 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h5.svg');
+}
+i.be-ico_headings_h6 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_headings_h6.svg');
+}
+
+/* Elements */
+i.be-ico_elements {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements.svg');
+}
+i.be-ico_elements_line {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_line.svg');
+}
+i.be-ico_elements_alpha {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_alpha.svg');
+}
+
+i.be-ico_elements_phi {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_phi.svg');
+}
+
+i.be-ico_elements_mason {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_mason.svg');
+}
+
+i.be-ico_elements_table {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_elements_table.svg');
+}
+
+
+/* Sections */
+i.be-ico_sections {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections.svg');
+}
+
+i.be-ico_sections_summary {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_summary.svg');
+}
+i.be-ico_sections_references {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_references.svg');
+}
+
+i.be-ico_sections_digitalization {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_digitalization.svg');
+}
+
+i.be-ico_sections_translate {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_translate.svg');
+}
+
+i.be-ico_sections_update {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_update.svg');
+}
+
+
+i.be-ico_sections_gcamarenaprog {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_gcamarenaprog.svg');
+}
+
+i.be-ico_sections_library {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_library.svg');
+}
+
+i.be-ico_sections_stories {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_sections_stories.svg');
+}
+
+/* Columns */
+i.be-ico_cols {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_cols.svg');
+}
+
+i.be-ico_cols_1 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_cols_1.svg');
+}
+
+i.be-ico_cols_2 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_cols_2.svg');
+}
+
+i.be-ico_cols_3 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_cols_3.svg');
+}
+
+i.be-ico_cols_4 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_cols_4.svg');
+}
+
+/* Images */
+i.be-ico_imgs {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs.svg');
+}
+
+i.be-ico_imgs_right {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_right.svg');
+}
+
+i.be-ico_imgs_left {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_left.svg');
+}
+
+i.be-ico_imgs_2 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_2.svg');
+}
+
+i.be-ico_imgs_3 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_3.svg');
+}
+
+i.be-ico_imgs_4 {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_imgs_4.svg');
+}
+
+/* YouTube */
+i.be-ico_youtube {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube.svg');
+}
+
+i.be-ico_youtube_banner {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_banner.svg');
+}
+
+i.be-ico_youtube_books {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_books.svg');
+}
+
+i.be-ico_youtube_social {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_social.svg');
+}
+
+
+i.be-ico_youtube_author {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_author.svg');
+}
+
+i.be-ico_youtube_data_table {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_data_table.svg');
+}
+
+i.be-ico_youtube_update {
+  width: 13px;
+  height: 21px;
+  text-align: center;
+  text-shadow: none;
+  background-image: url('ico_youtube_update.svg');
+}

@@ -5,7 +5,7 @@
       icon: ' be-icon ',
       tooltip: 'BE Herramientas',
       type: 'menubutton',
-      minWidth: 300,
+      minWidth: 200,
       toolbar_location: 'bottom',
       menu: [
         {
@@ -78,7 +78,7 @@
               onclick: function () {
                 let changeSettings = false;
                 let htmlCode = '';
-                let win = editor.windowManager.open({
+                editor.windowManager.open({
                   title: 'Insertar línea',
                   minWidth: 200,
                   body: [
@@ -1219,6 +1219,15 @@
                     body: [
                       {
                         type: 'textbox',
+                        name: 'textChannelName',
+                        id: 'textChannelName',
+                        label: 'Nombre del canal:',
+                        placeholder: 'Nombre del canal',
+                        minWidth: 300,
+                        value: 'Nombre del canal',
+                      },
+                      {
+                        type: 'textbox',
                         name: 'textBoxURL',
                         id: 'textBoxURL',
                         label: 'URL de la imágen',
@@ -1259,7 +1268,16 @@
                       editor.insertContent('<a href="' + textBoxURL.value + '">' +
                         '<img class="aligncenter wp-image-25929 size-full" ' +
                         'src="' + textBoxURL.value + '" ' +
-                        'alt="" /></a>\n' +
+                        'alt="" /></a>' +
+                        '<strong>' + e.data.textChannelName + '</strong> text of the printing ndomised words<strong> ' +
+                        'which dont look</strong> even slightly believable. If you are going to use a passage of ' +
+                        'Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of ' +
+                        'text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as ' +
+                        'necessary, making this the first true generator on the Internet. It uses lectronic typesetting, ' +
+                        'remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset ' +
+                        'sheets containing Lorem Ipsum passages, and more recently with desktop publishing software ' +
+                        'like Aldus PageMaker including versions of Lorem Ipsum.' +
+                        '<hr>' +
                         '&nbsp;');
                     },
 
@@ -1267,24 +1285,114 @@
                 }
               },
               {
-                text: 'Acerca del autor',
+                text: 'Autores',
                 icon: ' be-ico_youtube_author',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.windowManager.open({
+                    title: 'Nombre del autor',
+                    body: [
+                      {
+                        type: 'textbox',
+                        name: 'authorName',
+                        id: 'authorName',
+                        label: 'Nombre del autor:',
+                        placeholder: 'Autor',
+                        minWidth: 300,
+                        value: 'Autor',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'imageURL',
+                        id: 'imageURL',
+                        label: 'URL de la imágen',
+                        placeholder: 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-writer.jpg',
+                        minWidth: 300,
+                        value: 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-writer.jpg',
+                      },
+                      {
+                        type: 'checkbox',
+                        name: 'noTitle',
+                        id: 'noTitle',
+                        label: 'Habilitar título',
+                        checked: true,
+                      },
+                      {
+                        type: 'button',
+                        name: 'button',
+                        text: 'Seleccionar imágen',
+                        id: 'myButton',
+                        value: null,
+
+                        onclick: function () {
+                          let mediaUploader;
+                          if (mediaUploader) {
+                            mediaUploader.open();
+                            return;
+                          }
+                          mediaUploader = wp.media.frames.fle_frame = wp.media({
+                            title: 'Añadir imágen del autor',
+                            button: {
+                              text: 'Añadir'
+                            },
+                            multiple: false
+                          })
+                          mediaUploader.on('select', function () {
+                            attachment = mediaUploader.state().get('selection').first().toJSON();
+                            let imageURL = document.querySelector('#imageURL');
+                            imageURL.value = attachment['url'];
+                          });
+                          mediaUploader.open();
+                        }
+                      },
+                    ],
+                    onsubmit: function (e) {
+                      let title = '';
+                      if (e.data.noTitle) {
+                        title = '<h1 style="text-align: center;">Acerca del autor</h1>\n'
+                      }
+                      editor.insertContent('' + title +
+                        '<div class="tb-taxonomy-writer-img"' +
+                        'style="text-align: center; padding: 0;">' +
+                        '<img class="aligncenter wp-image-25931"' +
+                        'src="' + e.data.imageURL + '" width="200" height="200" />' +
+                        '<strong>' + e.data.authorName + '</strong></div>\n' +
+                        '<strong>' + e.data.authorName + '</strong> simply dummy text of the printing and typesetting ' +
+                        'industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when ' +
+                        'an unknown printer took a galley of type and scrambled it to make a type specimen book. It has ' +
+                        'survived not only five centuries, but also the leap into electronic typesetting, remaining ' +
+                        'essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets ' +
+                        'containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus ' +
+                        'PageMaker including versions of Lorem Ipsum.\n' +
+                        '\n' +
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been' +
+                        ' the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a ' +
+                        'galley of type and scrambled it to make a type specimen book. It has survived not only five ' +
+                        'centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ' +
+                        'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum ' +
+                        'passages, and more recently with desktop publishing software like Aldus PageMaker including ' +
+                        'versions of Lorem Ipsum.' +
+                        '<hr>' +
+                        '&nbsp;');
+                    },
+
+                  });
                 }
               },
               {
                 text: 'Libros publicados',
                 icon: ' be-ico_youtube_books',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
+                  editor.insertContent('<h1 style="text-align: center;">Libros publicados</h1>\n' +
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n' +
+                    'Lorem Ipsum has been the industrys standard dummy text ever since the: \n' +
+                    '<ul>\n' +
+                    '<li>Ipsum is simply dummy text</li>\n' +
+                    '<li>Ipsum is simply dummy text</li>\n' +
+                    '<li>Ipsum is simply dummy text</li>\n' +
+                    '<li>Ipsum is simply dummy text</li>\n' +
+                    '<li>Ipsum is simply dummy text</li>\n' +
+                    '</ul>\n' +
+                    '<hr/>\n' +
                     '&nbsp;');
                 }
               },
@@ -1292,22 +1400,466 @@
                 text: 'Contacto y redes sociales',
                 icon: ' be-ico_youtube_social',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+                  editor.windowManager.open({
+                    title: 'Nombre del autor',
+                    body: [
+                      {
+                        type: 'label',
+                        name: 'youtubeName1_',
+                        id: 'youtubeName1_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="youtubeName1-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="youtubeName1" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">YouTube</label>' +
+                          '<input id="youtubeName1" placeholder="@nombreDelCanal" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="youtubeURL1" placeholder="https://youtube.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'youtubeName2_',
+                        id: 'youtubeName2_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="youtubeName2-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="youtubeName2" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">YouTube</label>' +
+                          '<input id="youtubeName2" placeholder="@nombreDelCanal" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="youtubeURL2" placeholder="https://youtube.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+
+                      {
+                        type: 'label',
+                        name: 'spotify_',
+                        id: 'spotify_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="spotifyName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="spotifyName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Spotify</label>' +
+                          '<input id="spotifyName" placeholder="@Spotify" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="spotifyURL" placeholder="https://spotify.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'apple_',
+                        id: 'apple_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="appleName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="appleName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Apple</label>' +
+                          '<input id="appleName" placeholder="@apple" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="appleURL" placeholder="https://apple.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'facebook_',
+                        id: 'facebook_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="facebookName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="facebookName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Facebook</label>' +
+                          '<input id="facebookName" placeholder="@facebook" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="facebookURL" placeholder="https://facebook.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+
+                      {
+                        type: 'label',
+                        name: 'x_',
+                        id: 'x_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="xName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="xName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">X</label>' +
+                          '<input id="xName" placeholder="@x" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="xURL" placeholder="https://x.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'instagram_',
+                        id: 'instagram_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="instagramName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="instagramName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Instagram</label>' +
+                          '<input id="instagramName" placeholder="@instagram" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="instagramURL" placeholder="https://instagram.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+
+                      {
+                        type: 'label',
+                        name: 'tiktok_',
+                        id: 'tiktok_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="tiktokName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="tiktokName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">TikTok</label>' +
+                          '<input id="tiktokName" placeholder="@tiktok" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="tiktokURL" placeholder="https://tiktok.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'threads_',
+                        id: 'threads_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="threadsName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="threadsName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Threads</label>' +
+                          '<input id="threadsName" placeholder="@threads" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="threadsURL" placeholder="https://threads.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'patreon_',
+                        id: 'patreon_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="patreonName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="patreonName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Patreon</label>' +
+                          '<input id="patreonName" placeholder="@patreon" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="patreonURL" placeholder="https://patreon.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'web_',
+                        id: 'web_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="webName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="webName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Web</label>' +
+                          '<input id="webName" placeholder="web.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="webURL" placeholder="https://web.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                      {
+                        type: 'label',
+                        name: 'mail_',
+                        id: 'mail_',
+                        html: '<div id="mceu_232-body" class="mce-container-body mce-abs-layout" style="width: 444px; height: 32px;">' +
+                          '<label id="mailName-l" class="mce-widget mce-label mce-abs-layout-item mce-first" ' +
+                          'for="mailName" style="line-height: 19px;left: 0px;top: 6px;width: 100px;height: 19px;">Correo</label>' +
+                          '<input id="mailName" placeholder="correo@mail.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 100px;top: 2px;width: 125px;height: 24px;">\n' +
+                          '<input id="mailURL" placeholder="correo@mail.com" class="mce-textbox mce-abs-layout-item mce-last" ' +
+                          'style="left: 240px;top: 2px;width: 194px;height: 24px;" ></div>'
+                      },
+                    ],
+                    onsubmit: function (e) {
+                      let htmlList = '';
+
+                      let youtubeName1 = document.getElementById('youtubeName1');
+                      let youtubeURL1 = document.getElementById('youtubeURL1');
+                      if (youtubeName1.value !== '' || youtubeURL1.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-youtube"></i> <a href="' + youtubeURL1.value + '">' + youtubeName1.value + '</a></li>\n';
+                      }
+
+                      let youtubeName2 = document.getElementById('youtubeName2');
+                      let youtubeURL2 = document.getElementById('youtubeURL2');
+                      if (youtubeName2.value !== '' || youtubeURL2.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-youtube"></i> <a href="' + youtubeURL2.value + '">' + youtubeName2.value + '</a></li>\n';
+                      }
+
+                      let spotifyName = document.getElementById('spotifyName');
+                      let spotifyURL = document.getElementById('spotifyURL');
+                      if (spotifyName.value !== '' || spotifyURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-spotify"></i> <a href="' + spotifyURL.value + '">' + spotifyName.value + '</a></li>\n';
+                      }
+
+                      let appleName = document.getElementById('appleName');
+                      let appleURL = document.getElementById('appleURL');
+                      if (appleName.value !== '' || appleURL.value !== '') {
+                        htmlList += '<li><i class="fa-solid fa-podcast"></i> <a href="' + appleURL.value + '">' + appleName.value + '</a></li>\n';
+                      }
+
+                      let facebookName = document.getElementById('facebookName');
+                      let facebookURL = document.getElementById('facebookURL');
+                      if (facebookName.value !== '' || facebookURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-facebook"></i> <a href="' + facebookURL.value + '">' + facebookName.value + '</a></li>\n';
+                      }
+
+                      let xName = document.getElementById('xName');
+                      let xURL = document.getElementById('xURL');
+                      if (xName.value !== '' || xURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-x-twitter"></i> <a href="' + xURL.value + '">' + xName.value + '</a></li>\n';
+                      }
+
+                      let instagramName = document.getElementById('instagramName');
+                      let instagramURL = document.getElementById('instagramURL');
+                      if (instagramName.value !== '' || instagramURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-instagram"></i> <a href="' + instagramURL.value + '">' + instagramName.value + '</a></li>\n';
+                      }
+
+                      let tiktokName = document.getElementById('tiktokName');
+                      let tiktokURL = document.getElementById('tiktokURL');
+                      if (tiktokName.value !== '' || tiktokURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-tiktok"></i> <a href="' + tiktokURL.value + '">' + tiktokName.value + '</a></li>\n';
+                      }
+
+                      let threadsName = document.getElementById('threadsName');
+                      let threadsURL = document.getElementById('threadsURL');
+                      if (threadsName.value !== '' || threadsURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-threads"></i> <a href="' + threadsURL.value + '">' + threadsName.value + '</a></li>\n';
+                      }
+
+                      let patreonName = document.getElementById('patreonName');
+                      let patreonURL = document.getElementById('patreonURL');
+                      if (patreonName.value !== '' || patreonURL.value !== '') {
+                        htmlList += '<li><i class="fa-brands fa-patreon"></i> <a href="' + patreonURL.value + '">' + patreonName.value + '</a></li>\n';
+                      }
+
+                      let webName = document.getElementById('webName');
+                      let webURL = document.getElementById('webURL');
+                      if (webName.value !== '' || webURL.value !== '') {
+                        htmlList += '<li><i class="fa-solid fa-globe"></i> <a href="' + webURL.value + '">' + webName.value + '</a></li>\n';
+                      }
+
+                      let mailName = document.getElementById('mailName');
+                      let mailURL = document.getElementById('mailURL');
+                      if (mailName.value !== '' || mailURL.value !== '') {
+                        htmlList += '<li><i class="fa-solid fa-envelope-open"></i> <a href="' + mailURL.value + '">' + mailName.value + '</a></li>\n';
+                      }
+
+                      editor.insertContent('<h1 style="text-align: center;">Contacto y redes sociales</h1>\n' +
+                        '<ul>\n' +
+                        htmlList +
+                        '</ul>\n' +
+                        '<hr />' +
+                        '&nbsp;');
+                    },
+                  });
                 }
               },
               {
                 text: 'Ficha técnica',
                 icon: ' be-ico_youtube_data_table',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
-                    '&nbsp;');
+
+                  editor.windowManager.open({
+                    title: 'Ficha técnica',
+                    body: [
+                      {
+                        type: 'textbox',
+                        name: 'country',
+                        id: 'country',
+                        placeholder: 'México, España, Estados Unidos...',
+                        label: 'País',
+                        value: '',
+                      },
+                      {
+                        type: 'label',
+                        name: 'topic_',
+                        id: 'topic_',
+                        html: '<label for="topic">Tématica</label>' +
+                          '<select id="topic" name="topic" ' +
+                          'style="border: 1px solid #dcdcde;' +
+                          'border-radius: 0;' +
+                          'box-shadow: inset 0 1px 2px rgba(0, 0, 0, .07);' +
+                          'padding: 0 28px 0 4px;' +
+                          'margin-left: 51px;' +
+                          'margin-bottom: 2px;' +
+                          'width: 177px;' +
+                          '-webkit-appearance: none;' +
+                          'background: #fff url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) no-repeat right 5px top 55%;' +
+                          'background-size: 16px 16px;' +
+                          'cursor: pointer;' +
+                          'vertical-align: middle;">' +
+                          '<option value="Enigmas y misterios">Enigmas y misterios</option>' +
+                          '<option value="Paranormal">Paranormal</option>' +
+                          '<option value="Realtos">Realtos</option>' +
+                          '<option value="Historia">Historia</option>' +
+                          '<option value="Crímenes">Crímenes</option>' +
+                          '<option value="Ciencia">Ciencia</option>' +
+                          '<option value="Política">Política</option>' +
+                          '<option value="Economía">Economía</option>' +
+                          '<option value="Geopolítica">Geopolítica</option>' +
+                          '<option value="Documentales">Documentales</option>' +
+                          '<option value="Documental">Documental</option>' +
+                          '<option value="Historias">Historias</option>' +
+                          '<option value="Misterios religosos">Misterios religosos</option>' +
+                          '<option value="Política">Política</option>' +
+                          '<option value="otro">Otro</option>' +
+                          '</select>',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'writer',
+                        id: 'writer',
+                        placeholder: 'Autor',
+                        label: 'Autor/es',
+                        value: '',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'frequency',
+                        id: 'frequency',
+                        placeholder: 'Diario, semanal, mensual',
+                        label: 'Frecuencia',
+                        value: '',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'duration',
+                        id: 'duration',
+                        placeholder: '## min.',
+                        label: 'Duración',
+                        value: '',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'foundation',
+                        id: 'foundation',
+                        placeholder: '# de mes de ####',
+                        label: 'Fundación',
+                        value: '',
+                      },
+
+                      {
+                        type: 'textbox',
+                        name: 'subscribers',
+                        id: 'subscribers',
+                        placeholder: '#### k, M',
+                        label: 'Suscriptores',
+                        value: '',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'videos',
+                        id: 'videos',
+                        placeholder: '####',
+                        label: 'Videos',
+                        value: '',
+                      },
+                      {
+                        type: 'textbox',
+                        name: 'visits',
+                        id: 'visits',
+                        placeholder: '####',
+                        label: 'Visitas',
+                        value: '',
+                      },
+                    ],
+                    onsubmit: function (e) {
+                      let country = '';
+                      let topic = '';
+                      let writer = '';
+                      let frequency = '';
+                      let duration = '';
+                      let foundation = '';
+                      let subscribers = '';
+                      let videos = '';
+                      let visits = '';
+
+                      topic = document.getElementById('topic');
+
+                      if (e.data.country !== '') {
+                        country += e.data.country;
+                      } else {
+                        country += 'Lorem';
+                      }
+
+                      if (e.data.writer !== '') {
+                        writer += e.data.writer;
+                      } else {
+                        writer += 'Lorem';
+                      }
+
+                      if (e.data.frequency !== '') {
+                        frequency += e.data.frequency;
+                      } else {
+                        frequency += 'Lorem';
+                      }
+
+                      if (e.data.duration !== '') {
+                        duration += e.data.duration;
+                      } else {
+                        duration += 'Lorem';
+                      }
+
+                      if (e.data.foundation !== '') {
+                        foundation += e.data.foundation;
+                      } else {
+                        foundation += 'Lorem';
+                      }
+
+                      if (e.data.subscribers !== '') {
+                        subscribers += e.data.subscribers;
+                      } else {
+                        subscribers += 'Lorem';
+                      }
+
+                      if (e.data.videos !== '') {
+                        videos += e.data.videos;
+                      } else {
+                        videos += 'Lorem';
+                      }
+
+                      if (e.data.visits !== '') {
+                        visits += e.data.visits;
+                      } else {
+                        visits += 'Lorem';
+                      }
+
+                      editor.insertContent('<table style="font-size: 1.20em;">\n' +
+                        '<tbody>\n' +
+                        '<tr style="background: #2d2d2d !important; color: #dddddd;">\n' +
+                        '<td style="background: #2d2d2d !important; text-align: center; font-weight: bold; color: #dddddd; text-shadow: 0 0 0 #000000;" colspan="2" width="599">FICHA TÉCNICA</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;" width="20%">PAÍS</td>\n' +
+                        '<td>' + country + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">PLATAFORMA</td>\n' +
+                        '<td>YouTube</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">TEMÁTICA</td>\n' +
+                        '<td>' + topic.value + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">FROMATO</td>\n' +
+                        '<td>Vodcast</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">AUTOR/ES</td>\n' +
+                        '<td>' + writer + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">FRECUENCIA</td>\n' +
+                        '<td>' + frequency + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">DURACIÓN</td>\n' +
+                        '<td width="226">' + duration + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">FUNDACIÓN</td>\n' +
+                        '<td>' + foundation + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">SUSCRIPTORES</td>\n' +
+                        '<td>' + subscribers + '</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">VIDEOS</td>\n' +
+                        '<td>' + videos + ' videos</td>\n' +
+                        '</tr>\n' +
+                        '<tr>\n' +
+                        '<td style="background: #474747 !important; text-align: left; color: #dddddd;">VISITAS</td>\n' +
+                        '<td>' + visits + ' vistas</td>\n' +
+                        '</tr>\n' +
+                        '</tbody>\n' +
+                        '</table>' +
+                        '&nbsp;');
+                    },
+                  });
                 }
               },
 
@@ -1315,10 +1867,11 @@
                 text: 'Actualización',
                 icon: ' be-ico_youtube_update',
                 onclick: function () {
-                  editor.insertContent('<div class="row_">\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 1 of 2</div>\n' +
-                    '<div class="col_-xxl-12 col_-xl-12 col_-md-12 col_-sm-12 col_xs-12 text-center">Content column 2 of 2</div>\n' +
-                    '</div>\n' +
+                  const today = new Date();
+                  const date = String(today.getDate()).padStart(2, '0') + '-' +
+                    String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                    today.getFullYear();
+                  editor.insertContent('<p style="text-align: right;">Actualización: <strong>' + date + '</strong></p>' +
                     '&nbsp;');
                 }
               },
