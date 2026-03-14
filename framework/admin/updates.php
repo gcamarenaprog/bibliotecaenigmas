@@ -242,21 +242,6 @@ if( version_compare( $db_theme_version, THEME_VER, '<' ) ){
 
 	}
 
-
-	if( $db_theme_version < '5.8.3' ){
-
-		// Remove TieLabs Social Networks
-		if( ! empty( $theme_options['social'] ) && is_array( $theme_options['social'] ) ){
-			foreach ( $theme_options['social'] as $key => $value ) {
-				$value = strtolower( $value );
-				if( strpos( $value, 'mo3aser' ) !== false || strpos( $value, 'tielabs' ) !== false ){
-					$theme_options['social'][ $key ] = '#';
-				}
-			}
-		}
-	}
-	
-
 	if( $saved_options != $theme_options ){
 		update_option( 'tie_options' , $theme_options );
 	}

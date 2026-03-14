@@ -7,7 +7,7 @@
 	<?php tie_get_time() ?>
 <?php endif; ?>	
 <?php if( tie_get_option( 'arc_meta_cats' ) && get_post_type( get_the_ID() ) == 'post' ): ?>
-	<span class="post-cats"><i class="fa fa-folder"></i><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
+	<span class="post-cats"><i class="fa-solid fa-arrow-down-a-z"><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
 <?php endif; ?>	
 <?php if( tie_get_option( 'arc_meta_comments' ) ): ?>
 	<span class="post-comments"><i class="fa fa-comments"></i><?php comments_popup_link( '0' , '1' , '%' ); ?></span>

@@ -47,6 +47,10 @@ if (!$checkStatus == 'yes') {
 if ($hasThumbnail) {
   $cover = tie_thumb_src('tie_library');
 }
+
+$fullTitle = get_the_title();
+$title = getTitle($fullTitle);
+$subtitle = getSubtitle($fullTitle);
 ?>
 
 <section>
@@ -56,7 +60,7 @@ if ($hasThumbnail) {
        aria-controls="fancybox-wrap"
        aria-haspopup="dialog">
       <img src="<?php echo $cover ?>"
-           title="<?php the_title(); ?>"
+           title="<?php echo $title ?>"
            class="tie-appear">
       <li class="fa overlay-icon"></li>
     </a>

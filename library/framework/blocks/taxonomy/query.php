@@ -13,7 +13,7 @@
 ?>
 
 <?php if (!have_posts()) : ?>
-  <div class="content container full-width"><?php get_template_part('framework/parts/not-found'); ?></div>
+  <div class="content container full-width" style="width: 100%"><?php get_template_part('framework/parts/not-found'); ?></div>
 <?php endif; ?>
 
 <?php
@@ -26,10 +26,6 @@ $subtitleOfBook = getTitle($completeTitleOfBook);
 
 set_query_var('titleOfBook', $titleOfBook);
 set_query_var('subtitleOfBook', $subtitleOfBook);
-
-$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-
-$query = get_query_var('query');
 
 // Get slug name of the taxonomy
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));

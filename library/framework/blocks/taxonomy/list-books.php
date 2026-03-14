@@ -1,18 +1,18 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/taxonomy/
-   * File name:          list-posts.php
-   * Description:        This file displays the table with the list of posts for each taxonomy.
-   * Date:               25-08-2025
-   */
+
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/taxonomy/
+ * File name:          list-posts.php
+ * Description:        This file displays the table with the list of posts for each taxonomy.
+ * Date:               25-08-2025
+ */
 ?>
 
-<!-- Table /-->
 <?php
 
 echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
@@ -48,31 +48,49 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
   },
   [/wp-datatable]');
 
-get_template_part('query');
-$index = 0;
+?>
+
+<?php
 
 // Get slug name of the taxonomy
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 $taxonomy = get_query_var('taxonomy');
 $slug = $term->slug;
+
+$maximumGetPosts = 20000;
+$arguments = array(
+  'post_type' => 'book',
+  'post_status' => 'publish',
+  'posts_per_page' => $maximumGetPosts,
+  'tax_query' => array(
+    array(
+      'taxonomy' => $taxonomy,
+      'field' => 'slug',
+      'terms' => $slug,
+    ),
+  ),
+);
+$query = new WP_query($arguments);
+$index = 0;
+
 ?>
 
-
-
-<?php if ($slug != 'coleccion-de-libros'): ?>
 <!-- Title /-->
 <section>
   <div class="tb-head">
 
     <?php if ($taxonomy == 'editorial'): ?>
-      <h1> = LISTA DE LIBROS DE LA EDITORIAL <?php echo $term->slug; ?> = </h1>
+      <h1> = LISTA DE LA EDITORIAL <?php echo $term->name; ?> = </h1>
+    <?php elseif ($taxonomy == 'writer'): ?>
+      <h1> = LISTA DE DEL AUTOR <?php echo $term->name; ?> = </h1>
     <?php else: ?>
-      <h1> = LISTA DE LIBROS = </h1>
+      <h1> = LISTA DE PUBLICACIONES = </h1>
     <?php endif; ?>
 
   </div>
 </section>
 
+<!-- Content /-->
 <section>
   <div class="tb-box">
     <section>
@@ -174,7 +192,5 @@ $slug = $term->slug;
     </section>
   </div>
 </section>
-
-<?php endif; ?>
 
 <?php wp_reset_query(); ?>

@@ -131,7 +131,7 @@ add_filter('tie_instagram_force_avoid_ilightbox', 'tie_instagram_plugin_force_av
 # Enqueue Fonts From Google
 /*-----------------------------------------------------------------------------------*/
 function tie_enqueue_font ( $got_font = false ) {
-	if ( $got_font ) {
+	if ($got_font) {
 
 		$char_set = '';
 		if( tie_get_option('typography_latin_extended') || tie_get_option('typography_cyrillic') ||
@@ -165,16 +165,12 @@ function tie_enqueue_font ( $got_font = false ) {
 
 			// Do Nothing :)
 
-		}
-		elseif( $font_type == 'early-google'){
-
+		}elseif( $font_type == 'early-google'){
 			$font_name = str_replace (" ","", $font_pieces[0] );
 			$protocol = is_ssl() ? 'https' : 'http';
 			wp_enqueue_style( $font_name , $protocol.'://fonts.googleapis.com/earlyaccess/'.$font_name);
 
-		}
-		else{
-
+		}else{
 			$font_name = str_replace (" ","+", $font_pieces[0] );
 			$font_variants = str_replace ("|",",", $font_pieces[1] );
 			$protocol = is_ssl() ? 'https' : 'http';
@@ -192,13 +188,10 @@ function tie_get_font ( $got_font = false ) {
 		$font_pieces = explode(":", $got_font);
 		$font_name = $font_pieces[0];
 		$font_name = str_replace('&quot;' , '"' , $font_pieces[0] );
-
-		if (strpos($font_name, ',') !== false){
+		if (strpos($font_name, ',') !== false)
 			return $font_name;
-		}
-		else{
+		else
 			return "'".$font_name."'";
-		}
 	}
 }
 
@@ -207,24 +200,24 @@ function tie_get_font ( $got_font = false ) {
 # Typography Elements Array
 /*-----------------------------------------------------------------------------------*/
 $custom_typography = array(
-	"body"                                           => "typography_general",
-	".logo h1 a, .logo h2 a"                         => "typography_site_title",
-	".logo span"                                     => "typography_tagline",
-	".top-nav, .top-nav ul li a "                    => "typography_top_menu",
-	"#main-nav, #main-nav ul li a"                   => "typography_main_nav",
-	".breaking-news span.breaking-news-title"        => "typography_breaking_news",
-	".page-title"                                    => "typography_page_title",
-	".post-title"                                    => "typography_post_title",
-	"h2.post-box-title, h2.post-box-title a"         => "typography_post_title_boxes",
-	"h3.post-box-title, h3.post-box-title a"         => "typography_post_title2_boxes",
-	"p.post-meta, p.post-meta a"                     => "typography_post_meta",
-	"body.single .entry, body.page .entry"           => "typography_post_entry",
-	"blockquote p"                                   => "typography_blockquotes",
-	".widget-top h4, .widget-top h4 a"               => "typography_widgets_title",
-	".footer-widget-top h4, .footer-widget-top h4 a" => "typography_footer_widgets_title",
-	"#featured-posts .featured-title h2 a"           => "typography_grid_slider_title",
-	".ei-title h2, .slider-caption h2 a, .content .slider-caption h2 a, .slider-caption h2, .content .slider-caption h2, .content .ei-title h2" => "typography_slider_title",
-	".cat-box-title h2, .cat-box-title h2 a, .block-head h3, #respond h3, #comments-title, h2.review-box-header, .woocommerce-tabs .entry-content h2, .woocommerce .related.products h2, .entry .woocommerce h2, .woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, #order_review_heading, #bbpress-forums fieldset.bbp-form legend, #buddypress .item-body h4, #buddypress #item-body h4" => "typography_boxes_title"
+	"body"												=>		"typography_general",
+	".logo h1 a, .logo h2 a"							=>		"typography_site_title",
+	".logo span"										=>		"typography_tagline",
+	".top-nav, .top-nav ul li a "						=>		"typography_top_menu",
+	"#main-nav, #main-nav ul li a"						=>		"typography_main_nav",
+	".breaking-news span.breaking-news-title"			=>		"typography_breaking_news",
+	".page-title"										=>		"typography_page_title",
+	".post-title"										=> 		"typography_post_title",
+	"h2.post-box-title, h2.post-box-title a"			=> 		"typography_post_title_boxes",
+	"h3.post-box-title, h3.post-box-title a"			=> 		"typography_post_title2_boxes",
+	"p.post-meta, p.post-meta a"						=> 		"typography_post_meta",
+	"body.single .entry, body.page .entry"				=> 		"typography_post_entry",
+	"blockquote p"										=> 		"typography_blockquotes",
+	".widget-top h4, .widget-top h4 a"					=> 		"typography_widgets_title",
+	".footer-widget-top h4, .footer-widget-top h4 a"	=> 		"typography_footer_widgets_title",
+	"#featured-posts .featured-title h2 a"				=> 		"typography_grid_slider_title",
+	".ei-title h2, .slider-caption h2 a, .content .slider-caption h2 a, .slider-caption h2, .content .slider-caption h2, .content .ei-title h2"				=> 		"typography_slider_title",
+	".cat-box-title h2, .cat-box-title h2 a, .block-head h3, #respond h3, #comments-title, h2.review-box-header, .woocommerce-tabs .entry-content h2, .woocommerce .related.products h2, .entry .woocommerce h2, .woocommerce-billing-fields h3, .woocommerce-shipping-fields h3, #order_review_heading, #bbpress-forums fieldset.bbp-form legend, #buddypress .item-body h4, #buddypress #item-body h4"			=> 		"typography_boxes_title"
 );
 
 
@@ -233,14 +226,12 @@ $custom_typography = array(
 /*-----------------------------------------------------------------------------------*/
 add_action('wp_enqueue_scripts', 'tie_typography');
 function tie_typography(){
-
 	global $custom_typography;
 
 	foreach( $custom_typography as $selector => $value){
 		$option = tie_get_option( $value );
-		if( ! empty( $option['font'] ) ){
+		if( !empty($option['font']))
 			tie_enqueue_font( $option['font'] );
-		}
 	}
 }
 
@@ -389,31 +380,30 @@ function tie_wp_head() {
 <![endif]-->
 
 <?php
-	if( isset( $is_IE )){
-		echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
-	}
+if( $is_IE ){
+	echo '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />';
+}
 ?>
 
 <?php
-	if( tie_get_option( 'disable_responsive' ) ){
-		echo '<meta name="viewport" content="width=1045" />';
-	}
-	else{
-		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" />';
-	}
+if( tie_get_option( 'disable_responsive' ) ){
+	echo '<meta name="viewport" content="width=1045" />';
+}else{
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" />';
+}
 ?>
 
 <?php if( tie_get_option('apple_iPad_retina') ) : ?>
-<link rel="apple-touch-icon" sizes="144x144" href="<?php echo tie_get_option('apple_iPad_retina') ?>" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo tie_get_option('apple_iPad_retina') ?>" />
 <?php endif; ?>
 <?php if( tie_get_option('apple_iphone_retina') ) : ?>
-<link rel="apple-touch-icon" sizes="120x120" href="<?php echo tie_get_option('apple_iphone_retina') ?>" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo tie_get_option('apple_iphone_retina') ?>" />
 <?php endif; ?>
 <?php if( tie_get_option('apple_iPad') ) : ?>
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo tie_get_option('apple_iPad') ?>" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo tie_get_option('apple_iPad') ?>" />
 <?php endif; ?>
 <?php if( tie_get_option('apple_iphone') ) : ?>
-<link rel="apple-touch-icon" href="<?php echo tie_get_option('apple_iphone') ?>" />
+<link rel="apple-touch-icon-precomposed" href="<?php echo tie_get_option('apple_iphone') ?>" />
 <?php endif; ?>
 
 <?php
@@ -424,33 +414,35 @@ echo htmlspecialchars_decode( tie_get_option('header_code') ) , "\n";
 
 <style type="text/css" media="screen">
 
-<?php
-
-//Fonts
+<?php //Fonts
 foreach( $custom_typography as $selector => $value){
 	$option = tie_get_option( $value );
+	if( !empty( $option['font'] ) || !empty( $option['color'] ) || !empty( $option['size'] ) || !empty( $option['weight'] ) || !empty( $option['style'] ) ) {
 
-	if( ! empty( $option['font'] ) || ! empty( $option['color'] ) || ! empty( $option['size'] ) || ! empty( $option['weight'] ) || ! empty( $option['style'] ) ) {
-
-		echo $selector."{\n";
-			if( ! empty( $option['font'] ) ){
-				echo "	font-family: ". tie_get_font( $option['font']  ).";\n";
-			}
-			if( ! empty( $option['color'] ) ){
-				echo "	color :". $option['color'].";\n";
-			}
-			if( ! empty( $option['size'] ) ){
-				echo "	font-size : ".$option['size']."px;\n";
-			}
-			if( ! empty( $option['weight'] ) ){
-				echo "	font-weight: ".$option['weight'].";\n";
-			}
-			if( ! empty( $option['style'] ) ){
-				echo "	font-style: ". $option['style'].";\n";
-			}
-		echo "}\n";
-	}
+	echo $selector."{\n"; ?>
+<?php if( !empty( $option['font'] ) )
+	echo "	font-family: ". tie_get_font( $option['font']  ).";\n"?>
+<?php if( !empty( $option['color'] ) )
+	echo "	color :". $option['color'].";\n"?>
+<?php if( !empty( $option['size'] ) )
+	echo "	font-size : ".$option['size']."px;\n"?>
+<?php if( !empty( $option['weight'] ) )
+	echo "	font-weight: ".$option['weight'].";\n"?>
+<?php if( !empty( $option['style'] ) )
+	echo "	font-style: ". $option['style'].";\n"?>
 }
+
+<?php }
+}
+
+// Modern Scrollbar  @be_changed -------------------------------------------------------------- */
+if(tie_get_option('modern_scrollbar')) : ?>
+	::-webkit-scrollbar {
+		width: 8px;
+		height:8px;
+	}
+	
+	<?php endif;
 
 
 //highlighted color  --------------------------------------------------------------------------- */
@@ -472,68 +464,55 @@ elseif(tie_get_option('theme_skin'))
 
 
 // Bg Pattern  ------------------------------------------------------------------------- */
-if( tie_get_option('background_type') == 'pattern' ){
+if( tie_get_option('background_type') == 'pattern' ):
 
-	if( tie_get_option('background_pattern') || tie_get_option('background_pattern_color') ) { ?>
-		body {
-		<?php if( tie_get_option('background_pattern_color') ){ ?>
-			background-color: <?php echo tie_get_option('background_pattern_color') ?> !important;
-		<?php } if( tie_get_option('background_pattern') ){ ?>
-			background-image : url(<?php echo get_template_directory_uri(); ?>/images/patterns/<?php echo tie_get_option('background_pattern') ?>.png);
-		<?php } ?>
-			background-position: top center;
-		}
-		<?php
-	}
+	if( tie_get_option('background_pattern') || tie_get_option('background_pattern_color') ) : ?>
+
+body {
+<?php if( tie_get_option('background_pattern_color') ){ ?>
+	background-color: <?php echo tie_get_option('background_pattern_color') ?> !important;
+<?php } if( tie_get_option('background_pattern') ){ ?>
+	background-image : url(<?php echo get_template_directory_uri(); ?>/images/patterns/<?php echo tie_get_option('background_pattern') ?>.png);
+<?php } ?>
+	background-position: top center;
+}
+<?php
+	endif;
+
+
 
 // Custom Bg  ------------------------------------------------------------------------- */
-}
-elseif( tie_get_option('background_type') == 'custom' ){
+elseif( tie_get_option('background_type') == 'custom' ):
 	$bg = tie_get_option( 'background' );
 
-	if( tie_get_option('background_full') ){
-		
-		echo ".background-cover{";
-		if( ! empty( $bg['color'] ) ){
-			echo "background-color: {$bg['color']} !important;";
-		}
-		if( ! empty( $bg['img'] ) ){
-			echo "background-image : url('{$bg['img']}') !important;";
-		}
-		echo "}";
-	}
-	else{
-		echo "body{";
-			if( ! empty( $bg['color'] ) ){
-				echo "background-color: {$bg['color']} !important;";
-			}
+	if( tie_get_option('background_full') ): ?>
 
-			if( ! empty( $bg['img'] ) ){
-				echo "background-image: url('{$bg['img']}') !important;";
-			}
-
-			if( ! empty( $bg['repeat'] ) ){
-				echo "background-repeat:{$bg['repeat']} !important;";
-			}
-
-			if( ! empty( $bg['attachment'] ) ){
-				echo "background-attachment: {$bg['attachment']} !important;";
-			}
-
-			if( ! empty( $bg['hor'] ) || ! empty( $bg['ver'] ) ){
-				echo "background-position: {$bg['hor']} {$bg['ver']} !important;";
-			}
-		echo "}";
-	}	
+.background-cover{
+	background-color:<?php echo $bg['color'] ?> !important;
+	background-image : url('<?php echo $bg['img'] ?>') !important;<?php echo "\n"; ?>
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo $bg['img'] ?>',sizingMethod='scale') !important;<?php echo "\n"; ?>
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo $bg['img'] ?>',sizingMethod='scale')" !important;<?php echo "\n"; ?>
 }
+	<?php else: ?>
+
+body{
+	<?php if( !empty( $bg['color'] ) ){ ?>background-color:<?php echo $bg['color'] ?> !important; <?php echo "\n"; } ?>
+	<?php if( !empty( $bg['img'] ) ){ ?>background-image: url('<?php echo $bg['img'] ?>') !important; <?php echo "\n"; } ?>
+	<?php if( !empty( $bg['repeat'] ) ){ ?>background-repeat:<?php echo $bg['repeat'] ?> !important; <?php echo "\n"; } ?>
+	<?php if( !empty( $bg['attachment'] ) ){ ?>background-attachment:<?php echo $bg['attachment'] ?> !important; <?php echo "\n"; } ?>
+	<?php if( !empty( $bg['hor'] ) || !empty( $bg['ver'] ) ){ ?>background-position:<?php echo $bg['hor'] ?> <?php echo $bg['ver'] ?> !important; <?php echo "\n"; } ?>
+}
+	<?php endif;
+endif;
+
 
 
 // Links  ------------------------------------------------------------------------- */
 $links_styling = array (
-	"a"       => array (	'color' => 'links_color', 'decoration'=> 'links_decoration'	),
-	"a:hover" => array (	'color' => 'links_color_hover', 'decoration'=> 'links_decoration_hover'),
-	"body.single .post .entry a, body.page .post .entry a"             => array ( 'color' => 'post_links_color', 'decoration'=> 'post_links_decoration' ),
-	"body.single .post .entry a:hover, body.page .post .entry a:hover" => array ( 'color' => 'post_links_color_hover', 'decoration'=> 'post_links_decoration_hover' )
+	"a"			=>	array (	'color' => 'links_color', 'decoration'=> 'links_decoration'	),
+	"a:hover"	=>	array (	'color' => 'links_color_hover', 'decoration'=> 'links_decoration_hover'),
+	"body.single .post .entry a, body.page .post .entry a"				=>	array ( 'color' => 'post_links_color', 'decoration'=> 'post_links_decoration' ),
+	"body.single .post .entry a:hover, body.page .post .entry a:hover"	=>	array ( 'color' => 'post_links_color_hover', 'decoration'=> 'post_links_decoration_hover' )
 );
 
 foreach ( $links_styling as $selector => $values ){
@@ -553,14 +532,14 @@ foreach ( $links_styling as $selector => $values ){
 // Colors  ------------------------------------------------------------------------- */
 $colors_styling = array (
 	".top-nav ul li a:hover, .top-nav ul li:hover > a, .top-nav ul :hover > a , .top-nav ul li.current-menu-item a"	 => 'topbar_links_color_hover',
-	"#main-nav ul li a:hover, #main-nav ul li:hover > a, #main-nav ul :hover > a , #main-nav  ul ul li:hover > a, #main-nav  ul ul :hover > a" => 'nav_links_color_hover',
+	"#main-nav ul li a:hover, #main-nav ul li:hover > a, #main-nav ul :hover > a , #main-nav  ul ul li:hover > a, #main-nav  ul ul :hover > a"														 => 'nav_links_color_hover',
 	"#main-nav ul li a, #main-nav ul ul a, #main-nav ul.sub-menu a, #main-nav ul li.current_page_parent ul a, #main-nav ul li.current-menu-item ul a, #main-nav ul li.current-menu-parent ul a, #main-nav ul li.current-page-ancestor ul a" => 'nav_links_color',
-	"#main-nav ul li.current-menu-item a, #main-nav ul li.current_page_parent a" => 'nav_current_links_color',
-	".today-date " => 'todaydate_color',
-	".top-nav ul li a , .top-nav ul ul a" => 'topbar_links_color',
-	".footer-widget-top h4" => 'footer_title_color',
-	"#theme-footer a" => 'footer_links_color',
-	"#theme-footer a:hover" => 'footer_links_color_hover',
+	"#main-nav ul li.current-menu-item a, #main-nav ul li.current_page_parent a"			=> 'nav_current_links_color',
+	".today-date "									=> 'todaydate_color',
+	".top-nav ul li a , .top-nav ul ul a"			=> 'topbar_links_color',
+	".footer-widget-top h4"							=> 'footer_title_color',
+	"#theme-footer a"							=> 'footer_links_color',
+	"#theme-footer a:hover"					=> 'footer_links_color_hover',
 );
 
 foreach ( $colors_styling as $selector => $values ){
@@ -577,8 +556,8 @@ foreach ( $colors_styling as $selector => $values ){
 // Background  ------------------------------------------------------------------------- */
 $bg_styling = array (
 	".top-nav, .top-nav ul ul"	 => 'topbar_background',
-	"#theme-header" => 'header_background',
-	"#theme-footer" => 'footer_background',
+	"#theme-header"		 => 'header_background',
+	"#theme-footer"		 => 'footer_background',
 	".cat-box-content, #sidebar .widget-container, .post-listing, .column2 li.first-news, .wide-box li.first-news, #commentform " => 'boxes_bg',
 
 );
@@ -701,116 +680,73 @@ if( tie_get_option('homepage_cats_colors') ){
 
 // Categories Custom Bg and color  ----------------------------------------------------- */
 global $post ;
-if( is_category() || is_singular() || ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ){
-
+if( is_category() || is_singular() || ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ):
 	if( is_category() ){
 
 		$tie_cats_options = get_option( 'tie_cats_options' );
-		$category_id      = get_query_var('cat') ;
+		$category_id	  = get_query_var('cat') ;
 
-		if( ! empty( $tie_cats_options[ $category_id ] ) ){
-			$cat_options = $tie_cats_options[ $category_id ];
-		}
+		if( !empty( $tie_cats_options[ $category_id ] ) )
+			$cat_options	  = $tie_cats_options[ $category_id ];
 
-		if( ! empty( $cat_options['cat_background'] ) ){
+		if( !empty($cat_options['cat_background']) )
 			$cat_bg = $cat_options['cat_background'];
-		}
 
-		if( ! empty( $cat_options['cat_color'] ) ){
+		if( !empty($cat_options['cat_color']) )
 			$cat_color = $cat_options['cat_color'];
-		}
 
-		if( ! empty( $cat_options['cat_background_full'] ) ){
+		if( !empty($cat_options['cat_background_full']) )
 			$cat_full = $cat_options['cat_background_full'];
-		}
-
 	}
-
 	if( is_singular() || ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ){
 		$current_ID = $post->ID;
 		if( function_exists( 'is_woocommerce' ) && is_woocommerce() ) $current_ID = wc_get_page_id('shop');
 
 		$get_meta = get_post_custom( $current_ID );
 
-		if( ! empty( $get_meta["post_color"][0] ) ){
+		if( !empty( $get_meta["post_color"][0] ) )
 			$cat_color = $get_meta["post_color"][0];
-		}
 
-		if( ! empty( $get_meta["post_background"][0] ) ){
+		if( !empty( $get_meta["post_background"][0] ) )
 			$cat_bg = unserialize($get_meta["post_background"][0]);
-		}
 
-		if( ! empty( $get_meta["post_background_full"][0] ) ){
+		if( !empty( $get_meta["post_background_full"][0] ) )
 			$cat_full = $get_meta['post_background_full'];
-		}
 
 		if( is_singular( 'post' ) ){
 			$tie_cats_options = get_option( 'tie_cats_options' );
-			$categories       = get_the_category( $current_ID );
-			$category_id      = $categories[0]->term_id;
+			$categories 	  = get_the_category( $current_ID );
+			$category_id	  = $categories[0]->term_id;
 
-			if( ! empty( $tie_cats_options[ $category_id ] ) ){
-				$cat_options = $tie_cats_options[ $category_id ];
-			}
+			if( !empty($tie_cats_options[ $category_id ]) )
+				$cat_options	  = $tie_cats_options[ $category_id ];
 
-			if( empty( $cat_color ) && ! empty( $cat_options['cat_color'] ) ){
-				$cat_color = $cat_options['cat_color'];
-			}
-
-			if( empty( $cat_full ) && ! empty( $cat_options['cat_background_full'] ) ){
-				$cat_full = $cat_options['cat_background_full'];
-			}
-
-			if( empty( $cat_bg['color'] ) && empty( $cat_bg['img'] ) && ! empty( $cat_options['cat_background'] ) ) {
-				$cat_bg = $cat_options['cat_background'];
-			}
-
+			if( empty($cat_color) && !empty( $cat_options['cat_color'] ) ) $cat_color = $cat_options['cat_color'];
+			if( empty($cat_full) && !empty( $cat_options['cat_background_full'] ) ) $cat_full = $cat_options['cat_background_full'];
+			if( empty($cat_bg['color']) && empty($cat_bg['img']) && !empty( $cat_options['cat_background'] ) )  $cat_bg = $cat_options['cat_background'];
 		}
 	}
 
-	if( ! empty( $cat_bg['color'] ) || ! empty( $cat_bg['img'] ) ){
-		if( $cat_full ){
-			
-			echo ".background-cover{";
-			if( ! empty( $cat_bg['color'] ) ){
-				echo "background-color: {$cat_bg['color']} !important;";
-			}
-			if( ! empty( $cat_bg['img'] ) ){
-				echo "background-image : url('{$cat_bg['img']}') !important;";
-			}
-			echo "}";
-		}
-		else{
-			echo "body{";
-				if( ! empty( $cat_bg['color'] ) ){
-					echo "background-color: {$cat_bg['color']} !important;";
-				}
-
-				if( ! empty( $cat_bg['img'] ) ){
-					echo "background-image: url('{$cat_bg['img']}') !important;";
-				}
-
-				if( ! empty( $cat_bg['repeat'] ) ){
-					echo "background-repeat:{$cat_bg['repeat']} !important;";
-				}
-
-				if( ! empty( $cat_bg['attachment'] ) ){
-					echo "background-attachment: {$cat_bg['attachment']} !important;";
-				}
-
-				if( ! empty( $cat_bg['hor'] ) || ! empty( $cat_bg['ver'] ) ){
-					echo "background-position: {$cat_bg['hor']} {$cat_bg['ver']} !important;";
-				}
-			echo "}";
-		}
-	}
-
-
-	if( ! empty( $cat_color ) ){
-		tie_theme_color( $cat_color );
-	}
-
+if( !empty( $cat_bg['color'] ) || !empty( $cat_bg['img'] ) ):
+	if( $cat_full  ): ?>
+.background-cover{<?php echo "\n"; ?>
+	background-color:<?php echo $cat_bg['color'] ?> !important;
+	background-image : url('<?php echo $cat_bg['img'] ?>') !important;<?php echo "\n"; ?>
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo $cat_bg['img'] ?>',sizingMethod='scale') !important;<?php echo "\n"; ?>
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<?php echo $cat_bg['img'] ?>',sizingMethod='scale')" !important;<?php echo "\n"; ?>
 }
+<?php else: ?>
+body{
+<?php if( !empty( $cat_bg['color'] ) ){ ?>background-color:<?php echo $cat_bg['color'] ?> !important; <?php echo "\n"; } ?>
+<?php if( !empty( $cat_bg['img'] ) ){ ?>background-image: url('<?php echo $cat_bg['img'] ?>') !important; <?php echo "\n"; } ?>
+<?php if( !empty( $cat_bg['repeat'] ) ){ ?>background-repeat:<?php echo $cat_bg['repeat'] ?> !important; <?php echo "\n"; } ?>
+<?php if( !empty( $cat_bg['attachment'] ) ){ ?>background-attachment:<?php echo $cat_bg['attachment'] ?> !important; <?php echo "\n"; } ?>
+<?php if( !empty( $cat_bg['hor'] ) || !empty( $cat_bg['ver'] ) ){ ?>background-position:<?php echo $cat_bg['hor'] ?> <?php echo $cat_bg['ver'] ?> !important; <?php echo "\n"; } ?>
+}<?php echo "\n"; ?>
+<?php endif;
+endif;
+if( !empty($cat_color) ) tie_theme_color( $cat_color ); ?>
+<?php endif;
 
 
 

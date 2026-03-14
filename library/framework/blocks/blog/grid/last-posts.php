@@ -7,7 +7,7 @@
    *  Author URL:         http://gcamarenaprog.com
    *  File name:          last-posts.php
    *  Description:        This file displays the last posts on the grid blog.
-   *  Date:               03-02-2026
+   *  Date:               17-02-2026
    */
 
 $term = get_queried_object();
@@ -26,7 +26,7 @@ if ($slug === "blog-forteano"){
 
   <section>
     <div class="tb-head">
-      <h1>= ÚLTIMAS PUBLICACIONES =</h1>
+      <h1>= Últimas publicaciones =</h1>
     </div>
   </section>
 

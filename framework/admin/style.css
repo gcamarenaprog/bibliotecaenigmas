@@ -390,7 +390,7 @@ div.option-item select[multiple] {height: 75px;}
 		width: 100%;
 		height:100px;
 }
-#sidebarsList,  , #customList {padding-top:10px;}
+#sidebarsList, #customList {padding-top:10px;}
 #sidebarsList li  , #customList li{margin: 10px 0 0;}
 #sidebarsList .widget-head  , #customList .widget-head{
 	position: relative;;

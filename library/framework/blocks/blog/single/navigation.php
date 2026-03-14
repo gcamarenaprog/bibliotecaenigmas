@@ -24,9 +24,9 @@
       // Previous
       if ($previousPost != false) {
         $fullTitlePreivousPost = $previousPost->post_title; ?>
-        <div class="post-previous tbs-prev-and-next">
+        <div class="post-previous">
           <a href="<?php echo get_permalink ($previousPost); ?>">
-            <?php echo '<span class="tbs-prev-and-next-title">' . __ti ('Previous') . '</span>'; ?>
+            <?php echo '<span>' . __ti ('Previous') . '</span>'; ?>
             <?php the_title (); ?>
           </a>
           <br>
@@ -38,9 +38,9 @@
       // Next
       if ($nextPost != false) {
         $fullTitleNextPost = $nextPost->post_title; ?>
-        <div class="post-next tbs-prev-and-next">
+        <div class="post-next">
           <a href="<?php echo get_permalink ($nextPost); ?>">
-            <?php echo '<span class="tbs-prev-and-next-title">' . __ti ('Next') . '</span>'; ?>
+            <?php echo '<span>' . __ti ('Next') . '</span>'; ?>
             <?php the_title (); ?>
           </a>
           <br>

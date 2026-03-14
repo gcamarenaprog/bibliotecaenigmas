@@ -1,128 +1,119 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/book/grid/
-   * File name:          last-books.php
-   * Description:        This file displays last books section on the grid books.
-   * Date:               25-08-2025
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/book/grid/
+ * File name:          last-books.php
+ * Description:        This file displays last books section on the grid books.
+ * Date:               03-02-2026
+ */
 ?>
 
 <section>
   <div class="tb-head">
-    <h1>= ÚLTIMAS NOVEDADES =</h1>
+    <h1>= ÚLTIMOS LIBROS =</h1>
   </div>
 </section>
 
 <section>
+  <div class="tb-box">
+    <div class="row_">
 
-  <div class="tb-content-grid">
-
-    <?php
-    $countOfBooks = 0;
-    if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
+      <?php
+      $countBooks = 0;
+      if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
 
         // Get data of the books
-        $completeTitleOfBook = get_the_title();
-        $titleOfBook = getTitle($completeTitleOfBook);
+        $fullTitle = get_the_title();
+        $title = getTitle($fullTitle);
 
-        $return_value = match ($countOfBooks) {
-          $countOfBooks = 2, 5, 8, 11, 14, 17, 20, 23  => 'one_third',
-          $countOfBooks = 1, 3, 4, 6, 7, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20, 21, 24  => 'one_third last',
-        };
-    ?>
-        <div class="<?php echo $return_value; ?>">
+        ?>
 
-          <article class="card">
-
-            <!-- Cover book -->
-            <section>
+        <div class="col_-xxl-4 col_-xl-4  col_-md-4 col_-sm-6 col_xs-12 text-center">
+          <article>
+            <div class="tb-card-book">
               <?php if (function_exists("has_post_thumbnail") && has_post_thumbnail()) : ?>
 
-                <section class="tb-thumbnail">
-
+                <!-- Cover book -->
+                <section>
                   <?php
                   $be_theme_check = get_post_meta($post->ID, 'be_theme_check', true);
                   if ($be_theme_check != 'yes') {
-                    echo '<div  class="post-thumbnail tie_check tie-appear tb-overlay-icon">';
+                    echo '<div  class="post-thumbnail tie_check tie-appear tb-card-book-thumbnail">';
                   } else {
-                    echo '<div  class="post-thumbnail tie_book tie-appear tb-overlay-icon" >';
+                    echo '<div  class="post-thumbnail tie_book tie-appear tb-card-book-thumbnail">';
                   }
                   ?>
                   <a href="<?php the_permalink(); ?>" rel="bookmark">
                     <?php the_post_thumbnail(); ?>
                     <li
-                      class="fa overlay-icon tb-overlay-icon">
+                        class="fa overlay-icon tb-card-book-overlay-icon">
                     </li>
                   </a>
-
                 </section>
 
               <?php endif; ?>
-            </section>
 
-            <!-- Data book -->
-            <section>
-              <div class="data">
+              <!-- Data -->
+              <section>
+                <div class="tb-card-book-data">
 
+                  <!-- Title -->
+                  <div class="tb-card-book-title">
+                    <a href="<?php the_permalink(); ?>" rel="bookmark">
+                      <?php echo $title; ?> <span class="tb-card-book-title-paragraph-end"></span>
+                    </a>
+                  </div>
 
-                <h1>
-                  <a class="title" href="<?php the_permalink(); ?>" rel="bookmark">
-                    <?php echo $titleOfBook; ?> <span class="paragraph-end"></span>
-                  </a>
-                </h1>
+                  <!-- Writer -->
+                  <div class="tb-card-book-writer">
+                    <?php $writer = get_the_term_list($post->ID, 'writer', '', ', ', '');
+                    echo $writer;
+                    ?>
+                    <span class="tb-card-book-writer-paragraph-end "></span>
+                  </div>
 
-                <!-- Writer -->
-                <div class="writer">
-                  <?php echo get_the_term_list($post->ID, 'writer', '', ', ', ''); ?><span class="paragraph-end"></span>
+                  <!-- Excerpt -->
+                  <div class="tb-card-book-excerpt">
+                    <p> <?php the_excerpt(); ?></p>
+                    <span class="tb-card-book-excerpt-paragraph-end"></span>
+                  </div>
+
                 </div>
+              </section>
 
-                <!-- Excerpt -->
-                <div class="excerpt">
-                  <p> <?php the_content(); ?></p>
-                  <span class="paragraph-end"></span>
-                </div>
-              </div>
-
-            </section>
-
+            </div>
           </article><!--/.card-->
+        </div><!--/.cols-->
 
-        </div><!--/.one_third last-->
-
-        <?php
-        $return_value = match ($countOfBooks) {
-          $countOfBooks = 2, 5, 8, 11, 14, 17, 20, 23  => '<div class="clear"></div>',
-          $countOfBooks = 1, 3, 4, 6, 7, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20, 21, 24  => 'one_third last',
-        };
-        echo $return_value;
-        ?>
-
-        <?php $countOfBooks++; ?>
+        <?php $countBooks++; ?>
 
       <?php endwhile; ?>
 
-    <?php else : ?>
+        <!-- No books -->
+      <?php else : ?>
 
-      <!-- No books message /-->
-      <article>
-        <div class="item-list">
-          <div class="tb-no-more-books">
-            No hay más libros.
+        <!-- No more posts /-->
+        <div class="col_-12">
+          <div class="row_">
+            <p class="text-center">No hay publicaciones.</p>
           </div>
         </div>
-      </article>
 
-    <?php endif ?>
+      <?php endif ?>
 
-  </div><!--./tb-content-grid-->
+    </div><!--/.row_-->
+  </div><!--/.tb-box-->
 
-  <!-- Pagination /-->
-  <?php if ($wp_query->max_num_pages > 1) tie_pagenavi(); ?>
-
+  <section>
+    <div class="row_">
+      <!-- Pagination /-->
+      <?php if ($wp_query->max_num_pages > 1)
+        tie_pagenavi(); ?>
+    </div>
+  </section>
 
 </section>

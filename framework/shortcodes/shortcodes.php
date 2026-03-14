@@ -98,7 +98,7 @@ function tie_shortcode_toggle( $atts, $content = null ) {
 		<div class="clear"></div>
 		<div class="toggle '. $state .'">
 			<h3 class="toggle-head">'. $title .' <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
-			<div class="toggle-content">'.
+			<div class="toggle-content" >'.
 				do_shortcode( $content ) .'
 			</div>
 		</div>

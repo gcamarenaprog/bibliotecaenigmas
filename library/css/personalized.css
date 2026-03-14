@@ -8,7 +8,7 @@
 	Path: 						  /library/css/
 	File Name: 					personalized.css
 	Description: 	      Style files for the Sahifa theme custom style.
-	Date:               03-12-2025
+	Date:               14-03-2026
 **************************************************************************/
 
 body {
@@ -80,7 +80,7 @@ h4 {
 
 /* --> 555 | @be_checked */
 #wrapper.boxed-all #main-content {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 /* --> 522 | @be_checked */
@@ -91,11 +91,6 @@ h4 {
 /* --> 533 | @be_checked */
 #wrapper.boxed-all {
   box-shadow: 0 0 50px #e8dfa7;
-}
-
-/* --> 615 | @be_checked */
-#theme-header {
-  margin-bottom: 5px;
 }
 
 /* --> 634 | @be_checked */
@@ -230,21 +225,25 @@ h4 {
 
 /* --> 1774 | @be_checked */
 #crumbs {
-  font-size: 1.15em;
+  font-size: 1.20em;
   color: #2d2d2d;
   text-shadow: 0 0 0 #000000 !important;
   width: 100%;
-  padding: 0 10px;
-  clear: both;
-  border-bottom: 1px solid #eee;
+  background: #fdfdfc;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%);
+  border-radius: 12px;
 }
 
 /* --> XXXX | @be_checked */
 #crumbs a {
-  font-size: 1em !important;
+  color: #67523d;
+  text-shadow: 0 0 0 #ffffff !important;
+  font-size: 1.10em !important;
   text-decoration: none;
-  color: #2d2d2d;
-  text-shadow: 0 0 0 #000000 !important;
+  font-weight: bold;
 }
 
 /* --> 1826 | @be_checked */
@@ -383,7 +382,7 @@ p.post-meta span {
 
 /* --> 2834 | @be_checked */
 .post-thumbnail a {
-  border-radius: 0px !important;
+  border-radius: 0 !important;
 }
 
 /* --> 2736 | @be_checked */
@@ -403,7 +402,7 @@ p.post-meta span {
 }
 
 /* --> XXXX | @be_checked */
-.tie_book_small
+.tie_book_small,
 .overlay-icon:before {
   content: '\f02d';
   width: 40px;
@@ -1016,7 +1015,7 @@ span.widget-post-title {
   overflow: hidden;
   -webkit-line-clamp: 2;
   font-weight: normal;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 span.widget-post-categories {

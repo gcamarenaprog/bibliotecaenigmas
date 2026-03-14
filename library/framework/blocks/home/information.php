@@ -1,21 +1,18 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/home/
-   * File name:          information.php
-   * Description:        This file shows the information section in home page.
-   * Date:               25-08-2025
-   */
-
+/*
+  Template: 			Biblioteca Enigmas
+  Author: 				Guillermo Camarena
+  Section: 				Books | Framework | Blocks | Book | Home
+  File name: 			information.php
+  Date: 					30-05-2025
+  Description: 		This file contains the description of the home page.
+  Note:           Refactored
+  */
 ?>
 
 <section>
   <div class="toggle tie-sc-close">
-    <h3 class="toggle-head" style="font-size: 1.2em;">= LEER ANTES DE CONTINUAR = <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
+    <h3 class="toggle-head">= LEER ANTES DE CONTINUAR = <i class="fa fa-angle-down" aria-hidden="true"></i></h3>
     <div class="toggle-content">
 
       <!-- Information /-->

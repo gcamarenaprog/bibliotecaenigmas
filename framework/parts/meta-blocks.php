@@ -10,7 +10,7 @@ global $get_meta;
 <?php endif; ?>	
 <?php if( !empty( $get_meta[ 'box_meta_date' ][0] ) ) tie_get_time() ?>
 <?php if( !empty( $get_meta[ 'box_meta_cats' ][0] ) ): ?>
-	<span class="post-cats"><i class="fa fa-folder"></i><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
+	<span class="post-cats"><i class="fa-solid fa-arrow-down-a-z"><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
 <?php endif; ?>	
 <?php if( !empty( $get_meta[ 'box_meta_comments' ][0] ) ): ?>
 	<span class="post-comments"><i class="fa fa-comments"></i><?php comments_popup_link( '0' , '1' , '%' ); ?></span>

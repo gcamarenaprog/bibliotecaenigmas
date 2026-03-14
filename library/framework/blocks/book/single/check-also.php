@@ -18,8 +18,8 @@ global $post_id, $check_also_position;
 $isVisibleChekAlso = false;
 $currentPostId = $post->ID;
 $visibility = false;
-$arrayNamesGenresCurrentPost = '';
 $firstPostIdRelatedToCurrentPosts = '';
+$idsGenresOfCurrentPost = [];
 $idsPostsSelected = [];
 $index = 0;
 
@@ -51,72 +51,76 @@ if (!$checkStatus == 'yes') {
 # Get all genres ids of current post
 $idsGenresOfCurrentPost = wp_get_post_terms($post->ID, 'genre', array('fields' => 'ids'));
 
-# Get total genres of current post
-$totalGenresOfCurrentPost = sizeof($idsGenresOfCurrentPost);
+# If array is empty not continue
+if (!isset($idsGenresOfCurrentPost)) {
+
+  # Get total genres of current post
+  $totalGenresOfCurrentPost = sizeof($idsGenresOfCurrentPost);
 
 # Get random number between 0 to total genres of current post
-if ($totalGenresOfCurrentPost <= 1) {
-  $randomNumber = 0;
-} else {
-  $randomNumber = rand(0, $totalGenresOfCurrentPost - 1);
-}
+  if ($totalGenresOfCurrentPost <= 1) {
+    $randomNumber = 0;
+  } else {
+    $randomNumber = rand(0, $totalGenresOfCurrentPost - 1);
+  }
 
 # Select random genre id of all genres list
-$selectedGenre = $idsGenresOfCurrentPost[$randomNumber];
+  $selectedGenre = $idsGenresOfCurrentPost[$randomNumber];
 
 # Query of 10 posts with the selected genre
-$args = array(
-    'post_type' => 'book',
-    'posts_per_page' => 10,
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'genre',
-            'field' => 'term_id',
-            'terms' => $selectedGenre,
-        ),
-    ),
-);
+  $args = array(
+      'post_type' => 'book',
+      'posts_per_page' => 10,
+      'tax_query' => array(
+          array(
+              'taxonomy' => 'genre',
+              'field' => 'term_id',
+              'terms' => $selectedGenre,
+          ),
+      ),
+  );
 
-$query = new WP_Query($args);
+  $query = new WP_Query($args);
 
-while ($query->have_posts()) {
-  $query->the_post();
-  $postId = $query->post->ID;
-  if ($postId != $currentPostId) { // Check if post id selected is not equal to current post id
-    $idsPostsSelected[] = $postId;
+  while ($query->have_posts()) {
+    $query->the_post();
+    $postId = $query->post->ID;
+    if ($postId != $currentPostId) { // Check if post id selected is not equal to current post id
+      $idsPostsSelected[] = $postId;
+    }
+  }
+
+# Get total posts selected
+  $totalIdsPostsSelected = sizeof($idsPostsSelected);
+
+# Get random number between 0 to total posts selected
+  if ($totalIdsPostsSelected <= 1) {
+    $randomNumber = 0;
+  } else {
+    $isVisibleChekAlso = true; // If ids post select <= 1 is visible check also module
+    $randomNumber = rand(0, $totalIdsPostsSelected - 1);
+  }
+
+# Select post with random number
+  $selectedPost = $idsPostsSelected[$randomNumber];
+
+# Get book or multimedia post data
+  $fullTitle = get_the_title($selectedPost);
+  $title = getTitle($fullTitle);
+  $subtitle = getSubtitle($fullTitle);
+  $writer = get_the_taxonomies($selectedPost);
+  $writer = cleanWriterTextOfTaxonomies($writer);
+
+# Get thumbnail image url
+  $imageUrl = getThumbnailUrl('tie-book', $selectedPost);
+
+# If no exist thumbnail image
+  if (!$imageUrl) {
+    $imageUrl = $noCover;
   }
 }
 
-# Get total posts selected
-$totalIdsPostsSelected = sizeof($idsPostsSelected);
-
-# Get random number between 0 to total posts selected
-if ($totalIdsPostsSelected <= 1) {
-  $randomNumber = 0;
-} else {
-  $isVisibleChekAlso = true; // If ids post select <= 1 is visible check also module
-  $randomNumber = rand(0, $totalIdsPostsSelected - 1);
-}
-
-# Select post with random number
-$selectedPost = $idsPostsSelected[$randomNumber];
-
-# Get book or multimedia post data
-$fullTitle = get_the_title($selectedPost);
-$title = getTitle($fullTitle);
-$subtitle = getSubtitle($fullTitle);
-$writer = get_the_taxonomies($selectedPost);
-$writer = cleanWriterTextOfTaxonomies($writer);
-
-# Get thumbnail image url
-$imageUrl = getThumbnailUrl('tie-book', $selectedPost);
-
-# If no exist thumbnail image
-if (!$imageUrl) {
-  $imageUrl = $noCover;
-}
 ?>
-
 
 <?php if ($isVisibleChekAlso): ?>
   <section>

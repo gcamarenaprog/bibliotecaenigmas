@@ -8,37 +8,47 @@
 	Path: 						  /library/css/
 	File Name: 					base.css
 	Description: 	      This is the style file base the Biblioteca Enigmas Theme.
-	Date:               25-08-2025
+	Date:               14-03-2026
 **************************************************************************/
 
 @import url('template-be.css');
 
 /* 1045px */
-@media only screen and (max-width: 1045px) {}
+@media only screen and (max-width: 1045px) {
+}
 
 /* 990px */
-@media only screen and (max-width: 990px) {}
+@media only screen and (max-width: 990px) {
+}
 
 /* 900px */
-@media only screen and (max-width: 900px) {}
+@media only screen and (max-width: 900px) {
+}
 
 /* 800px */
-@media only screen and (max-width: 800px) {}
+@media only screen and (max-width: 800px) {
+}
 
 /* 730px */
-@media only screen and (max-width: 730px) {}
+@media only screen and (max-width: 730px) {
+}
 
 /* 670px */
-@media only screen and (max-width: 670px) {}
+@media only screen and (max-width: 670px) {
+}
 
 /* 600px */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+}
 
 /* 500px */
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+}
 
 /* 400px */
-@media only screen and (max-width: 400px) {}
+@media only screen and (max-width: 400px) {
+}
 
 /* 350px */
-@media only screen and (max-width: 350px) {}
+@media only screen and (max-width: 350px) {
+}

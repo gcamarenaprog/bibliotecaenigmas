@@ -6,14 +6,14 @@
    * Author:             Guillermo Camarena
    * Author URL:         http://gcamarenaprog.com
    * Path:               /library/framework/blocks/blog/maps/
-   * File name:          writer-blog-maps.php
-   * Description:        This file displays the writer blog maps.
-   * Date:               25-08-2025
+   * File name:          fortean-blog-maps.php
+   * Description:        This file displays the fortean blog maps.
+   * Date:               02-12-2025
    */
 ?>
 
 <section>
-  <div class="sitemap-col">
+  <div class="sitemap-col ml20">
     <ul id="sitemap-tags">
       <?php
         $args = [
@@ -26,7 +26,7 @@
           'show_count' => 1,
           'hide_empty' => 1,
           'use_desc_for_title' => 1,
-          'child_of' => 0,
+          'child_of' => 1300,
           'hierarchical' => true,
           'title_li' => __ (''),
           'echo' => 1,

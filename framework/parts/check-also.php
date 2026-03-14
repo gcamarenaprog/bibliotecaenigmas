@@ -8,7 +8,7 @@ if( ( tie_get_option('check_also') && empty( $get_meta["tie_hide_check_also"][0]
 	$check_also_position = tie_get_option('check_also_position') ? tie_get_option('check_also_position') : 'right';
 	
 	$do_not_duplicate[] = $post->ID;
-		
+	
 	$query_type = tie_get_option('check_also_query') ;
 	if( $query_type == 'author' ){
 		$args=array('post__not_in' => $do_not_duplicate ,'posts_per_page'=> $check_also_no , 'author'=> get_the_author_meta( 'ID' ), 'no_found_rows' => 1 );
@@ -23,7 +23,7 @@ if( ( tie_get_option('check_also') && empty( $get_meta["tie_hide_check_also"][0]
 		$category_ids = array();
 		foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
 		$args=array('post__not_in' => $do_not_duplicate ,'posts_per_page'=> $check_also_no , 'category__in'=> $category_ids, 'no_found_rows' => 1 );
-	}		
+	}
 	$check_also_query = new wp_query( $args );
 	if( $check_also_query->have_posts() ) :?>
 	
@@ -36,21 +36,21 @@ if( ( tie_get_option('check_also') && empty( $get_meta["tie_hide_check_also"][0]
 
 		<?php while ( $check_also_query->have_posts() ) : $check_also_query->the_post()?>
 		<div <?php tie_post_class( 'check-also-post' ); ?>>
-			<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) : ?>			
+			<?php if ( function_exists("has_post_thumbnail") && has_post_thumbnail() ) : ?>
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail( 'tie-medium' ); ?>
 					<span class="fa overlay-icon"></span>
 				</a>
 			</div><!-- post-thumbnail /-->
-			<?php endif; ?>			
+			<?php endif; ?>
 			<h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<p><?php tie_excerpt_home() ?></p>
 		</div>
 		<?php endwhile;?>
 	</section>
-			
-			
+	
+	
 	<?php endif;
 
 	$post = $original_post;

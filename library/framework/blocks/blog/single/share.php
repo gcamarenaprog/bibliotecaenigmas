@@ -8,7 +8,7 @@
    * Path:               /library/framework/blocks/blog/single/
    * File name:          share.php
    * Description:        This file contains the related section of a blog post page.
-   * Date:               25-08-2025
+   * Date:               24-11-2025
    */
 ?>
 

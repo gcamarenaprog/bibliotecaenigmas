@@ -6,7 +6,7 @@
    * Author:             Guillermo Camarena
    * Author URL:         http://gcamarenaprog.com
    * Path:               /library/framework/blocks/blog/search/
-   * File name:          widget-books.php
+   * File name:          fast-search-writer-blog.php
    * Description:        This file shows the writer blog search page.
    * Date:               25-08-2025
    */

@@ -8,16 +8,24 @@
    * Path:               /library/framework/blocks/home/
    * File name:          buttons.php
    * Description:        This file shows the buttons section in home page.
-   * Date:               25-08-2025
+   * Date:               02-12-2025
    */
 ?>
 
 <section>
-  <div class="tbh-button">
-    <a class="shortc-button tbh black" title="Ir a Biblioteca" href="https://bibliotecaenigmas.com/books/" class="shortc-button tbh  ">BIBLIOTECA</a>
-    <a class="shortc-button tbh black" title="Ir a Videoteca" href="https://bibliotecaenigmas.com/genre/videoteca/" class="shortc-button tbh  ">VIDEOTECA</a>       
-    <a class="shortc-button tbh black" title="Ir a Blog Forteano" href="https://bibliotecaenigmas.com/category/blog-forteano/" class="shortc-button tbh  ">BLOG FORTEANO</a>
-    <a class="shortc-button tbh black" title="Ir a Blog del Autor" href="https://bibliotecaenigmas.com/category/blog-del-autor/" class="shortc-button tbh  ">BLOG DEL AUTOR</a>
-    <a class="shortc-button tbh black" title="Ir a la Colección de Frases" href="https://bibliotecaenigmas.com/coleccion-de-frases/" class="shortc-button tbh  ">FRASES</a>
+  <div class="text-center">
+    <a class="tb-button" title="Ir a libros"
+       href="https://bibliotecaenigmas.com/books/">Libros</a>
+    <a class="tb-button" title="Ir a multimedia"
+       href="https://bibliotecaenigmas.com/genre/multimedia/">Multimedia</a>
+    <a class="tb-button" title="Ir a blog forteano"
+       href="https://bibliotecaenigmas.com/category/blog-forteano/">Blog forteano</a>
+    <a class="tb-button" title="Ir a blog del autor"
+       href="https://bibliotecaenigmas.com/category/blog-del-autor/">Blog autor</a>
+    <a class="tb-button" title="Ir a cuentos del autor"
+       href="https://bibliotecaenigmas.com/category/cuentos-del-autor/">Cuentos del
+      autor</a>
+    <a class="tb-button" title="Ir a colección de frases"
+       href="https://bibliotecaenigmas.com/coleccion-de-frases/">Frases</a>
   </div>
 </section>

@@ -8,17 +8,14 @@
    * Path:               /library/framework/blocks/taxonomy/
    * File name:          description.php
    * Description:        This file shows description and details of the genres in taxonomy file.
-   * Date:               25-08-2025
+   * Date:               17-11-2025
    */
 
 // Get genre image
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 $filename = $term->slug . '.jpg';
 $imageUrl = get_template_directory_uri() . '/library/images/genres/' . $filename;
-?>
 
-
-<?php
 if ($term->slug == 'books') {
   $title = 'Biblioteca';
 } else {
@@ -26,12 +23,13 @@ if ($term->slug == 'books') {
 }
 
 
+
 ?>
 
 <!-- Title /-->
 <section>
   <div class="tb-head">
-    <h1>= <?php echo $title; ?> =</h1>
+    <h1>= <?php echo $term->name; ?> =</h1>
   </div>
 </section>
 
@@ -42,27 +40,38 @@ if ($term->slug == 'books') {
     <!-- Image /-->
     <section>
       <div class="tb-tax-image">
-        <img width="624" height="422" style="box-shadow: 0 2px 4px rgb(0 0 0 / 60%);" src="<?php echo $imageUrl; ?>">
+        <img width="624" height="422" src="<?php echo $imageUrl; ?>">
       </div>
     </section>
 
     <!-- Description /-->
     <section>
-      <div class="entry">
+      <div class="entry mt10">
+        <hr>
         <?php echo category_description(); ?>
       </div>
     </section>
 
     <!-- Others descriptions /-->
     <?php
-
+      if ($term->slug == 'atlas-de-lo-extraordinario') {
+        require_once(get_template_directory() . '/library/framework/blocks/book/descriptions/atlas-de-lo-extraordinario.php');
+      }
     if ($term->slug == 'biblioteca-basica-espacio-y-tiempo') {
       require_once(get_template_directory() . '/library/framework/blocks/book/descriptions/biblioteca-basica-espacio-y-tiempo.php');
     }
     if ($term->slug == 'investigacion-abierta') {
       require_once(get_template_directory() . '/library/framework/blocks/book/descriptions/investigacion-abierta.php');
     }
+    if ($term->slug == 'duda-semanal') {
+      require_once(get_template_directory() . '/library/framework/blocks/book/descriptions/duda-semanal.php');
+    }
     ?>
+
+    <div class="tb-advice">
+      <p>Las referencias bibliográficas son de índole investigativo, histórico, documentativo e informativo,
+        de ser otro tipo se señalará explícitamente.</p>
+    </div>
 
   </div>
 </section>

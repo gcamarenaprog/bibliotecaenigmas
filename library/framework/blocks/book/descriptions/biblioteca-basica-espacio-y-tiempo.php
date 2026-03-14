@@ -33,4 +33,4 @@
 <p style="text-align: right;"><strong>07-07-2023</strong></p>
 <hr>
 <p class="tax-description">Relación de volumenes de esta colección:</p>
-<?php echo do_shortcode('[wpdatatable id=45]'); ?>
+<?php echo do_shortcode('[wpdatatable id=102]'); ?>

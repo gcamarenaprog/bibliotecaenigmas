@@ -1,44 +1,40 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/blog/single/
-   * File name:          thumbnail.php
-   * Description:        This file contains the image section of a blog post page.
-   * Date:               03-02-2026
-   */
-
-
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/blog/single/
+ * File name:          thumbnail.php
+ * Description:        This file contains the image section of a blog post page.
+ * Date:               14-03-2026
+ */
 
 global $get_meta;
 $category = get_the_category();
-$cat_id =  $category[0]->cat_ID;
+$cat_id = $category[0]->cat_ID;
 $res = get_category_parents($cat_id);
-print_r($res);
-var_dump($res);
-if (str_contains($res,'Blog forteano')) {
-    $tieIcon = 'tie_fortean';
-} else if (str_contains($res,'Blog del autor'))  {
-    $tieIcon = 'tie_author';
-}else if (str_contains($res,'Cuentos del autor')) {
-    $tieIcon = 'tie_story';
+
+if (str_contains($res, 'Blog forteano')) {
+  $tieIcon = 'tie_fortean';
+} else if (str_contains($res, 'Blog del autor')) {
+  $tieIcon = 'tie_author';
+} else if (str_contains($res, 'Cuentos del autor')) {
+  $tieIcon = 'tie_story';
 }
 ?>
 
 <section>
   <div class="tb-box">
-      <?php echo $tieIcon; ?>
     <div class="post-thumbnail <?php echo $tieIcon; ?> tb-post-thumbnail tie_article tie-appear">
-      <a href="<?php echo tie_thumb_src ('tie-large'); ?>" class="fancybox image"
+      <a href="<?php echo tie_thumb_src('tie-large'); ?>" class="fancybox image"
          aria-controls="fancybox-wrap" aria-haspopup="dialog">
-        <img src="<?php echo tie_thumb_src ('tie-large'); ?>"
+        <img src="<?php echo tie_thumb_src('tie-large'); ?>"
              alt=""
              width="auto"
              height="auto"
-             title="<?php the_title (); ?>"
+             title="<?php the_title(); ?>"
              class="tie-appear">
         <li class="fa overlay-icon"></li>
       </a>

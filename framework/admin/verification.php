@@ -561,9 +561,8 @@ if( ! class_exists( 'SAHIFA_VERIFICATION' ) ){
 			delete_transient( $server_error_key );
 			delete_option( $token_error_key );
 			delete_option( $token_key );
-			delete_option( $cache_key.'_timeout' );
+			delete_option( $cache_key );
 			*/
-			
 
 			// Stored Cache
 			$cached_data = get_option( $cache_key );
