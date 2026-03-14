@@ -88,12 +88,12 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
           $imageString = $fila->ep;
           if ($imageString != 'No existe') {
 
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/la-escobula-de-la-brujula/' . $imageString . '.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/la-escobula-de-la-brujula/small/' . $imageString . '.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/la-escobula-de-la-brujula/' . $imageString . '.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/la-escobula-de-la-brujula/small/' . $imageString . '.jpg';
 
           } else {
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-cover.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/no-cover-small.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers//no-cover-book.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers//no-cover-book-small.jpg';
           }
 
           ?>
@@ -104,7 +104,7 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
                style="width: 95px;"
                aria-controls="fancybox-wrap"
                aria-haspopup="dialog">
-              <img style="width: 95px;"
+              <img style="width: 95px; border-color: #69696900;"
                    src="<?php echo $smallImagePath; ?>"
                    title="<?php echo $fila->titulo; ?>"
                    class="tie-appear">
@@ -132,10 +132,10 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
         <td style="text-align: justify;"><?php echo $fila->descripcion; ?></td>
 
         <!-- Temporada /-->
-        <td><?php echo $fila->temporada; ?>
+        <td><?php echo $fila->temporada; ?></td>
 
           <!-- Fecha /-->
-        <td><?php echo $fila->fecha; ?></td>
+        <td><?php echo $newDate = date("d-m-Y", strtotime($fila->fecha)); ?></td>
 
         <!-- Año /-->
         <td><?php echo $fila->ano; ?></td>
