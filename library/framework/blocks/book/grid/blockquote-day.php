@@ -8,7 +8,7 @@
    * Path:               /library/framework/blocks/book/grid/
    * File name:          blockquote-day.php
    * Description:        This file displays blockquote day sections on the grid books.
-   * Date:               25-08-2025
+   * Date:               02-12-2025
    */
 ?>
 

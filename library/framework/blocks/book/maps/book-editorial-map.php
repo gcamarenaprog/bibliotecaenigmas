@@ -5,33 +5,31 @@
    * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
    * Author:             Guillermo Camarena
    * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/book/maps/
-   * File name:          editorial.php
+   * Path:               library/framework/blocks/book/maps
+   * File name:          book-editorial-map.php
    * Description:        This file shows the editorial map page.
-   * Date:               25-08-2025
+   * Date:               22-11-2025
    */
 ?>
 
-<section>
-  <div class="sitemap-col">
-    <ul id="sitemap-tags">
-      <?php
-      $terms = get_terms(array(
+<div class="sitemap-col ml20">
+  <ul id="sitemap-tags">
+    <?php
+      $terms = get_terms (array(
         'taxonomy' => 'editorial',
-        'hide_empty' => false,
+        'hide_empty' => false
       ));
-      if (empty($terms) || is_wp_error($terms)) {
+      if (empty($terms) || is_wp_error ($terms)) {
         return;
       } ?>
-      <?php
+    <?php
       foreach ($terms as $term) {
-        printf(
+        printf (
           '<li><a href="%s">%s</a> <span class="term-count">(%s)</span></li>',
-          esc_url(get_term_link($term)),
-          esc_attr($term->name),
+          esc_url (get_term_link ($term)),
+          esc_attr ($term->name),
           $term->count
         );
       } ?>
-    </ul>
-  </div>
-</section>
+  </ul>
+</div>

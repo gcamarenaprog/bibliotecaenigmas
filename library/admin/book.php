@@ -11,6 +11,7 @@
    * Date:               25-08-2025
    */
   
+  
   add_action ('init', 'project_books_init');
   
   /**
@@ -96,6 +97,7 @@
       )
     );
     
+    
     /**
      * Register a new post-type
      */
@@ -113,13 +115,19 @@
       'update_item' => __ ('Actualizar género'),
       'add_new_item' => __ ('Añadir género'),
       'new_item_name' => __ ('Nuevo nombre de género'),
+      'add_or_remove_items' => __ ('Añadir o quitar Géneros'),
+      'choose_from_most_used' => __ ('Escoger el género más usado'),
+      'menu_name' => __ ('Géneros'),
     );
     
     // Genre taxonomy register
     register_taxonomy ('genre', array('book'), array(
       'hierarchical' => true,
+      'public' => true,
       'labels' => $labels_genre,
       'show_in_nav_menus' => true,
+      'show_admin_column' => true,
+      'show_tagcloud' => true,
       'show_ui' => true,
       'query_var' => true,
       'rewrite' => array('slug' => 'genre'),

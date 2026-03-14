@@ -9,7 +9,7 @@
  * Path:               /library/framework/blocks/home/
  * File name:          blockquote-day.php
  * Description:        This file shows 1 of the last 10 phrases in the blockquote day section on the home page.
- * Date:               03-02-2026
+ * Date:               17-02-2026
  */
 ?>
 
@@ -93,8 +93,6 @@ $authorExtra = stripslashes($authorExtra);
         <p> "<?php echo $quote; ?>" <br><b>— <?php echo $author; ?><?php echo $authorExtra; ?> </b></p>
       </blockquote>
     </section>
-
-    <hr>
 
     <!-- Button /-->
     <section>

@@ -8,7 +8,7 @@
    * Path:               /library/framework/blocks/blog/grid/
    * File name:          blockquote-day.php
    * Description:        This file displays blockquote day section on the grid blog.
-   * Date:               25-08-2025
+   * Date:               17-02-2026
    */
   
   /**
@@ -69,7 +69,7 @@
 
 <section>
   <div class="tb-head">
-    <h1>= FRASE DEL DÍA =</h1>
+    <h1>= Frase del día =</h1>
   </div>
 </section>
 
