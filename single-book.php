@@ -8,7 +8,7 @@
  * Path:               root
  * File name:          single-book.php
  * Description:        This file shows single book page.
- * Date:               06-02-2026
+ * Date:               16-02-2026
  */
 ?>
 
@@ -79,24 +79,41 @@ if ($sidebarHidden == 'yes') {
           <!-- Content /-->
           <article>
 
-            <!-- Sinopsis title /-->
-            <p><strong>Sinopsis</strong></p>
+            <!-- Sinopsis /-->
+            <h1 class="text-center">Sinopsis</h1>
 
             <!-- Content /-->
             <?php the_content(); ?>
 
             <!-- Tables /-->
-            <?php
-
-            if ($postId == 24799): ?>
+            <?php if ($postId == 24799): ?>
 
               <!-- Related books box /-->
               <?php get_template_part('library/framework/blocks/book/descriptions/description-escobula-de-la-brujula'); ?>
 
-            <?php else:{
+            <?php elseif ($postId == 21667): ?>
 
-            }
-            endif; ?>
+              <!-- Related books box /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emm'); ?>
+
+            <?php elseif ($postId == 26230): ?>
+
+                <!-- Related books box /-->
+                <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emu'); ?>
+
+            <?php elseif ($postId == 26252): ?>
+
+                <!-- Related books box /-->
+                <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-empe'); ?>
+
+            <?php elseif ($postId == 24478): ?>
+
+              <!-- Related books box /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-paradig+'); ?>
+
+            <?php else: ?>
+              <!-- Nothing -->
+            <?php endif; ?>
 
 
             <!-- Pagination /-->
