@@ -9,13 +9,13 @@
  * Path:               /library/framework/blocks/home/
  * File name:          blockquote-day.php
  * Description:        This file shows 1 of the last 10 phrases in the blockquote day section on the home page.
- * Date:               17-02-2026
+ * Date:               14-03-2026
  */
 ?>
 
 <?php
 /**
- * Get author name with author Id.
+ * Get author name with author ID.
  * @param int $authorId
  * @return array
  */
@@ -79,7 +79,7 @@ $authorExtra = stripslashes($authorExtra);
 <!-- Title /-->
 <section>
     <div class="tb-head">
-        <h2>= ÚLTIMAS FRASES =</h2>
+        <h2>= FRASE DEL DÍA =</h2>
     </div><!--/.tb-head-->
 </section>
 
