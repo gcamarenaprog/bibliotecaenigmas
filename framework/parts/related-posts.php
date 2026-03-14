@@ -1,4 +1,5 @@
 <?php
+
 global $get_meta , $post, $do_not_duplicate;
 $original_post = $post;
 
