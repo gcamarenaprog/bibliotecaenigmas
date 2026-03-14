@@ -102,7 +102,6 @@ library
 | | | |_ blockquote-day.php               This file shows the blockquote day section in home page.
 | | | |_ breaking-news.php                This file shows the breaking news section in home page.
 | | | |_ buttons.php                      This file shows the buttons section in home page.
-| | | |_ digital-services.php             This file shows the digital services section in home page.
 | | | |_ information.php                  This file shows the information section in home page.
 | | | |_ last-post-book.php               This file shows the last post book section in home page.
 | | | |_ last-post-fortean-blog.php       This file shows the last post fortean blog section in home page.

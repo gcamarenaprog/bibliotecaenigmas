@@ -8,7 +8,7 @@
  * Path:              /library/framework/blocks/home/
  * File name:         template-be-home.php
  * Description:       This file shows home page.
- * Date:              06-11-2025
+ * Date:              14-03-2026
  */
 ?>
 
@@ -47,9 +47,6 @@
 
     <!-- Blockquote day /-->
     <?php get_template_part('library/framework/blocks/home/blockquote-day'); ?>
-
-    <!-- Digital services /-->
-    <?php get_template_part('library/framework/blocks/home/digital-services'); ?>
 
     <!-- Buttons /-->
     <?php get_template_part('library/framework/blocks/home/buttons'); ?>
