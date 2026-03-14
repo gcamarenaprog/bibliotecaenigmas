@@ -60,7 +60,7 @@ Template Name: Best Reviews
 							<p class="post-meta">
 								<span class="post-meta-author"><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) )?>" title=""><?php echo get_the_author() ?> </a></span>
 								<?php tie_get_time() ?>
-								<span class="post-cats"><i class="fa fa-folder"></i><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
+								<span class="post-cats"><i class="fa-solid fa-arrow-down-a-z"><?php printf('%1$s', get_the_category_list( ', ' ) ); ?></span>
 							</p>
 						</div>
 					</li>
