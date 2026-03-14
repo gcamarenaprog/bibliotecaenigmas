@@ -8,7 +8,7 @@
    * Path:               root
    * File name:          template-be-search-book.php
    * Description:        This file show the searches books.
-   * Date:               02-12-2025
+   * Date:               14-03-2026
    */
 ?>
 
@@ -16,15 +16,7 @@
 <?php tie_breadcrumbs (); ?>
 
 <?php
-  $postId = get_the_ID ();
-  $arguments = array(
-    'post_type' => 'book',
-    'posts_per_page' => -1,
-    'paged' => $paged
-  );
-  $query = new WP_query($arguments);
-  
-  set_query_var ('query', $query);
+$postId = get_the_ID ();
 ?>
 
   <div class="content">
