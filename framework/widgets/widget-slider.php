@@ -133,12 +133,7 @@ class tie_slider extends WP_Widget {
 			<input id="<?php echo $this->get_field_id( 'no_of_posts' ); ?>" name="<?php echo $this->get_field_name( 'no_of_posts' ); ?>" value="<?php if( !empty($instance['no_of_posts']) ) echo $instance['no_of_posts']; ?>" type="text" size="3" />
 		</p>
 		<p>
-			<?php 
-				$cats_id = array();
-				if( ! empty( $instance['cats_id'] ) && ! is_array( $instance['cats_id'] ) ){
-					$cats_id = explode ( ',' , $instance['cats_id'] ) ;
-				}
-			?>
+			<?php $cats_id = explode ( ',' , $instance['cats_id'] ) ; ?>
 			<label for="<?php echo $this->get_field_id( 'cats_id' ); ?>"><?php _e( 'Category:' , 'tie') ?></label>
 			<select multiple="multiple" id="<?php echo $this->get_field_id( 'cats_id' ); ?>[]" name="<?php echo $this->get_field_name( 'cats_id' ); ?>[]">
 				<?php foreach ($categories as $key => $option) { ?>

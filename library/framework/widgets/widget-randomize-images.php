@@ -63,12 +63,13 @@
       extract ($arguments);
       
       $title = apply_filters ('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+      
       $imagePath = $instance['image_path'];
       
       $hide = !empty($instance['hide']) ? $instance['hide'] : false;
-      
       echo $before_widget;
       echo $before_title;
+      
       if (!$hide) {
         echo $title;
       }
@@ -83,7 +84,8 @@
       
       ?>
 
-      <div class="picture" style="font-size: 18px;overflow: hidden;text-align: center;width: 100%;padding: 0px;">
+      <div class="picture"
+           style="font-size: 18px;overflow: hidden;text-align: center;width: 100%;padding: 0px;">
         <a href="<?php echo $urlImage; ?>" class="fancybox image" aria-controls="fancybox-wrap" aria-haspopup="dialog">
           <img src="<?php echo $urlImage ?>" alt="" width="auto" height="auto" class="tie-appear">
         </a>
