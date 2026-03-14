@@ -92,8 +92,8 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
             $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/la-escobula-de-la-brujula/small/' . $imageString . '.jpg';
 
           } else {
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers//no-cover-book.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers//no-cover-book-small.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book-small.jpg';
           }
 
           ?>

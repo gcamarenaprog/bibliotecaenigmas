@@ -120,8 +120,8 @@ echo do_shortcode('[wp-datatable id="table2" fat="LEVEL"]
             $imageString = $fila->no;
             if ($imageString != 'No existe') {
 
-              $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/covers/paradig+/dosieres/' . $imageString . '.jpg';
-              $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/covers/paradig+/dosieres/small/' . $imageString . '.jpg';
+              $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/paradig+/dosieres/' . $imageString . '.jpg';
+              $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/paradig+/dosieres/small/' . $imageString . '.jpg';
 
             } else {
               $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
@@ -228,8 +228,8 @@ echo do_shortcode('[wp-datatable id="table2" fat="LEVEL"]
             $imageString = $fila->no;
             if ($imageString != 'No existe') {
 
-              $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/covers/paradig+/otros/' . $imageString . '.jpg';
-              $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/covers/paradig+/otros/small/' . $imageString . '.jpg';
+              $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/paradig+/otros/' . $imageString . '.jpg';
+              $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/paradig+/otros/small/' . $imageString . '.jpg';
 
             } else {
               $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
