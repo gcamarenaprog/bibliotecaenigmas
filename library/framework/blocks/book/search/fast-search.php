@@ -1,15 +1,15 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/book/search/
-   * File name:          fast-search.php
-   * Description:        This file shows fast search page.
-   * Date:               25-08-2025
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/book/search/
+ * File name:          fast-search.php
+ * Description:        This file shows fast search page.
+ * Date:               14-03-2026
+ */
 ?>
 
 <?php
@@ -50,114 +50,128 @@ columnControl: ["order", ["orderAsc", "orderDesc", "search"]],
   },
   [/wp-datatable]');
 
-get_template_part('query');
+$arguments = array(
+        'post_type' => 'book',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'paged' => $paged,
+        'tax_query' => array(
+                array(
+                        'taxonomy' => 'genre',
+                        'field' => 'term_id',
+                        'terms' => array(1523),
+                        'operator' => 'NOT IN',
+                ),
+        ),
+);
+$query = new WP_query($arguments);
+
 $index = 0;
 ?>
 
 
-
 <section>
-  <div class="mt10">
+    <div class="mt10">
 
-    <table id="table" class="display compact" style="width:100%">
+        <table id="table" class="display compact" style="width:100%">
 
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>TÍTULO</th>
-          <th>SUBTÍTULO</th>
-          <th>AUTOR</th>
-          <th>EDITORIAL</th>
-          <th>GÉNERO</th>
-          <th>AÑO</th>
-          <th>PAÍS</th>
-          <th>PÁGINAS</th>
-          <th>TAMAÑO</th>
-          <th>FECHA</th>
-          <th>VISITAS</th>
-        </tr>
-      </thead>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>TÍTULO</th>
+                <th>SUBTÍTULO</th>
+                <th>AUTOR</th>
+                <th>EDITORIAL</th>
+                <th>GÉNERO</th>
+                <th>AÑO</th>
+                <th>PAÍS</th>
+                <th>PÁGINAS</th>
+                <th>TAMAÑO</th>
+                <th>FECHA</th>
+                <th>VISITAS</th>
+            </tr>
+            </thead>
 
-      <tbody>
+            <tbody>
 
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-          <?php
-          $numberOfLikes = get_post_meta($post->ID, 'be_theme_likes');
-          $numberOfLikes_ = $numberOfLikes[0] ?? 0;
-          ?>
+            <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <?php
+                $numberOfLikes = get_post_meta($post->ID, 'be_theme_likes');
+                $numberOfLikes_ = $numberOfLikes[0] ?? 0;
+                ?>
 
-          <?php
-          $fullTitle = get_the_title();
-          $title = getTitle($fullTitle);
-          $subtitle = getSubtitle($fullTitle);
-          if (!$subtitle) {
-            $subtitle = 'No disponible';
-          }
-          ?>
+                <?php
+                $fullTitle = get_the_title();
+                $title = getTitle($fullTitle);
+                $subtitle = getSubtitle($fullTitle);
+                if (!$subtitle) {
+                    $subtitle = 'No disponible';
+                }
+                ?>
 
-          <?php $index++; ?>
+                <?php $index++; ?>
 
-          <tr>
+                <tr>
 
-            <!-- # /-->
-            <td><?php echo "$index"; ?></td>
+                    <!-- # /-->
+                    <td><?php echo "$index"; ?></td>
 
-            <!--Title /-->
-            <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php echo $title; ?></a></td>
+                    <!--Title /-->
+                    <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php echo $title; ?></a></td>
 
-            <!--Subtitle /-->
-            <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php echo $subtitle; ?></a></td>
+                    <!--Subtitle /-->
+                    <td><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php echo $subtitle; ?></a></td>
 
-            <!-- Author /-->
-            <td><?php echo get_the_term_list($post->ID, 'writer', '', ', ', ''); ?></td>
+                    <!-- Author /-->
+                    <td><?php echo get_the_term_list($post->ID, 'writer', '', ', ', ''); ?></td>
 
-            <!-- Editorial /-->
-            <td><?php echo get_the_term_list($post->ID, 'editorial', '', ', ', ''); ?></td>
+                    <!-- Editorial /-->
+                    <td><?php echo get_the_term_list($post->ID, 'editorial', '', ', ', ''); ?></td>
 
-            <!-- Genre /-->
-            <td><?php echo get_the_term_list($post->ID, 'genre', '', ', ', ''); ?></td>
+                    <!-- Genre /-->
+                    <td><?php echo get_the_term_list($post->ID, 'genre', '', ', ', ''); ?></td>
 
-            <!-- Year /-->
-            <td><?php echo get_post_meta($post->ID, 'be_theme_year', true); ?></td>
+                    <!-- Year /-->
+                    <td><?php echo get_post_meta($post->ID, 'be_theme_year', true); ?></td>
 
-            <!-- Country /-->
-            <td><?php echo get_post_meta($post->ID, 'be_theme_country', true); ?></td>
+                    <!-- Country /-->
+                    <td><?php echo get_post_meta($post->ID, 'be_theme_country', true); ?></td>
 
-            <!-- Pages /-->
-            <td><?php echo get_post_meta($post->ID, 'be_theme_pages', true); ?> pags.</td>
+                    <!-- Pages /-->
+                    <td><?php echo get_post_meta($post->ID, 'be_theme_pages', true); ?> pags.</td>
 
-            <!-- Size /-->
-            <td><?php echo get_post_meta($post->ID, 'be_theme_size', true); ?></td>
+                    <!-- Size /-->
+                    <td><?php echo get_post_meta($post->ID, 'be_theme_size', true); ?></td>
 
-            <!-- Date /-->
-            <td><?php echo the_time(get_option('date_format')); ?> </td>
+                    <!-- Date /-->
+                    <td><?php echo the_time(get_option('date_format')); ?> </td>
 
-            <!-- Views /-->
-            <td><?php echo get_post_meta($post->ID, 'tie_views', true); ?> <i class="fa fa-eye"></i></td>
+                    <!-- Views /-->
+                    <td><?php echo get_post_meta($post->ID, 'tie_views', true); ?> <i class="fa fa-eye"></i></td>
 
-          </tr>
+                </tr>
 
-        <?php endwhile; ?>
+            <?php endwhile; ?>
 
-      </tbody>
+            </tbody>
 
-      <tfoot>
-        <tr>
-          <th>#</th>
-          <th>TÍTULO</th>
-          <th>SUBTÍTULO</th>
-          <th>AUTOR</th>
-          <th>EDITORIAL</th>
-          <th>GÉNERO</th>
-          <th>AÑO</th>
-          <th>PAÍS</th>
-          <th>PÁGINAS</th>
-          <th>TAMAÑO</th>
-          <th>FECHA</th>
-          <th>VISITAS</th>
-        </tr>
-      </tfoot>
+            <tfoot>
+            <tr>
+                <th>#</th>
+                <th>TÍTULO</th>
+                <th>SUBTÍTULO</th>
+                <th>AUTOR</th>
+                <th>EDITORIAL</th>
+                <th>GÉNERO</th>
+                <th>AÑO</th>
+                <th>PAÍS</th>
+                <th>PÁGINAS</th>
+                <th>TAMAÑO</th>
+                <th>FECHA</th>
+                <th>VISITAS</th>
+            </tr>
+            </tfoot>
 
-    </table>
-  </div>
+        </table>
+    </div>
 </section>
