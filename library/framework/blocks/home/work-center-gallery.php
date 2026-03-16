@@ -1,22 +1,21 @@
 <?php
-  
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/gallery/
-   * File name:          work-center-gallery.php
-   * Description:        This file shows the work center gallery section in gallery page.
-   * Date:               03-02-2026
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/gallery/
+ * File name:          work-center-gallery.php
+ * Description:        This file shows the work center gallery section in gallery page.
+ * Date:               15-03-2026
+ */
 ?>
 
 <!--/Title-->
 <section>
   <div class="tb-head">
-    <h1>= GALERÍA DEL ESPACIO DE TRABAJO =</h1>
+    <h1>= Galería del espacio del trabajo =</h1>
   </div>
 </section>
 

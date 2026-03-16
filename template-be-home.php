@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name:    Biblioteca Enigmas - Home Page
+ * Template Name:     Biblioteca Enigmas - Home Page
  * Theme URI:         https://github.com/gcamarenaprog/bibliotecaenigmas
  * Description Theme: Sahifa theme personalized for bibliotecaenigmas.com website!
  * Author:            Guillermo Camarena
@@ -8,7 +8,7 @@
  * Path:              /library/framework/blocks/home/
  * File name:         template-be-home.php
  * Description:       This file shows home page.
- * Date:              14-03-2026
+ * Date:              15-03-2026
  */
 ?>
 
@@ -46,7 +46,7 @@
     <?php get_template_part('library/framework/blocks/home/last-post-stories-blog'); ?>
 
     <!-- Blockquote day /-->
-    <?php get_template_part('library/framework/blocks/home/blockquote-day'); ?>
+    <?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
 
     <!-- Buttons /-->
     <?php get_template_part('library/framework/blocks/home/buttons'); ?>

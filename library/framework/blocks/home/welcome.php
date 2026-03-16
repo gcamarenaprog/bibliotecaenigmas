@@ -1,22 +1,21 @@
 <?php
-  
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/home/
-   * File name:          welcome.php
-   * Description:        This file shows the welcome section in home page.
-   * Date:               03-02-2026
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/home/
+ * File name:          welcome.php
+ * Description:        This file shows the welcome section in home page.
+ * Date:               15-03-2026
+ */
 ?>
 
 <!--/Title-->
 <section>
   <div class="tb-head">
-    <h1>= BIENVENIDO =</h1>
+    <h1>= Bienvenido =</h1>
   </div>
 </section>
 
@@ -26,35 +25,20 @@
 
     <!--/Introducing-->
     <section>
-      <h2 class="text-center" style="line-height: 1.20em;">BIBLIOTECA ENIGMAS<br>Información sobre fenómenos forteanos</h2>
+      <h2 class="text-center" style="line-height: 1.20em;">
+        Biblioteca Enigmas </h2>
+      <h3 class="text-center" style="line-height: 1.20em;">Información sobre fenómenos forteanos
+      </h3>
       <p class="text-center mt10">Hecho en México el <strong> 9 de mayo de 2016,</strong> es un sitio de referencia
-          sobre fenómenos forteanos. <br><a href="https://bibliotecaenigmas.com/acerca-de/" title="Leer más sobre el sitio."> Más sobre el sitio.</a></p>
+        sobre fenómenos forteanos.</p>
     </section>
 
     <!--/Blockquote-->
-    <section>
-
+    <section class="mb10">
       <blockquote class="mt10">
-        <hr>
         <p> "Vivimos una grandiosa novela, en un gran teatro, montado por gente inteligente que le gusta jugar a
           las marionetas”. <br><strong>— Guillermo Camarena.·. </strong></p>
-        <hr>
       </blockquote>
-
-    </section>
-
-    <!--/Donate button-->
-    <section>
-      <div class="text-center mt10 mb10">
-        <a href="https://bibliotecaenigmas.com/realizar-una-donacion/">
-          <img class="wp-image-22972 size-full"
-               title="¡Realizar una donación!"
-               src="https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/images/donar.png"
-               alt="¡Realizar una donación!"
-               width="89"
-               height="26"/>
-        </a>
-      </div>
     </section>
 
     <!--/Advise-->

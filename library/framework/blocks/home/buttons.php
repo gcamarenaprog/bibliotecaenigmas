@@ -1,15 +1,15 @@
 <?php
-  /**
-   * Template Name:      Biblioteca Enigmas
-   * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
-   * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
-   * Author:             Guillermo Camarena
-   * Author URL:         http://gcamarenaprog.com
-   * Path:               /library/framework/blocks/home/
-   * File name:          buttons.php
-   * Description:        This file shows the buttons section in home page.
-   * Date:               02-12-2025
-   */
+/**
+ * Template Name:      Biblioteca Enigmas
+ * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme:  Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:             Guillermo Camarena
+ * Author URL:         http://gcamarenaprog.com
+ * Path:               /library/framework/blocks/home/
+ * File name:          buttons.php
+ * Description:        This file shows the buttons section in home page.
+ * Date:               15-03-2026
+ */
 ?>
 
 <section>
