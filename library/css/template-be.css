@@ -631,14 +631,14 @@ hr.tb-book-data {
   white-space: nowrap;
 }
 
-.tb-card-book-title-paragraph-end {
+.tb-card-book-title-end {
   height: 15px;
   width: 80px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);
-  bottom: 144px;
   max-height: 100%;
+  top: 6px;
   position: absolute;
-  right: 10px;
+  right: 0;
 }
 
 .tb-card-book-writer {
@@ -653,7 +653,7 @@ hr.tb-book-data {
   margin-top: 5px;
 }
 
-.tb-card-book-writer-paragraph-end {
+.tb-card-book-writer-end {
   height: 15px;
   width: 80px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -682,7 +682,7 @@ hr.tb-book-data {
   text-align: justify;
 }
 
-.tb-card-book-excerpt-paragraph-end {
+.tb-card-book-excerpt-end {
   height: 15px;
   width: 80px;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255 255 255)) repeat scroll 0 0 rgba(0, 0, 0, 0);

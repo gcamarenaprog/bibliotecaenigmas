@@ -8,7 +8,7 @@
  * Path:               /library/framework/blocks/book/single/
  * File name:          data.php
  * Description:        This file shows the data section of the single book page.
- * Date:               17-02-2026
+ * Date:               16-03-2026
  */
 ?>
 

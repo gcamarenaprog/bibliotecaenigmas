@@ -83,7 +83,7 @@
                   <!-- Title -->
                   <div class="tb-card-book-title">
                     <a href="<?php the_permalink(); ?>" rel="bookmark">
-                      <?php echo $title; ?> <span class="tb-card-book-title-paragraph-end"></span>
+                      <?php echo $title; ?> <span class="tb-card-book-title-end"></span>
                     </a>
                   </div>
 
@@ -92,13 +92,13 @@
                     <?php $writer = get_the_term_list($post->ID, 'writer', '', ', ', '');
                     echo $writer;
                     ?>
-                    <span class="tb-card-book-writer-paragraph-end "></span>
+                    <span class="tb-card-book-writer-end "></span>
                   </div>
 
                   <!-- Excerpt -->
                   <div class="tb-card-book-excerpt">
                     <p> <?php the_excerpt(); ?></p>
-                    <span class="tb-card-book-excerpt-paragraph-end"></span>
+                    <span class="tb-card-book-excerpt-end"></span>
                   </div>
 
                 </div>
