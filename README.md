@@ -50,7 +50,6 @@ library
 | | |_ blog                               This directory contains the files for the blog.
 | | | |_ grid                             This directory contains the files for the grid blog.
 | | | | |_ blockquote-day.php             This file displays blockquote day on the grid blog.
-| | | | |_ information.php                This file displays the name and description of the category on the grid blog.
 | | | | |_ last-posts.php                 This file displays the last posts on the grid blog.
 | | | | |_ list-posts.php                 This file displays the table with the list of posts on the grid blog.
 | | | |
@@ -98,7 +97,6 @@ library
 | | |   |_ tumbnail.php                   This file shows the thumbnail section of the single book page.
 | | |
 | | |_ home                               This directory contains the files for the sections of the home page.
-| | | |_ advice.php                       This file shows the advice section in home page.
 | | | |_ blockquote-day.php               This file shows the blockquote day section in home page.
 | | | |_ breaking-news.php                This file shows the breaking news section in home page.
 | | | |_ buttons.php                      This file shows the buttons section in home page.
