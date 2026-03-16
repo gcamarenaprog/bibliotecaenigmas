@@ -13,16 +13,19 @@
 <?php get_header(); ?>
 <?php tie_breadcrumbs(); ?>
 
-<!-- PHP code /-->
+  <!-- PHP code /-->
 <?php get_template_part('library/framework/blocks/taxonomy/query'); ?>
 
-<!-- Welcome message /-->
+  <!-- Welcome message /-->
 <?php get_template_part('library/framework/blocks/taxonomy/biography'); ?>
 
-<!-- Table of posts /-->
+  <!-- Blockquote day /-->
+<?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
+
+  <!-- Table of posts /-->
 <?php get_template_part('library/framework/blocks/taxonomy/list-books'); ?>
 
-<!-- Las books /-->
+  <!-- Las books /-->
 <?php get_template_part('library/framework/blocks/taxonomy/last-books'); ?>
 
 <?php get_footer(); ?>

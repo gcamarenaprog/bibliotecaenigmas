@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template Name:      Biblioteca Enigmas
  * Theme URI:          https://github.com/gcamarenaprog/bibliotecaenigmas
@@ -9,7 +8,7 @@
  * Path:               /library/framework/blocks/taxonomy/
  * File name:          last-books.php
  * Description:        This file shows the last books in books collections, encyclopedia collection or genre taxonomy file.
- * Date:               03-02-2026
+ * Date:               15-03-2026
  */
 
 // Get genre image
@@ -116,12 +115,12 @@ if ($categoryId) {
         $tieIcon = 'tie_play';
 
         ?>
-        <h1>= ÚLTIMAS PUBLICACIONES EN <?php echo $term->name; ?> =</h1>
+        <h1>= Últimas publicaciones en "<?php echo $term->name; ?>" =</h1>
 
       <?php else:
         $tieIcon = 'tie_book';
         ?>
-        <h1>= ÚLTIMAS LIBROS DE <?php echo $term->name; ?> =</h1>
+        <h1>= Últimas publicaciones de "<?php echo $term->name; ?>" =</h1>
       <?php endif; ?>
     </div>
   </section>

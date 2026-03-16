@@ -8,7 +8,7 @@
    * Path:               /library/framework/blocks/taxonomy/
    * File name:          biography.php
    * Description:        This file shows description and details of the writers.
-   * Date:               25-08-2025
+   * Date:               15-03-2026
    */
   
   // Get genre image
@@ -52,7 +52,7 @@
         <?php
           $description = category_description ();
           if ($description == '') {
-            echo '<p class="text-center">Aún no hay datos.</p>';
+            echo '<p class="text-center">Aún no hay biografía.</p>';
           } else {
             echo $description;
           } ?>

@@ -34,7 +34,7 @@ if ($slug): ?>
       <?php get_template_part('library/framework/blocks/blog/grid/information'); ?>
 
       <!-- Blockquote day /-->
-      <?php get_template_part('library/framework/blocks/blog/grid/blockquote-day'); ?>
+      <?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
 
       <!-- Table of posts only categories /-->
       <?php get_template_part('library/framework/blocks/blog/grid/list-posts'); ?>
@@ -54,7 +54,7 @@ if ($slug): ?>
       <?php get_template_part('library/framework/blocks/blog/grid/information'); ?>
 
       <!-- Blockquote day /-->
-      <?php get_template_part('library/framework/blocks/blog/grid/blockquote-day'); ?>
+      <?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
 
       <!-- Last news /-->
       <?php get_template_part('library/framework/blocks/blog/grid/last-posts'); ?>

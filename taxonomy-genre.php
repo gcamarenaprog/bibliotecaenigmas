@@ -21,7 +21,7 @@
 <?php get_template_part('library/framework/blocks/taxonomy/description'); ?>
 
 <!-- Blockquote day /-->
-<?php get_template_part('library/framework/blocks/taxonomy/blockquote-day'); ?>
+<?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
 
 <!-- Table of posts /-->
 <?php get_template_part('library/framework/blocks/taxonomy/list-books'); ?>

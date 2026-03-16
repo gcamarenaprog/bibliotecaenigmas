@@ -8,17 +8,11 @@
    * Path:               /library/framework/blocks/book/grid/
    * File name:          blockquote-day.php
    * Description:        This file displays blockquote day sections on the grid books.
-   * Date:               02-12-2025
+   * Date:               15-03-2026
    */
 ?>
 
 <?php
-function getAuthorNameWithAuthorId_(int $authorId): array
-{
-  global $wpdb;
-  return $wpdb->get_results("SELECT befrases_aut_name FROM  {$wpdb->prefix}befrases_aut	WHERE	befrases_aut_id = {$authorId}", ARRAY_A);
-}
-
 global $wpdb;
 $listQuotes = $wpdb->get_results("SELECT * FROM  {$wpdb->prefix}befrases", ARRAY_A);
 $author = '';
@@ -35,7 +29,7 @@ if ($length == 0) { // If there are no quotes.
     $quote = $value['befrases_quote'];
     $author = $value['befrases_author'];
     $authorExtra = $value['befrases_author_extra'];
-    $nameOfAuthor = getAuthorNameWithAuthorId_($author);
+    $nameOfAuthor = getWriterNameWithWriterId($author);
     foreach ($nameOfAuthor as $key => $value) {
       $author = $value['befrases_aut_name'];
     }
@@ -47,7 +41,7 @@ if ($length == 0) { // If there are no quotes.
       $quote = $value['befrases_quote'];
       $author = $value['befrases_author'];
       $authorExtra = $value['befrases_author_extra'];
-      $nameOfAuthor = getAuthorNameWithAuthorId_($author);
+      $nameOfAuthor = getWriterNameWithWriterId($author);
       foreach ($nameOfAuthor as $key => $value) {
         $author = $value['befrases_aut_name'];
       }

@@ -9,7 +9,7 @@
  * Path:               /library/framework/blocks/taxonomy/
  * File name:          list-posts.php
  * Description:        This file displays the table with the list of posts for each taxonomy.
- * Date:               25-08-2025
+ * Date:               15-03-2026
  */
 ?>
 
@@ -59,44 +59,44 @@ $slug = $term->slug;
 
 $maximumGetPosts = 20000;
 $arguments = array(
-  'post_type' => 'book',
-  'post_status' => 'publish',
-  'posts_per_page' => $maximumGetPosts,
-  'tax_query' => array(
-    array(
-      'taxonomy' => $taxonomy,
-      'field' => 'slug',
-      'terms' => $slug,
+    'post_type' => 'book',
+    'post_status' => 'publish',
+    'posts_per_page' => $maximumGetPosts,
+    'tax_query' => array(
+        array(
+            'taxonomy' => $taxonomy,
+            'field' => 'slug',
+            'terms' => $slug,
+        ),
     ),
-  ),
 );
 $query = new WP_query($arguments);
 $index = 0;
 
 ?>
 
-<!-- Title /-->
-<section>
-  <div class="tb-head">
+  <!-- Title /-->
+  <section>
+    <div class="tb-head">
 
-    <?php if ($taxonomy == 'editorial'): ?>
-      <h1> = LISTA DE LA EDITORIAL <?php echo $term->name; ?> = </h1>
-    <?php elseif ($taxonomy == 'writer'): ?>
-      <h1> = LISTA DE DEL AUTOR <?php echo $term->name; ?> = </h1>
-    <?php else: ?>
-      <h1> = LISTA DE PUBLICACIONES = </h1>
-    <?php endif; ?>
+      <?php if ($taxonomy == 'editorial'): ?>
+        <h1> = Lista de publicaciones de "<?php echo $term->name; ?>" = </h1>
+      <?php elseif ($taxonomy == 'writer'): ?>
+        <h1> = Lista de publicaciones de "<?php echo $term->name; ?>" = </h1>
+      <?php else: ?>
+        <h1> = Lista de publicaciones de "<?php echo $term->name; ?>" = </h1>
+      <?php endif; ?>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- Content /-->
-<section>
-  <div class="tb-box">
-    <section>
-      <table id="table" class="display compact" style="width:100%">
+  <!-- Content /-->
+  <section>
+    <div class="tb-box">
+      <section>
+        <table id="table" class="display compact" style="width:100%">
 
-        <thead>
+          <thead>
           <tr>
             <th>#</th>
             <th>TÍTULO</th>
@@ -111,9 +111,9 @@ $index = 0;
             <th>FECHA</th>
             <th>VISITAS</th>
           </tr>
-        </thead>
+          </thead>
 
-        <tbody>
+          <tbody>
 
           <?php while ($query->have_posts()) : $query->the_post(); ?>
             <?php
@@ -169,9 +169,9 @@ $index = 0;
 
           <?php endwhile; ?>
 
-        </tbody>
+          </tbody>
 
-        <tfoot>
+          <tfoot>
           <tr>
             <th>#</th>
             <th>TÍTULO</th>
@@ -186,11 +186,11 @@ $index = 0;
             <th>FECHA</th>
             <th>VISITAS</th>
           </tr>
-        </tfoot>
+          </tfoot>
 
-      </table>
-    </section>
-  </div>
-</section>
+        </table>
+      </section>
+    </div>
+  </section>
 
 <?php wp_reset_query(); ?>

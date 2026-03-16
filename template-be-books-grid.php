@@ -1,13 +1,15 @@
 <?php
-/*
-  Template Name: 	Biblioteca Enigmas - Home Books Grid Page
-  Author: 				Guillermo Camarena
-  Section: 				Library
-  File name: 			template-be-books-grid.php
-  Date: 					31-05-2025
-  Description: 		This file show home book grid page.
-  Note:           Refactored
-  */
+/**
+ * Template Name:     Biblioteca Enigmas - Home Books Grid Page
+ * Theme URI:         https://github.com/gcamarenaprog/bibliotecaenigmas
+ * Description Theme: Sahifa theme personalized for bibliotecaenigmas.com website!
+ * Author:            Guillermo Camarena
+ * Author URL:        http://gcamarenaprog.com
+ * Path:              root
+ * File name:         template-be-books-grid.php
+ * Description:       This file show home book grid page.
+ * Date:              15-03-2026
+ */
 ?>
 
 <?php get_header(); ?>
@@ -46,7 +48,7 @@ $wp_query = new WP_Query($arguments);
     <?php get_template_part('library/framework/blocks/book/grid/welcome'); ?>
 
     <!-- Blockquote day /-->
-    <?php get_template_part('library/framework/blocks/book/grid/blockquote-day'); ?>
+    <?php get_template_part('library/framework/blocks/common/blockquote-day'); ?>
 
     <!-- Books grid /-->
     <?php get_template_part('library/framework/blocks/book/grid/last-books'); ?>
