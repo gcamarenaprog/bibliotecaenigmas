@@ -96,6 +96,12 @@ if ($sidebarHidden == 'yes') {
               <!-- Related books box /-->
               <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emm'); ?>
 
+
+            <?php elseif ($postId == 19774): ?>
+
+              <!-- Related books box /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-tvn-chile-ovni'); ?>
+
             <?php elseif ($postId == 26230): ?>
 
                 <!-- Related books box /-->
