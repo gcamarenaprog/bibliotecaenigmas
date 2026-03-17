@@ -45,12 +45,18 @@ if ($term->slug == 'books') {
         <section>
             <div class="entry mt10">
                 <hr>
-                <?php echo category_description(); ?>
+                <?php echo category_description();
+
+                if ($term->slug == 'canal-infinito') {
+                  get_template_part('library/framework/blocks/book/descriptions/description-canal-infinito');
+                }
+                ?>
             </div>
         </section>
 
         <!-- Others descriptions /-->
         <?php
+
         if ($term->slug == 'atlas-de-lo-extraordinario') {
             require_once(get_template_directory() . '/library/framework/blocks/book/descriptions/atlas-de-lo-extraordinario.php');
         }
