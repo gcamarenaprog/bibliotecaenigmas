@@ -88,33 +88,47 @@ if ($sidebarHidden == 'yes') {
             <!-- Tables /-->
             <?php if ($postId == 24799): ?>
 
-              <!-- Related books box /-->
+              <!-- La escóbula de la brújula /-->
               <?php get_template_part('library/framework/blocks/book/descriptions/description-escobula-de-la-brujula'); ?>
-
-            <?php elseif ($postId == 21667): ?>
-
-              <!-- Related books box /-->
-              <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emm'); ?>
-
 
             <?php elseif ($postId == 19774): ?>
 
-              <!-- Related books box /-->
+              <!-- TVN Chile, OVNI /-->
               <?php get_template_part('library/framework/blocks/book/descriptions/description-tvn-chile-ovni'); ?>
+
+            <?php elseif ($postId == 21667): ?>
+
+              <!-- Arthur C. Clarke - EMM /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emm'); ?>
 
             <?php elseif ($postId == 26230): ?>
 
-                <!-- Related books box /-->
-                <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emu'); ?>
+              <!-- Arthur C. Clarke - EMU /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-emu'); ?>
 
             <?php elseif ($postId == 26252): ?>
 
-                <!-- Related books box /-->
-                <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-empe'); ?>
+              <!-- Arthur C. Clarke - EMPE /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-arthur-cc-empe'); ?>
+
+            <?php elseif ($postId == 26387): ?>
+
+              <!-- Netflix, El enigma extraterrestre /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-netflix-el-enigma-extraterrestre'); ?>
+
+            <?php elseif ($postId == 26383): ?>
+
+              <!-- Canal Infinito, Latinoamérica, Historia perdida /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-canal-infinito-lhp'); ?>
+
+            <?php elseif ($postId == 21515): ?>
+
+              <!-- Canal Infinito, Latinoamérica, Historia perdida /-->
+              <?php get_template_part('library/framework/blocks/book/descriptions/description-canal-infinito-mu'); ?>
 
             <?php elseif ($postId == 24478): ?>
 
-              <!-- Related books box /-->
+              <!-- Paradig+ XXI /-->
               <?php get_template_part('library/framework/blocks/book/descriptions/description-paradig+'); ?>
 
             <?php else: ?>

@@ -1,6 +1,6 @@
 <?php
 global $wpdb;
-$query = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}wpdatatable_119");
+$query = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}wpdatatable_123");
 
 echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
   pageLength: -1,
@@ -17,7 +17,7 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
   },
   columnDefs: [
     { "orderable": false, "targets": [1] },
-    { "targets": [1], visible: false },
+    { "targets": [0], visible: false },
   ],
   language: {
     "search":     "Buscar",
@@ -50,13 +50,12 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <thead>
     <tr>
-      <th>PORTADA</th>
       <th>VISTO</th>
-      <th>EP.</th>
-      <th>TÍTULO ORIGINAL</th>
-      <th>TÍTULO ESPAÑOL</th>
+      <th>PORTADA</th>
+      <th>NO.</th>
+      <th>TÍTULO</th>
       <th>DESCRIPCIÓN</th>
-      <th>FECHA DE EMISIÓN</th>
+      <th>TAMAÑO</th>
       <th>DURACIÓN</th>
     </tr>
     </thead>
@@ -69,19 +68,21 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
       ?>
 
       <tr>
+        <!-- VISTO /-->
+        <td><?php echo $fila->visto; ?></td>
 
-        <!-- PROTADAS /-->
+        <!-- PORTADA /-->
         <td style="width: 20px; padding: 10px;">
           <?php
-          $imageString = $fila->episodio;
+          $imageString = $fila->no;
           if ($imageString != 'No existe') {
 
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-empe/' . $imageString . '.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-empe/small/' . $imageString . '.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/canal-infinito-lhp/' . $imageString . '.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/canal-infinito-lhp/small/' . $imageString . '.jpg';
 
           } else {
-            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
-            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book-small.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-book-cover.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-book-cover-small.jpg';
           }
 
           ?>
@@ -94,30 +95,25 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
                aria-haspopup="dialog">
               <img style="width: 95px;  border: 0 solid #dbdbdb;"
                    src="<?php echo $smallImagePath; ?>"
-                   title="<?php echo $fila->tituloespanol; ?>"
-                   class="tie-appear" alt="<?php echo $fila->tituloespanol; ?>">
+                   title="<?php echo $fila->titulo; ?>"
+                   class="tie-appear"
+                   alt="<?php echo $fila->titulo; ?>">
               <li class="fa overlay-icon"></li>
             </a>
           </div>
         </td>
 
-        <!-- VISTO /-->
-        <td><?php echo $fila->visto; ?></td>
+        <!-- NO. /-->
+        <td><?php echo $fila->no; ?></td>
 
-        <!-- EP. /-->
-        <td><?php echo $fila->episodio; ?></td>
-
-        <!-- TITULO ORIGINAL /-->
-        <td><?php echo $fila->titulooriginal; ?></td>
-
-        <!-- TITULO ESPAÑOL /-->
-        <td><?php echo $fila->tituloespanol; ?></td>
+        <!-- TITULO /-->
+        <td><?php echo $fila->titulo; ?></td>
 
         <!-- DESCRIPCIÓN /-->
         <td><?php echo $fila->descripcion; ?></td>
 
-        <!-- FECHA DE EMISIÓN /-->
-        <td><?php echo $newDate = date("d-m-Y", strtotime($fila->fechadeemision)); ?></td>
+        <!-- TAMAÑO /-->
+        <td><?php echo $fila->tamano; ?></td>
 
         <!-- DURACIÓN /-->
         <td><?php echo $fila->duracion; ?></td>
@@ -130,13 +126,12 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <tfoot>
     <tr>
-      <th>PORTADA</th>
       <th>VISTO</th>
-      <th>EP.</th>
-      <th>TÍTULO ORIGINAL</th>
-      <th>TÍTULO ESPAÑOL</th>
+      <th>PORTADA</th>
+      <th>NO.</th>
+      <th>TÍTULO</th>
       <th>DESCRIPCIÓN</th>
-      <th>FECHA DE EMISIÓN</th>
+      <th>TAMAÑO</th>
       <th>DURACIÓN</th>
     </tr>
     </tfoot>

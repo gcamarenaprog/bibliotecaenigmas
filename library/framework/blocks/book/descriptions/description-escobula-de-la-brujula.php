@@ -41,16 +41,16 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 ?>
 
 <script type="text/javascript">
-    jQuery(window).on('load', function () {
-        let table = new DataTable('#table');
-        table.page.len(5).draw();
-    });
+  jQuery(window).on('load', function () {
+    let table = new DataTable('#table');
+    table.page.len(5).draw();
+  });
 </script>
 
 <script type="text/javascript">
-    jQuery(document).ready(function () {
+  jQuery(document).ready(function () {
 
-    });
+  });
 </script>
 
 <!-- Content /-->
@@ -59,7 +59,7 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <thead>
     <tr>
-      <th>PORTADA</th>  
+      <th>PORTADA</th>
       <th>VISTO</th>
       <th>#</th>
       <th>NO.</th>
@@ -98,16 +98,17 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
           ?>
 
-          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0px; width: 94px;">
+          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0; width: 95px;">
             <a href="<?php echo $fullImagePath; ?>"
                class="fancybox image"
                style="width: 95px;"
                aria-controls="fancybox-wrap"
                aria-haspopup="dialog">
-              <img style="width: 95px; border-color: #69696900;"
+              <img style="width: 95px;  border: 0 solid #dbdbdb;"
                    src="<?php echo $smallImagePath; ?>"
                    title="<?php echo $fila->titulo; ?>"
-                   class="tie-appear">
+                   class="tie-appear"
+                   alt="<?php echo $fila->titulo; ?>">
               <li class="fa overlay-icon"></li>
             </a>
           </div>
@@ -134,7 +135,7 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
         <!-- Temporada /-->
         <td><?php echo $fila->temporada; ?></td>
 
-          <!-- Fecha /-->
+        <!-- Fecha /-->
         <td><?php echo $newDate = date("d-m-Y", strtotime($fila->fecha)); ?></td>
 
         <!-- Año /-->
@@ -151,7 +152,7 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
     <tfoot>
     <tr>
-      <th>PORTADA</th>  
+      <th>PORTADA</th>
       <th>VISTO</th>
       <th>#</th>
       <th>NO.</th>

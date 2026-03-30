@@ -38,10 +38,10 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 ?>
 
 <script type="text/javascript">
-    jQuery(window).on('load', function() {
-        let table = new DataTable('#table');
-        table.page.len(5).draw();
-    });
+  jQuery(window).on('load', function () {
+    let table = new DataTable('#table');
+    table.page.len(5).draw();
+  });
 </script>
 
 <!-- Content /-->
@@ -86,16 +86,16 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 
           ?>
 
-          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0px; width: 94px;">
+          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0; width: 95px;">
             <a href="<?php echo $fullImagePath; ?>"
                class="fancybox image"
                style="width: 95px;"
                aria-controls="fancybox-wrap"
                aria-haspopup="dialog">
-              <img style="width: 95px; border-color: #69696900;"
+              <img style="width: 95px;  border: 0 solid #dbdbdb;"
                    src="<?php echo $smallImagePath; ?>"
                    title="<?php echo $fila->tituloespanol; ?>"
-                   class="tie-appear">
+                   class="tie-appear" alt="<?php echo $fila->tituloespanol; ?>">
               <li class="fa overlay-icon"></li>
             </a>
           </div>

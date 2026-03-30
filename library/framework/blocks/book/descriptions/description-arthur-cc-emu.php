@@ -38,110 +38,111 @@ echo do_shortcode('[wp-datatable id="table" fat="LEVEL"]
 ?>
 
 <script type="text/javascript">
-    jQuery(window).on('load', function() {
-        let table = new DataTable('#table');
-        table.page.len(5).draw();
-    });
+  jQuery(window).on('load', function () {
+    let table = new DataTable('#table');
+    table.page.len(5).draw();
+  });
 </script>
 
 <!-- Content /-->
 <section>
-    <table id="table" class="display compact" style="width:100%">
+  <table id="table" class="display compact" style="width:100%">
 
-        <thead>
-        <tr>
-            <th>PORTADA</th>
-            <th>VISTO</th>
-            <th>EP.</th>
-            <th>TÍTULO ORIGINAL</th>
-            <th>TÍTULO ESPAÑOL</th>
-            <th>DESCRIPCIÓN</th>
-            <th>FECHA DE EMISIÓN</th>
-            <th>DURACIÓN</th>
-        </tr>
-        </thead>
+    <thead>
+    <tr>
+      <th>PORTADA</th>
+      <th>VISTO</th>
+      <th>EP.</th>
+      <th>TÍTULO ORIGINAL</th>
+      <th>TÍTULO ESPAÑOL</th>
+      <th>DESCRIPCIÓN</th>
+      <th>FECHA DE EMISIÓN</th>
+      <th>DURACIÓN</th>
+    </tr>
+    </thead>
 
-        <tbody>
+    <tbody>
 
-        <?php foreach ($query as $fila): ?>
-            <?php
+    <?php foreach ($query as $fila): ?>
+      <?php
 
-            ?>
+      ?>
 
-            <tr>
+      <tr>
 
-                <!-- PROTADAS /-->
-                <td style="width: 20px; padding: 10px;">
-                    <?php
-                    $imageString = $fila->episodio;
-                    if ($imageString != 'No existe') {
+        <!-- PROTADAS /-->
+        <td style="width: 20px; padding: 10px;">
+          <?php
+          $imageString = $fila->episodio;
+          if ($imageString != 'No existe') {
 
-                        $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-emu/' . $imageString . '.jpg';
-                        $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-emu/small/' . $imageString . '.jpg';
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-emu/' . $imageString . '.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/arthur-cc-emu/small/' . $imageString . '.jpg';
 
-                    } else {
-                        $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
-                        $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book-small.jpg';
-                    }
+          } else {
+            $fullImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book.jpg';
+            $smallImagePath = 'https://bibliotecaenigmas.com/wp-content/themes/sahifa/library/images/covers/no-cover-book-small.jpg';
+          }
 
-                    ?>
+          ?>
 
-                    <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0px; width: 94px;">
-                        <a href="<?php echo $fullImagePath; ?>"
-                           class="fancybox image"
-                           style="width: 95px;"
-                           aria-controls="fancybox-wrap"
-                           aria-haspopup="dialog">
-                            <img style="width: 95px; border-color: #69696900;"
-                                 src="<?php echo $smallImagePath; ?>"
-                                 title="<?php echo $fila->tituloespanol; ?>"
-                                 class="tie-appear">
-                            <li class="fa overlay-icon"></li>
-                        </a>
-                    </div>
-                </td>
+          <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0; width: 95px;">
+            <a href="<?php echo $fullImagePath; ?>"
+               class="fancybox image"
+               style="width: 95px;"
+               aria-controls="fancybox-wrap"
+               aria-haspopup="dialog">
+              <img style="width: 95px;  border: 0 solid #dbdbdb;"
+                   src="<?php echo $smallImagePath; ?>"
+                   title="<?php echo $fila->tituloespanol; ?>"
+                   class="tie-appear"
+                   alt="<?php echo $fila->tituloespanol; ?>">
+              <li class="fa overlay-icon"></li>
+            </a>
+          </div>
+        </td>
 
-                <!-- VISTO /-->
-                <td><?php echo $fila->visto; ?></td>
+        <!-- VISTO /-->
+        <td><?php echo $fila->visto; ?></td>
 
-                <!-- EP. /-->
-                <td><?php echo $fila->episodio; ?></td>
+        <!-- EP. /-->
+        <td><?php echo $fila->episodio; ?></td>
 
-                <!-- TITULO ORIGINAL /-->
-                <td><?php echo $fila->titulooriginal; ?></td>
+        <!-- TITULO ORIGINAL /-->
+        <td><?php echo $fila->titulooriginal; ?></td>
 
-                <!-- TITULO ESPAÑOL /-->
-                <td><?php echo $fila->tituloespanol; ?></td>
+        <!-- TITULO ESPAÑOL /-->
+        <td><?php echo $fila->tituloespanol; ?></td>
 
-                <!-- DESCRIPCIÓN /-->
-                <td><?php echo $fila->descripcion; ?></td>
+        <!-- DESCRIPCIÓN /-->
+        <td><?php echo $fila->descripcion; ?></td>
 
-                <!-- FECHA DE EMISIÓN /-->
-                <td><?php echo $newDate = date("d-m-Y", strtotime($fila->fechadeemision)); ?></td>
+        <!-- FECHA DE EMISIÓN /-->
+        <td><?php echo $newDate = date("d-m-Y", strtotime($fila->fechadeemision)); ?></td>
 
-                <!-- DURACIÓN /-->
-                <td><?php echo $fila->duracion; ?></td>
+        <!-- DURACIÓN /-->
+        <td><?php echo $fila->duracion; ?></td>
 
-            </tr>
+      </tr>
 
-        <?php endforeach; ?>
+    <?php endforeach; ?>
 
-        </tbody>
+    </tbody>
 
-        <tfoot>
-        <tr>
-            <th>PORTADA</th>
-            <th>VISTO</th>
-            <th>EP.</th>
-            <th>TÍTULO ORIGINAL</th>
-            <th>TÍTULO ESPAÑOL</th>
-            <th>DESCRIPCIÓN</th>
-            <th>FECHA DE EMISIÓN</th>
-            <th>DURACIÓN</th>
-        </tr>
-        </tfoot>
+    <tfoot>
+    <tr>
+      <th>PORTADA</th>
+      <th>VISTO</th>
+      <th>EP.</th>
+      <th>TÍTULO ORIGINAL</th>
+      <th>TÍTULO ESPAÑOL</th>
+      <th>DESCRIPCIÓN</th>
+      <th>FECHA DE EMISIÓN</th>
+      <th>DURACIÓN</th>
+    </tr>
+    </tfoot>
 
-    </table>
+  </table>
 </section>
 
 

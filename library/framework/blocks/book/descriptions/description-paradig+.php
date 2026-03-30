@@ -238,16 +238,17 @@ echo do_shortcode('[wp-datatable id="table2" fat="LEVEL"]
 
             ?>
 
-            <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0px; width: 94px;">
+            <div class="post-thumbnail tie_play tb-book-thumbnail tie-appear" style="margin-bottom: 0; width: 95px;">
               <a href="<?php echo $fullImagePath; ?>"
                  class="fancybox image"
                  style="width: 95px; "
                  aria-controls="fancybox-wrap"
                  aria-haspopup="dialog">
-                <img style="width: 95px; border-color: #69696900;"
+                <img style="width: 95px;  border: 0 solid #dbdbdb;"
                      src="<?php echo $smallImagePath; ?>"
                      title="<?php echo $fila->titulo; ?>"
-                     class="tie-appear">
+                     class="tie-appear"
+                     alt="<?php echo $fila->titulo; ?>">
                 <li class="fa overlay-icon"></li>
               </a>
             </div>
