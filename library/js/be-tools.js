@@ -1623,7 +1623,7 @@
                       let mailName = document.getElementById('mailName');
                       let mailURL = document.getElementById('mailURL');
                       if (mailName.value !== '' || mailURL.value !== '') {
-                        htmlList += '<li><i class="fa-solid fa-envelope-open"></i> <a href="' + mailURL.value + '">' + mailName.value + '</a></li>\n';
+                        htmlList += '<li><i class="fa-solid fa-envelope-open"></i> <a href="mailto:' + mailURL.value + '">' + mailName.value + '</a></li>\n';
                       }
 
                       editor.insertContent('<h1 style="text-align: center;">Contacto y redes sociales</h1>\n' +
