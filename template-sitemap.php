@@ -8,7 +8,7 @@
    * Path:               root
    * File name:          template-sitemap.php
    * Description:        This file show a sitemap book page.
-   * Date:               22-11-2025
+   * Date:               16-03-2026
    */
 ?>
 
@@ -69,7 +69,7 @@
           <?php endif ?>
 
           <!-- Stories blog map -->
-          <?php if ($postId == 22599) : ?>
+          <?php if ($postId == 26356) : ?>
             <?php get_template_part ('library/framework/blocks/blog/maps/stories-blog-map'); ?>
           <?php endif ?>
           
@@ -82,7 +82,6 @@
 
     <div class="clear"></div>
   </div><!-- .content -->
-
 
 <?php get_sidebar ('genres'); ?>
 <?php get_footer (); ?>
